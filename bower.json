@@ -1,0 +1,29 @@
+{
+  "name": "forSocial",
+  "description": "project",
+  "version": "1.0.0",
+  "homepage": "https://github.com/MiKolka7/forSocial.github.io",
+  "authors": [
+    "MiKolka <kolka.koval@gmail.com>"
+  ],
+  "keywords": [
+    "forSocial",
+    "aid",
+    "social",
+    "help"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    ".idea",
+    "design"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.4",
+    "angular-cookie": "~4.0.9",
+    "angular-resource": "~1.4.4",
+    "angular-route": "~1.4.4",
+    "underscore": "~1.8.3"
+  }
+}
