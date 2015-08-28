@@ -41,10 +41,17 @@ gulp.task('inject', function () {
     };
 
     gulp.src('./index.html')
-        .pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))
         .pipe(inject(
-            gulp.src(js.app.src), {name: js.app.name})
-                .pipe(angularFilesort())
+                gulp.src(bowerFiles(), { base: './bower_components' }, {read: false}),
+                {name: 'bower'},
+                {relative: true}
+            )
+        )
+        .pipe(inject(
+                gulp.src(js.app.src).pipe(angularFilesort()),
+                {name: js.app.name},
+                {relative: true}
+            )
         )
         .pipe(gulp.dest('./'))
         .pipe(connect.reload());
