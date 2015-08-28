@@ -1,0 +1,17 @@
+=font-face($family, $path, $svg, $weight: normal, $style: normal)
+    @font-face
+        font-family: $family
+        src: url('#{$path}.eot')
+        src: url('#{$path}.eot?#iefix') format('embedded-opentype'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg##{$svg}') format('svg')
+        font-weight: $weight
+        font-style: $style
+
+
++font-face('texgyreheros-regular', '../fonts/texgyreheros-regular', 'texgyreheros')
++font-face('texgyreheros-italic', '../fonts/texgyreheros-italic', 'texgyreheros', 'normal', 'italic')
++font-face('texgyreheros-bold', '../fonts/texgyreheros-bold', 'texgyreheros')
+
+
+$BaseFont: 'texgyreheros-regular'
+$BaseFont-italic: 'texgyreheros-italic'
+$BaseFont-bold: 'texgyreheros-bold'
