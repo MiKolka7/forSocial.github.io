@@ -14,3 +14,7 @@ https://cloud.mail.ru/public/BYvq/uw3CUwZac
   - bower install (будуть завантажені бібліотеки)
 
 - після всіх дій в терміналі написати команду gulp, відкрити в браузері http://localhost:8080/ (термінал не закривати, після додавання нових файлів, повторити цей пункт)
+
+### Рекомендовані консолі
+- для mac iterm https://www.iterm2.com/
+- для win https://www.iterm2.com/ (download https://github.com/cmderdev/cmder/releases/tag/v1.2)
