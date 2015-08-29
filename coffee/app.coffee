@@ -1,8 +1,7 @@
 
-angular.module 'tadApp', [
+angular.module 'app', [
     'ngTouch'
     'ngRoute'
     'ngCookies'
-    'tadApp.run'
-    'tadApp.config.route'
+    'app.config.route'
 ]

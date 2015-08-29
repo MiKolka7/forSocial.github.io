@@ -1,4 +1,4 @@
-angular.module('tadApp.config.route', [])
+angular.module('app.config.route', [])
     .config ($routeProvider) ->
 
         $routeProvider
@@ -7,7 +7,7 @@ angular.module('tadApp.config.route', [])
                 templateUrl: 'template/registration.html'
             )
 
-            .otherwise redirectTo: '/login'
+            .otherwise redirectTo: '/main'
 
 
 #angular.module('tadApp.config.route', [])
