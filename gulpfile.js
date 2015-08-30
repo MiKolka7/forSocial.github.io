@@ -79,7 +79,8 @@ gulp.task('coffee', function () {
             coffee({bare: true})
             .on('error', gutil.log)
         )
-        .pipe(gulp.dest('./js/'));
+        .pipe(gulp.dest('./js/'))
+        .pipe(connect.reload());
 });
 
 
