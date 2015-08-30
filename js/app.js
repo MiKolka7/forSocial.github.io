@@ -1,1 +1,1 @@
-angular.module('app', ['ngTouch', 'ngRoute', 'ngCookies', 'app.config.route']);
+angular.module('app', ['ui.router', 'app.config.route']);

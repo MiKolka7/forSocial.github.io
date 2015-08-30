@@ -1,28 +1,48 @@
 angular.module('app.config.route', [])
-    .config ($routeProvider) ->
+    .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
+        $urlRouterProvider.otherwise '/'
 
-        $routeProvider
-            .when('/registration',
-                controller: 'registrationCtrl'
-                templateUrl: 'template/registration.html'
+        $stateProvider
+            .state('main',
+                url: "/"
+                views:
+                    '@':
+                        templateUrl: 'template/pages/events.html'
+                    'header':
+                        #controller: 'mainBodyHeader'
+                        templateUrl: 'template/header.html'
+
+                    'footer':
+                        #controller: 'mainBodyFooter'
+                        templateUrl: 'template/footer.html'
+            )
+            .state('main.friends',
+                url: 'friends'
+                views:
+                    '@':
+                        templateUrl: 'template/pages/friends.html'
+            )
+            .state('main.events',
+                url: 'events'
+                views:
+                    '@':
+                        templateUrl: 'template/pages/events.html'
+            )
+            .state('main.organizations',
+                url: 'organizations'
+                views:
+                    '@':
+                        templateUrl: 'template/pages/organizations.html'
+            )
+            .state('main.messages',
+                url: 'messages'
+                views:
+                    '@':
+                        templateUrl: 'template/pages/messages.html'
+            )
+            .state('registration',
+                url: '/registration'
+                templateUrl: 'template/pages/registration.html'
             )
 
-            .otherwise redirectTo: '/main'
-
-
-#angular.module('tadApp.config.route', [])
-#    .config ($stateProvider, $urlRouterProvider) ->
-#        $urlRouterProvider.otherwise '/'
-#
-#        $stateProvider
-#            .state('/',
-#                url: '/'
-#                templateUrl: 'template/slide-1.html'
-#            )
-#
-#            .state ('slide5',
-#                url: '/slide-5'
-#                controller: 'slideCtrl'
-#                templateUrl: 'template/slide-5.html'
-#            )
-
+        return true

@@ -1,7 +1,5 @@
 
 angular.module 'app', [
-    'ngTouch'
-    'ngRoute'
-    'ngCookies'
+    'ui.router'
     'app.config.route'
 ]
