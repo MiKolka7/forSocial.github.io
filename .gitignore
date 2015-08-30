@@ -28,6 +28,7 @@ node_modules
 
 # Bower
 bower_components
+/css/style.css
 
 # Design
 design
