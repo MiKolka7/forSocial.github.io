@@ -22,12 +22,6 @@ angular.module('app.config.route', [])
                     '@':
                         templateUrl: 'template/pages/friends.html'
             )
-            .state('main.events',
-                url: 'events'
-                views:
-                    '@':
-                        templateUrl: 'template/pages/events.html'
-            )
             .state('main.organizations',
                 url: 'organizations'
                 views:

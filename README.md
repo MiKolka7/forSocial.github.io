@@ -18,3 +18,10 @@ https://cloud.mail.ru/public/BYvq/uw3CUwZac
 ### Рекомендовані консолі
 - для mac iterm https://www.iterm2.com/
 - для win https://www.iterm2.com/ (download https://github.com/cmderdev/cmder/releases/tag/v1.2)
+
+### Доступні сторінки
+- івенти: http://localhost:8080/#/
+- повідомлення: http://localhost:8080/#/messages
+- коло знайомств: http://localhost:8080/#/friends
+- реєстарція http://localhost:8080/#/registration
+- організації http://localhost:8080/#/organizations
