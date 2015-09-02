@@ -26,12 +26,32 @@
     <!-- app:js -->
     <script src="/js/route.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/modal.js"></script>
     <!-- endinject -->
 
 </head>
 
 
 <body ng-app="app">
+
+    <!-- Modal window for authorization -->
+    <a href="#" class="login">Увійти</a>
+    <div class="modal-layout">
+        <div class="modal">
+            <div class="form_wrap">
+                <p>ВХІД</p>
+                <form class="auth">
+                    <span>Email:</span>
+                    <input type="email" required>
+                    <span>Пароль:</span>
+                    <input type="password" required>
+                    <a href="#">Нагадати пароль?</a>
+                    <button type="submit">Увійти</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END -->
 
     <header ui-view="header"></header>
 

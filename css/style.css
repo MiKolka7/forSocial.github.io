@@ -158,19 +158,87 @@ label {
       opacity: 1;
       visibility: visible;
       transform: translate3d(0, -50%, 0) scale(1); }
+/*Den Korch - START*/
+a.login {
+  display: block;
+  margin: 10px auto;
+  border-radius: 20px;
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  background-color: gray;
+}
 
+.form_wrap {
+  width: 287px;
+  margin: 0 auto;
+}
+.auth > input[type="password"] {
+  background-image: url(../img/pass-icon.png);
+  background-position: 20px center;
+  background-repeat: no-repeat; }
+  .auth > input[type="password"]:focus {
+    background-position: -20px center; }
+.auth > input:focus {
+  border: 1px solid #58a5ff;
+  box-shadow: inset 0px 0px 3px 1px rgba(88, 165, 255, 0.6);
+  -moz-box-shadow: inset 0px 0px 3px 1px rgba(88, 165, 255, 0.6);
+  -webkit-box-shadow: inset 0px 0px 3px 1px rgba(88, 165, 255, 0.6);
+}
+.auth > input,
+.modal button {
+  display: block;
+  margin: 0 auto;
+  border-radius: 47px;
+}
+.auth > input {
+  border: 1px solid;
+  padding-left: 20px;
+  font-size: 16px;
+  width: 265px;
+  height: 45px;
+}
+.modal p {
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  margin: 17px 0;
+  color: #383838;
+}
+.auth a {
+  display: block;
+  text-align: right;
+  color: #58a5ff;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 40px;
+}
+.modal span {
+  display: block;
+  padding-left: 16px;
+  margin: 8px 4px;
+  color: #383838;
+}
+.modal button {
+  background-color: #58a5ff;
+  color: #fff;
+  font-size: 22px;
+  width: 285px;
+  height: 47px;
+}
+
+/*Den Korch - END*/
 .modal {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
-  width: 1523712%;
-  min-width: 496px;
+  width: 365px; 
+  height: 355px;
   margin: 0 auto;
   background-color: #fff;
-  border-top: 10px solid #8ab71f;
-  border-bottom: 4px solid #8ab71f;
-  border-radius: 3px;
+  border: 2px solid #58a5ff;
+  border-radius: 2px;
   box-shadow: 0 3px 0 rgba(0, 1, 1, 0.15);
   z-index: 1001;
   opacity: 0;
