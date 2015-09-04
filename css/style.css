@@ -108,7 +108,7 @@ label {
 .no-select {
   user-select: none; }
 
-.clearfix:after, .modal__main:after {
+.clearfix:after, .events__item:after, .users:after, .modal__main:after {
   content: ' ';
   width: 0;
   height: 0;
@@ -128,9 +128,222 @@ label {
   transition: opacity 0.5s ease, visibility 0.5s ease; }
 
 .container {
-  width: 1050px;
+  max-width: 1050px;
   padding: 0 10px;
   margin: 0 auto; }
+
+/************************************************************************************
+ *  header
+ ************************************************************************************/
+header {
+  background: url("../images/designe/bg-header.png");
+  height: 84px; }
+
+.header_logo {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 52px;
+  height: 52px; }
+
+/****************************************************************************************
+ *drop-down menu
+ *******************************************************************************************/
+.header_menu {
+  width: 450px; }
+
+.m_category {
+  margin: 0 0 20px 0; }
+  .m_category:first-child {
+    margin-bottom: 60px; }
+  .m_category:last-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 20px; }
+
+.m_inside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 450px;
+  overflow: hidden;
+  text-decoration: none;
+  background-image: linear-gradient(10deg, #234266 0%, #58a5ff 100%);
+  box-shadow: 5.3px 4.6px 5px rgba(90, 98, 110, 0.46); }
+
+.link_inside {
+  display: block;
+  padding: 0 0 0 85px;
+  margin-left: 42px;
+  height: 70px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 70px;
+  font-size: 24px;
+  font-weight: 900;
+  background-repeat: no-repeat;
+  background-position: 0% 50%; }
+
+.ikon_close {
+  background-image: url(../images/designe/icon/icon-close.png); }
+
+.ikon_news {
+  background-image: url(../images/designe/icon/icon-news.png); }
+
+.ikon_mail {
+  background-image: url(../images/designe/icon/ikon_mail.png); }
+
+.ikon_network {
+  background-image: url(../images/designe/icon/ikon_network.png); }
+
+.ikon_organization {
+  background-image: url(../images/designe/icon/ikon_organization.png);
+  background-position: 3px 50%; }
+
+.ikon_map {
+  background-image: url(../images/designe/icon/ikon_map.png);
+  background-position: 10px 50%; }
+
+.ikon_help {
+  background-image: url(../images/designe/icon/ikon_help.png); }
+
+.m_top_link {
+  display: inline-block;
+  text-decoration: none;
+  background-image: url(../images/designe/icon/icon-menu.png); }
+
+/*******************************************************************
+ *end of drop-down menu
+ *******************************************************************/
+/****************************************************************************************
+ *drop-down profile
+ *******************************************************************************************/
+.header_profile {
+  float: right; }
+
+.p {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px; }
+
+.p_inside {
+  text-decoration: none;
+  position: absolute;
+  right: -9999px;
+  height: 202px;
+  background-image: linear-gradient(10deg, black 0%, #58a5ff 100%);
+  box-shadow: 0 7px 5px rgba(90, 98, 110, 0.46); }
+
+.p_categroy {
+  display: inline-block; }
+
+.p_top {
+  display: inline; }
+
+.p_link_inside {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 60px;
+  color: #fff; }
+
+.p_top_link {
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  background: gray;
+  border-radius: 30px; }
+
+ul.p li.p_top:hover .p_inside {
+  display: block;
+  right: -20px;
+  top: 115px; }
+
+/****************************************************************************************
+ *end drop-down profile
+ *******************************************************************************************/
+/************************************************************************************
+ * end of header
+ *************************************************************************************/
+.events {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 0; }
+
+.events__item {
+  padding: 15px 15px 60px 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+
+.events__item__img {
+  width: 18.54369%;
+  margin-right: 5.53398%;
+  float: left; }
+
+.events__item__container {
+  overflow: hidden; }
+
+.events__item__info {
+  position: relative;
+  top: 7px;
+  float: right;
+  font-size: 18px;
+  font-weight: 400;
+  white-space: nowrap; }
+  .events__item__info > address {
+    display: inline-block; }
+
+.events__item__title {
+  width: 80%;
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 900; }
+
+.events__item__text {
+  margin-bottom: 30px;
+  color: #767676;
+  font-size: 18px;
+  font-weight: 400; }
+
+.events__item__users {
+  float: left;
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px; }
+
+.users {
+  margin-top: 12px; }
+
+.users__list {
+  width: 38px;
+  height: 38px;
+  margin-right: 20px;
+  float: left;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 50%; }
+
+.btn {
+  width: 168px;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 27px;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300; }
+
+.btn--blue {
+  background-color: #58a5ff; }
+
+.btn-event {
+  float: right;
+  margin-bottom: 15px; }
 
 /************************************************************************************
  * Modal window
@@ -158,87 +371,19 @@ label {
       opacity: 1;
       visibility: visible;
       transform: translate3d(0, -50%, 0) scale(1); }
-/*Den Korch - START*/
-a.login {
-  display: block;
-  margin: 10px auto;
-  border-radius: 20px;
-  width: 100px;
-  height: 20px;
-  text-align: center;
-  background-color: gray;
-}
 
-.form_wrap {
-  width: 287px;
-  margin: 0 auto;
-}
-.auth > input[type="password"] {
-  background-image: url(../img/pass-icon.png);
-  background-position: 20px center;
-  background-repeat: no-repeat; }
-  .auth > input[type="password"]:focus {
-    background-position: -20px center; }
-.auth > input:focus {
-  border: 1px solid #58a5ff;
-  box-shadow: inset 0px 0px 3px 1px rgba(88, 165, 255, 0.6);
-  -moz-box-shadow: inset 0px 0px 3px 1px rgba(88, 165, 255, 0.6);
-  -webkit-box-shadow: inset 0px 0px 3px 1px rgba(88, 165, 255, 0.6);
-}
-.auth > input,
-.modal button {
-  display: block;
-  margin: 0 auto;
-  border-radius: 47px;
-}
-.auth > input {
-  border: 1px solid;
-  padding-left: 20px;
-  font-size: 16px;
-  width: 265px;
-  height: 45px;
-}
-.modal p {
-  font-size: 24px;
-  text-align: center;
-  width: 100%;
-  margin: 17px 0;
-  color: #383838;
-}
-.auth a {
-  display: block;
-  text-align: right;
-  color: #58a5ff;
-  font-size: 12px;
-  margin-top: 5px;
-  margin-bottom: 40px;
-}
-.modal span {
-  display: block;
-  padding-left: 16px;
-  margin: 8px 4px;
-  color: #383838;
-}
-.modal button {
-  background-color: #58a5ff;
-  color: #fff;
-  font-size: 22px;
-  width: 285px;
-  height: 47px;
-}
-
-/*Den Korch - END*/
 .modal {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
-  width: 365px; 
-  height: 355px;
+  width: 1523712%;
+  min-width: 496px;
   margin: 0 auto;
   background-color: #fff;
-  border: 2px solid #58a5ff;
-  border-radius: 2px;
+  border-top: 10px solid #8ab71f;
+  border-bottom: 4px solid #8ab71f;
+  border-radius: 3px;
   box-shadow: 0 3px 0 rgba(0, 1, 1, 0.15);
   z-index: 1001;
   opacity: 0;

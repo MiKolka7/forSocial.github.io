@@ -3,111 +3,95 @@
  ************************************************************************************/
 
 header
-  background: url(../pic/bg_header.png)
-  width: 1366px
-  height: 84px
+    background: url("../images/designe/bg-header.png")
+    height: 84px
 
 .header_logo
-  display: block
-  margin: 0 auto
-  width: 52px
-  height: 52px
+    position: absolute
+    top: 16px
+    left: 0
+    right: 0
+    margin: auto
+    width: 52px
+    height: 52px
 
 /****************************************************************************************
  *drop-down menu
  *******************************************************************************************/
 
 .header_menu
-  display: inline-block
-  float: left
-
-.m
-  position: relative
-  display: inline-block
-  margin-right: 20px
-
-.m_inside
-  text-decoration: none
-  position: absolute
-  left: -9999px
-  height: 1250px
-  background-image: linear-gradient(10deg, black 0%, #58a5ff 100%)
-  box-shadow: 5.3px 4.6px 5px rgba(90, 98, 110, 0.46)
+    width: 450px
 
 .m_category
-  display: inline-block
-  padding: 10px
-  height: 50px
+    margin: 0 0 20px 0
 
-.m_top
-  display: inline-block
+    &:first-child
+        margin-bottom: 60px
+
+    &:last-child
+        border-top: 1px solid rgba(#fff, 0.1)
+        margin-top: 40px
+        padding-top: 20px
+
+.m_inside
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    width: 450px
+
+    overflow: hidden
+    text-decoration: none
+    background-image: linear-gradient(10deg, #234266 0%, #58a5ff 100%)
+    box-shadow: 5.3px 4.6px 5px rgba(90, 98, 110, 0.46)
 
 .link_inside
-  display: inline
-  text-decoration: none
-  font-family: 'Lato'
-  font-size: 24px
-  font-weight: 900
-  line-height: 65px
-  text-transform: uppercase
-  color: #fff
-  white-space: nowrap
+    display: block
+    padding: 0 0 0 85px
+    margin-left: 42px
+    height: 70px
+
+    color: #fff
+    text-decoration: none
+    text-transform: uppercase
+    white-space: nowrap
+    line-height: 70px
+
+    font-size: 24px
+    font-weight: 900
+
+    background-repeat: no-repeat
+    background-position: 0% 50%
+
 
 .ikon_close
-  background-image: url(../pic/icon-close.png)
-  background-repeat: no-repeat
-  background-position: 0% 50%
-  padding: 130px
+    background-image: url(../images/designe/icon/icon-close.png)
 
 .ikon_news
-  background-image: url(../pic/icon-news.png)
-  background-repeat: no-repeat
-  background-position: 0% 50%
-  padding: 130px
+    background-image: url(../images/designe/icon/icon-news.png)
 
 .ikon_mail
-  background-image: url(../pic/ikon_mail.png)
-  background-repeat: no-repeat
-  background-position: 0% 50%
-  padding: 130px
+    background-image: url(../images/designe/icon/ikon_mail.png)
 
 .ikon_network
-  background-image: url(../pic/ikon_network.png)
-  background-repeat: no-repeat
-  background-position: 0% 50%
-  padding: 130px
+    background-image: url(../images/designe/icon/ikon_network.png)
 
 .ikon_organization
-  background-image: url(../pic/ikon_organization.png)
-  background-repeat: no-repeat
-  background-position: 0% 50%
-  padding: 130px
+    background-image: url(../images/designe/icon/ikon_organization.png)
+    background-position: 3px 50%
 
 .ikon_map
-  background-image: url(../pic/ikon_map.png)
-  background-repeat: no-repeat
-  background-position: 0% 50%
-  padding: 130px
+    background-image: url(../images/designe/icon/ikon_map.png)
+    background-position: 10px 50%
 
 .ikon_help
-  background-image: url(../pic/ikon_help.png)
-  background-repeat: no-repeat
-  background-position: 0% 50%
-  padding: 130px
+    background-image: url(../images/designe/icon/ikon_help.png)
+
 
 .m_top_link
-  display: inline-block
-  text-decoration: none
-  background-image: url(../pic/icon-menu.png)
-  background-repeat: no-repeat
-  width: 42px
-  height: 34px
-  margin: 24px 44px 24px 44px
-
-ul.m li.m_top:hover .m_inside
-  display: block
-  left: 0px
-  top: 0
+    display: inline-block
+    text-decoration: none
+    background-image: url(../images/designe/icon/icon-menu.png)
 
 /*******************************************************************
  *end of drop-down menu
@@ -118,47 +102,46 @@ ul.m li.m_top:hover .m_inside
  *******************************************************************************************/
 
 .header_profile
-  float: right
+    float: right
 
 .p
-  position: relative
-  display: inline-block
-  margin-right: 20px
+    position: relative
+    display: inline-block
+    margin-right: 20px
 
 .p_inside
-  text-decoration: none
-  position: absolute
-  right: -9999px
-  height: 202px
-  background-image: linear-gradient(10deg, black 0%, #58a5ff 100%)
-  box-shadow: 0 7px 5px rgba(90, 98, 110, 0.46)
+    text-decoration: none
+    position: absolute
+    right: -9999px
+    height: 202px
+    background-image: linear-gradient(10deg, black 0%, #58a5ff 100%)
+    box-shadow: 0 7px 5px rgba(90, 98, 110, 0.46)
 
 .p_categroy
-  display: inline-block
+    display: inline-block
 
 .p_top
-  display: inline
+    display: inline
 
 .p_link_inside
-  display: inline-block
-  text-decoration: none
-  font-family: 'Lato'
-  font-size: 24px
-  font-weight: 300
-  line-height: 60px
-  color: #fff
+    display: inline-block
+    text-decoration: none
+    font-size: 24px
+    font-weight: 300
+    line-height: 60px
+    color: #fff
 
 .p_top_link
-  text-decoration: none
-  width: 40px
-  height: 40px
-  background: gray
-  border-radius: 30px
+    text-decoration: none
+    width: 40px
+    height: 40px
+    background: gray
+    border-radius: 30px
 
 ul.p li.p_top:hover .p_inside
-  display: block
-  right: -20px
-  top: 115px
+    display: block
+    right: -20px
+    top: 115px
 
 /****************************************************************************************
  *end drop-down profile
