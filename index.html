@@ -34,6 +34,10 @@
 
 <body ng-app="app">
 
+    <!--modal window button-->
+    <a href="#" class="login">Увійти</a>
+    <!--end-->
+
     <header ui-view="header"></header>
 
     <ui-view></ui-view>
@@ -41,12 +45,11 @@
     <footer ui-view="footer"></footer>
 
     <!-- Modal window for authorization -->
-    <a href="#" class="login">Увійти</a>
-    <div class="modal-layout">
+    <div class="modal-layout clearfix">
         <div class="modal">
             <div class="form_wrap">
                 <p>ВХІД</p>
-                <form class="auth">
+                <form class="modal-form">
                     <span>Email:</span>
                     <input type="email" required>
                     <span>Пароль:</span>
