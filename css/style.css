@@ -108,7 +108,7 @@ label {
 .no-select {
   user-select: none; }
 
-.clearfix:after, .events__item:after, .users:after, .modal__main:after {
+.clearfix:after, .events__item:after, .friends__item:after, .users:after, .modal__main:after {
   content: ' ';
   width: 0;
   height: 0;
@@ -271,15 +271,15 @@ ul.p li.p_top:hover .p_inside {
 /************************************************************************************
  * end of header
  *************************************************************************************/
-.events {
+.events, .friends {
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 0; }
 
-.events__item {
+.events__item, .friends__item {
   padding: 15px 15px 60px 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
 
-.events__item__img {
+.events__item__img, .friends__item__img {
   width: 18.54369%;
   margin-right: 5.53398%;
   float: left; }
@@ -297,7 +297,7 @@ ul.p li.p_top:hover .p_inside {
   .events__item__info > address {
     display: inline-block; }
 
-.events__item__title {
+.events__item__title, .friends__item__name {
   width: 80%;
   margin-bottom: 15px;
   font-size: 28px;
@@ -344,6 +344,29 @@ ul.p li.p_top:hover .p_inside {
 .btn-event {
   float: right;
   margin-bottom: 15px; }
+
+.friends__item {
+  padding: 15px 15px 15px 15px; }
+
+.friends__item__container {
+  overflow: hidden;
+  position: relative; }
+
+.friends__item__text {
+  margin-bottom: 10px;
+  color: black;
+  font-size: 18px; }
+
+.actions {
+  position: absolute;
+  top: 50%;
+  right: 50px; }
+
+.friends__action {
+  display: block;
+  color: #58a5ff;
+  font-size: 18px;
+  margin-bottom: 10px; }
 
 /************************************************************************************
  * Modal window
