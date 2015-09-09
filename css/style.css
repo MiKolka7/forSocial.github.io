@@ -19,11 +19,11 @@ body, html {
   text-transform: none;
   text-rendering: auto;
   overflow: hidden;
+  font-family: 'Lato';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  font-family: 'texgyreheros-regular'; }
+  -webkit-text-size-adjust: none; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block; }
@@ -118,7 +118,7 @@ label {
   visibility: hidden;
   clear: both; }
 
-.animate, body, html, .modal-layout, .modal {
+.animate, body, html, .m_inside, .p_inside, .modal-layout, .modal {
   transition: all 0.5s ease; }
 
 .animate-transform {
@@ -136,7 +136,8 @@ label {
  *  header
  ************************************************************************************/
 header {
-  background: url("../images/designe/bg-header.png");
+  background: url("../images/design/bg-header.png");
+  background-size: cover;
   height: 84px; }
 
 .header_logo {
@@ -152,11 +153,13 @@ header {
  *drop-down menu
  *******************************************************************************************/
 .header_menu {
-  width: 450px; }
+  position: relative;
+  height: 84px; }
 
 .m_category {
   margin: 0 0 20px 0; }
   .m_category:first-child {
+    padding-top: 10px;
     margin-bottom: 60px; }
   .m_category:last-child {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -172,7 +175,11 @@ header {
   overflow: hidden;
   text-decoration: none;
   background-image: linear-gradient(10deg, #234266 0%, #58a5ff 100%);
-  box-shadow: 5.3px 4.6px 5px rgba(90, 98, 110, 0.46); }
+  box-shadow: 5.3px 4.6px 5px rgba(90, 98, 110, 0.46);
+  transform: translate(-100%, 0);
+  z-index: 10; }
+  .m_inside.is-active {
+    transform: translate(0, 0); }
 
 .link_inside {
   display: block;
@@ -190,32 +197,38 @@ header {
   background-position: 0% 50%; }
 
 .ikon_close {
-  background-image: url(../images/designe/icon/icon-close.png); }
+  background-image: url(../images/design/icon/icon-close.png); }
 
 .ikon_news {
-  background-image: url(../images/designe/icon/icon-news.png); }
+  background-image: url(../images/design/icon/icon-news.png); }
 
 .ikon_mail {
-  background-image: url(../images/designe/icon/ikon_mail.png); }
+  background-image: url(../images/design/icon/ikon_mail.png); }
 
 .ikon_network {
-  background-image: url(../images/designe/icon/ikon_network.png); }
+  background-image: url(../images/design/icon/ikon_network.png); }
 
 .ikon_organization {
-  background-image: url(../images/designe/icon/ikon_organization.png);
+  background-image: url(../images/design/icon/ikon_organization.png);
   background-position: 3px 50%; }
 
 .ikon_map {
-  background-image: url(../images/designe/icon/ikon_map.png);
+  background-image: url(../images/design/icon/ikon_map.png);
   background-position: 10px 50%; }
 
 .ikon_help {
-  background-image: url(../images/designe/icon/ikon_help.png); }
+  background-image: url(../images/design/icon/ikon_help.png); }
 
 .m_top_link {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  width: 45px;
+  height: 34px;
   display: inline-block;
   text-decoration: none;
-  background-image: url(../images/designe/icon/icon-menu.png); }
+  background: url(../images/design/icon/icon-menu.png) no-repeat 50% 50%;
+  transform: translate(0, -50%); }
 
 /*******************************************************************
  *end of drop-down menu
@@ -229,21 +242,24 @@ header {
 .p {
   position: relative;
   display: inline-block;
+  height: 84px;
+  line-height: 84px;
   margin-right: 20px; }
 
 .p_inside {
-  text-decoration: none;
   position: absolute;
-  right: -9999px;
-  height: 202px;
-  background-image: linear-gradient(10deg, black 0%, #58a5ff 100%);
-  box-shadow: 0 7px 5px rgba(90, 98, 110, 0.46); }
+  top: 100%;
+  right: -12px;
+  opacity: 0;
+  visibility: hidden;
+  padding: 31px 28px;
+  line-height: 2;
+  background-image: linear-gradient(10deg, #606873 0%, #58a5ff 100%);
+  box-shadow: 0 7px 5px rgba(90, 98, 110, 0.46);
+  z-index: 10; }
 
 .p_categroy {
   display: inline-block; }
-
-.p_top {
-  display: inline; }
 
 .p_link_inside {
   display: inline-block;
@@ -257,13 +273,21 @@ header {
   text-decoration: none;
   width: 40px;
   height: 40px;
-  background: gray;
-  border-radius: 30px; }
+  border-radius: 30px;
+  cursor: pointer; }
 
 ul.p li.p_top:hover .p_inside {
-  display: block;
-  right: -20px;
-  top: 115px; }
+  opacity: 1;
+  visibility: visible; }
+
+.login {
+  width: 100px;
+  height: 20px;
+  margin-right: 20px;
+  line-height: 84px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: gray; }
 
 /****************************************************************************************
  *end drop-down profile
@@ -574,18 +598,6 @@ ul.p li.p_top:hover .p_inside {
   background-color: #fafafa;
   box-shadow: 0 -1px 0 #eee; }
 
-.login {
-  display: block;
-  position: relative;
-  left: 100%;
-  top: 10px;
-  margin-left: -120px;
-  width: 100px;
-  height: 20px;
-  border-radius: 20px;
-  text-align: center;
-  background-color: gray; }
-
 .form_wrap {
   width: 287px;
   margin: 0 auto; }
@@ -631,9 +643,7 @@ ul.p li.p_top:hover .p_inside {
   height: 45px; }
   .modal-form > input:focus {
     border: 1px solid #58a5ff;
-    box-shadow: inset 0px 0px 3px 1px rgba(88, 165, 255, 0.6);
-    -moz-box-shadow: inset 0px 0px 3px 1px rgba(88, 165, 255, 0.6);
-    -webkit-box-shadow: inset 0px 0px 3px 1px rgba(88, 165, 255, 0.6); }
+    box-shadow: inset 0px 0px 3px 1px rgba(88, 165, 255, 0.6); }
   .modal-form > input[type="password"] {
     background-image: url(../img/pass-icon.png);
     background-position: 20px center;

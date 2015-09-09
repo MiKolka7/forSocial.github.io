@@ -1,62 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>header</title>
-	<link rel="stylesheet" href="../css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-</head>
-<body>
-	<header>
-		<div class="header_menu">
-			<a class="m_top_link" href=""></a>
 
-			<ul class="m_inside">
-				<li class="m_category">
-					<a href="" class="link_inside ikon_close"></a>
-				</li>
-				<li class="m_category">
-					<a href="" class="link_inside ikon_news">заходи</a>
-				</li>
-				<li class="m_category">
-					<a href=""class="link_inside ikon_mail">повідомлення</a>
-				 </li>
-				 <li class="m_category">
-					<a href=""class="link_inside ikon_network">коло знайомств</a>
-				 </li>
-				 <li class="m_category">
-					<a href=""class="link_inside ikon_organization">організації</a>
-				</li>
-				<li class="m_category">
-					<a href=""class="link_inside ikon_map">мапа</a>
-				</li>
-				<li class="m_category">
-					<a href=""class="link_inside ikon_help">шукаю допомогу</a>
-				</li>
-			</ul>
-		</div>
+<div class="header_menu">
+	<a class="m_top_link" href="" ng-click="visibleMenu = visibleMenu ? false : true"></a>
 
-		<img src="../pic/logo.png" alt="" class="header_logo">
-		
-		<div class="header_profile">
-				<ul class="p">
-					<li class="p_top">
-						<img src="" alt="" class="p_top_link"> 
-							<ul class="p_inside">
-								<li class="">
-									<a href=" " class="p_link_inside">ffg </a>
-								</li>
-								<li class="">
-								 	<a href="" class="p_link_inside">заходи</a>
-								</li>
-								<li class="">
-									<a href=""class="p_link_inside">повідомлення</a>
-								 </li>
-							</ul>
+	<ul class="m_inside" ng-class="{'is-active' : visibleMenu}">
+		<li class="m_category">
+			<a href=""
+			   ng-click="visibleMenu = visibleMenu ? false : true"
+			   class="link_inside ikon_close"></a>
+		</li>
+		<li class="m_category">
+			<a href="" class="link_inside ikon_news">заходи</a>
+		</li>
+		<li class="m_category">
+			<a href=""class="link_inside ikon_mail">повідомлення</a>
+		 </li>
+		 <li class="m_category">
+			<a href=""class="link_inside ikon_network">коло знайомств</a>
+		 </li>
+		 <li class="m_category">
+			<a href=""class="link_inside ikon_organization">організації</a>
+		</li>
+		<li class="m_category">
+			<a href=""class="link_inside ikon_map">мапа</a>
+		</li>
+		<li class="m_category">
+			<a href=""class="link_inside ikon_help">шукаю допомогу</a>
+		</li>
+	</ul>
+
+
+	<div class="header_profile">
+		<!--<a href="#" class="login">Увійти</a>-->
+		<ul class="p">
+			<li class="p_top">
+				<img src="" alt="" class="p_top_link">
+				<ul class="p_inside">
+					<li class="">
+						<a href=" " class="p_link_inside">Мій профіль</a>
 					</li>
-			</ul>
-		</div>
+					<li class="">
+						<a href="" class="p_link_inside">Налаштування</a>
+					</li>
+					<li class="">
+						<a href=""class="p_link_inside">Вийти</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
 
-	</header>
-</body>
-</html>
+<img src="images/design/logo.png" alt="" class="header_logo">
