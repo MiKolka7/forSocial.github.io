@@ -108,7 +108,7 @@ label {
 .no-select {
   user-select: none; }
 
-.clearfix:after, .events__item:after, .friends__item:after, .users:after, .modal__main:after {
+.clearfix:after, .events__item:after, .friends__item:after, .users:after, .msg__items:after, .msg_controls:after, .modal__main:after {
   content: ' ';
   width: 0;
   height: 0;
@@ -368,6 +368,149 @@ ul.p li.p_top:hover .p_inside {
   font-size: 18px;
   margin-bottom: 10px; }
 
+/********************************************************
+ Inbox/Outbox messages page -- START
+ *******************************************************/
+.link_message_type {
+  display: inline-block;
+  color: #505961;
+  margin: 55px 10px 55px 0;
+  font-size: 20px; }
+  .link_message_type.is-active {
+    color: #000000;
+    font-weight: 600; }
+
+.msg {
+  border-top: 1px solid rgba(0, 0, 0, 0.05); }
+
+.msg__items {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 0;
+  position: relative; }
+  .msg__items.js-mouseover {
+    background-color: #F4F4F4; }
+  .msg__items.js-mouseover a.icon_msg_item_delete {
+    background-image: url(../img/mouseover-icon-msg-delete.png); }
+
+.msg_item_delete_wrap {
+  display: block;
+  position: relative;
+  height: 40px; }
+
+.icon_msg_item_delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 18px;
+  height: 19px;
+  background-image: url(../img/icon-msg-delete.png); }
+
+.user_icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 30px 40px 25px;
+  float: left;
+  background-image: url(http://bit.ly/1LdzaZD);
+  background-repeat: no-repeat;
+  border-radius: 30px; }
+
+.msg_item_container {
+  overflow: hidden;
+  width: 70%; }
+
+.msg_time {
+  display: none;
+  position: absolute;
+  right: 70px;
+  color: lightgray; }
+
+.msg_item_name {
+  width: 80%;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 900; }
+
+.msg_item_text {
+  font-size: 18px;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 19px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
+
+/********************************************************
+ Inbox/Outbox messages page -- END
+ *******************************************************/
+/*******************************************************
+ Read message page -- START
+ *******************************************************/
+.msg__wrap {
+  position: relative; }
+  .msg__wrap > div ul li {
+    display: none; }
+  .msg__wrap > div ul li:nth-of-type(1) {
+    display: block; }
+  .msg__wrap.js-clicked > div ul li {
+    display: block; }
+    .msg__wrap.js-clicked > div ul li > span .icon_msg_item_delete {
+      display: none; }
+  .msg__wrap.js-clicked > div.msg__area {
+    visibility: visible; }
+  .msg__wrap.js-clicked > div .msg_time {
+    display: block; }
+  .msg__wrap.js-clicked > div .msg_item_text {
+    overflow: visible;
+    display: block; }
+  .msg__wrap.js-clicked > div ul li:nth-last-of-type(1) {
+    margin-bottom: 70px; }
+
+.msg__area {
+  position: absolute;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 0;
+  background-color: #FBFBFB;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  visibility: hidden; }
+
+.msg-box-input {
+  width: 70%;
+  display: block;
+  margin: 0 0 20px 115px;
+  overflow: hidden;
+  word-wrap: break-word;
+  height: 75px;
+  border-color: #C9C9C9; }
+
+.msg_controls {
+  position: relative;
+  width: 70%;
+  margin-left: 115px; }
+
+.send-msg-btn {
+  width: 120px;
+  line-height: 30px;
+  border: solid 1px #4191eb;
+  border-radius: 15px;
+  color: #4191eb;
+  float: left; }
+
+.msg-attach {
+  display: block;
+  position: absolute;
+  right: -4px;
+  bottom: 10px;
+  font-size: 14px;
+  color: #4191eb; }
+
+/***************************
+ Read message page -- END
+ ***************************/
 /************************************************************************************
  * Modal window
  *************************************************************************************/
