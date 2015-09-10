@@ -14,15 +14,19 @@
   border-top: 1px solid rgba(#000, .05)
 
 .msg__items
+  @extend .animate
   @extend .clearfix
   width: 100%
   border: 1px solid rgba(#000, .05)
   border-top: 0
   position: relative
-  &.js-mouseover
+  cursor: pointer
+
+  &:hover
     background-color: #F4F4F4
-  &.js-mouseover a.icon_msg_item_delete
-    background-image: url(../img/mouseover-icon-msg-delete.png)
+
+  &:hover a.icon_msg_item_delete
+    background-image: url("../img/mouseover-icon-msg-delete.png")
 
 .msg_item_delete_wrap
   display: block
@@ -86,7 +90,7 @@
     display: none
   > div ul li:nth-of-type(1)
     display: block
-  &.js-clicked
+  &:active
     > div ul li
       display: block
       > span .icon_msg_item_delete

@@ -3,28 +3,28 @@
 	<a class="m_top_link" href="" ng-click="visibleMenu = visibleMenu ? false : true"></a>
 
 	<ul class="m_inside" ng-class="{'is-active' : visibleMenu}">
-		<li class="m_category">
+		<li class="m_category"
+			ng-click="visibleMenu = visibleMenu ? false : true">
 			<a href=""
-			   ng-click="visibleMenu = visibleMenu ? false : true"
 			   class="link_inside ikon_close"></a>
 		</li>
 		<li class="m_category">
-			<a href="" class="link_inside ikon_news">заходи</a>
+			<a href="#/" class="link_inside ikon_news">заходи</a>
 		</li>
 		<li class="m_category">
-			<a href=""class="link_inside ikon_mail">повідомлення</a>
+			<a href="#/messages" class="link_inside ikon_mail">повідомлення</a>
 		 </li>
 		 <li class="m_category">
-			<a href=""class="link_inside ikon_network">коло знайомств</a>
+			<a href="#/friends" class="link_inside ikon_network">коло знайомств</a>
 		 </li>
 		 <li class="m_category">
-			<a href=""class="link_inside ikon_organization">організації</a>
+			<a href="#/organizations" class="link_inside ikon_organization">організації</a>
 		</li>
 		<li class="m_category">
-			<a href=""class="link_inside ikon_map">мапа</a>
+			<a href="#/map" class="link_inside ikon_map">мапа</a>
 		</li>
 		<li class="m_category">
-			<a href=""class="link_inside ikon_help">шукаю допомогу</a>
+			<a href="#/help" class="link_inside ikon_help">шукаю допомогу</a>
 		</li>
 	</ul>
 

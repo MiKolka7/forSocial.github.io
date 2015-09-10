@@ -118,7 +118,7 @@ label {
   visibility: hidden;
   clear: both; }
 
-.animate, body, html, .m_inside, .p_inside, .modal-layout, .modal {
+.animate, body, html, .m_inside, .p_inside, .msg__items, .modal-layout, .modal {
   transition: all 0.5s ease; }
 
 .animate-transform {
@@ -176,7 +176,7 @@ header {
   text-decoration: none;
   background-image: linear-gradient(10deg, #234266 0%, #58a5ff 100%);
   box-shadow: 5.3px 4.6px 5px rgba(90, 98, 110, 0.46);
-  transform: translate(-100%, 0);
+  transform: translate(-110%, 0);
   z-index: 10; }
   .m_inside.is-active {
     transform: translate(0, 0); }
@@ -411,11 +411,12 @@ ul.p li.p_top:hover .p_inside {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-top: 0;
-  position: relative; }
-  .msg__items.js-mouseover {
+  position: relative;
+  cursor: pointer; }
+  .msg__items:hover {
     background-color: #F4F4F4; }
-  .msg__items.js-mouseover a.icon_msg_item_delete {
-    background-image: url(../img/mouseover-icon-msg-delete.png); }
+  .msg__items:hover a.icon_msg_item_delete {
+    background-image: url("../img/mouseover-icon-msg-delete.png"); }
 
 .msg_item_delete_wrap {
   display: block;
@@ -478,18 +479,18 @@ ul.p li.p_top:hover .p_inside {
     display: none; }
   .msg__wrap > div ul li:nth-of-type(1) {
     display: block; }
-  .msg__wrap.js-clicked > div ul li {
+  .msg__wrap:active > div ul li {
     display: block; }
-    .msg__wrap.js-clicked > div ul li > span .icon_msg_item_delete {
+    .msg__wrap:active > div ul li > span .icon_msg_item_delete {
       display: none; }
-  .msg__wrap.js-clicked > div.msg__area {
+  .msg__wrap:active > div.msg__area {
     visibility: visible; }
-  .msg__wrap.js-clicked > div .msg_time {
+  .msg__wrap:active > div .msg_time {
     display: block; }
-  .msg__wrap.js-clicked > div .msg_item_text {
+  .msg__wrap:active > div .msg_item_text {
     overflow: visible;
     display: block; }
-  .msg__wrap.js-clicked > div ul li:nth-last-of-type(1) {
+  .msg__wrap:active > div ul li:nth-last-of-type(1) {
     margin-bottom: 70px; }
 
 .msg__area {
