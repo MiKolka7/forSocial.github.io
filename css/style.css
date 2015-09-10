@@ -118,7 +118,12 @@ label {
   visibility: hidden;
   clear: both; }
 
-.animate, body, html, .m_inside, .p_inside, .msg__items, .modal-layout, .modal {
+.c-blue {
+  color: #58a5ff; }
+  .c-blue:hover {
+    color: cornflowerblue; }
+
+.animate, body, html, .m_inside, .p_inside, .filter__list, .msg__items, .modal-layout, .modal {
   transition: all 0.5s ease; }
 
 .animate-transform {
@@ -295,6 +300,61 @@ ul.p li.p_top:hover .p_inside {
 /************************************************************************************
  * end of header
  *************************************************************************************/
+.filter-line {
+  margin: 40px auto; }
+
+.filter {
+  position: relative;
+  padding: 5px 30px 15px 0;
+  margin-right: 26px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer; }
+  .filter:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border-top: 7px solid #000;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 0; }
+  .filter:hover .filter__list {
+    opacity: 1;
+    visibility: visible; }
+
+.filter__list {
+  position: absolute;
+  top: 100%;
+  right: -26px;
+  padding: 17px 41px 0 27px;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 48px;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: -0.8px 4.9px 5px rgba(0, 0, 0, 0.33); }
+  .filter__list__item {
+    position: relative;
+    padding-left: 31px;
+    margin-bottom: 30px;
+    line-height: 1; }
+    .filter__list__item:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      opacity: 0.15;
+      background-color: #878787;
+      border-radius: 2px;
+      transform: translate(0, -50%); }
+    .filter__list__item:hover {
+      opacity: 0.6; }
+
 .events, .friends {
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 0; }
@@ -368,6 +428,12 @@ ul.p li.p_top:hover .p_inside {
 .btn-event {
   float: right;
   margin-bottom: 15px; }
+
+.events__text-info {
+  margin-top: 32px;
+  line-height: 28px;
+  font-size: 18px;
+  font-weight: 400; }
 
 .friends__item {
   padding: 15px 15px 15px 15px; }
@@ -536,6 +602,9 @@ ul.p li.p_top:hover .p_inside {
 /***************************
  Read message page -- END
  ***************************/
+.organization__item {
+  padding: 15px; }
+
 /************************************************************************************
  * Modal window
  *************************************************************************************/
