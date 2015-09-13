@@ -1,48 +1,63 @@
 
 <div class="header_menu">
-	<a class="m_top_link" href="" ng-click="visibleMenu = visibleMenu ? false : true"></a>
+	<a class="m_top_link"
+	   href=""
+	   ng-click="visibleMenu = visibleMenu ? false : true">
+	</a>
 
 	<ul class="m_inside" ng-class="{'is-active' : visibleMenu}">
 		<li class="m_category"
 			ng-click="visibleMenu = visibleMenu ? false : true">
-			<a href=""
-			   class="link_inside ikon_close"></a>
+			<a ng-href=""
+			   class="link_inside icon-close"></a>
 		</li>
 		<li class="m_category">
-			<a href="#/" class="link_inside ikon_news">заходи</a>
+			<a ng-href="#/"
+			   ng-click="visibleMenu = visibleMenu ? false : true"
+			   class="link_inside icon-news">заходи</a>
 		</li>
 		<li class="m_category">
-			<a href="#/messages" class="link_inside ikon_mail">повідомлення</a>
-		 </li>
-		 <li class="m_category">
-			<a href="#/friends" class="link_inside ikon_network">коло знайомств</a>
-		 </li>
-		 <li class="m_category">
-			<a href="#/organizations" class="link_inside ikon_organization">організації</a>
+			<a ng-href="#/messages"
+			   ng-click="visibleMenu = visibleMenu ? false : true"
+			   class="link_inside icon-mail">повідомлення</a>
 		</li>
 		<li class="m_category">
-			<a href="#/map" class="link_inside ikon_map">мапа</a>
+			<a ng-href="#/friends"
+			   ng-click="visibleMenu = visibleMenu ? false : true"
+			   class="link_inside icon-network">коло знайомств</a>
 		</li>
 		<li class="m_category">
-			<a href="#/help" class="link_inside ikon_help">шукаю допомогу</a>
+			<a ng-href="#/organizations"
+			   ng-click="visibleMenu = visibleMenu ? false : true"
+			   class="link_inside icon-organization">організації</a>
+		</li>
+		<li class="m_category">
+			<a ng-href="#/map"
+			   ng-click="visibleMenu = visibleMenu ? false : true"
+			   class="link_inside icon-map">мапа</a>
+		</li>
+		<li class="m_category">
+			<a ng-href="#/help"
+			   ng-click="visibleMenu = visibleMenu ? false : true"
+			   class="link_inside icon-help">шукаю допомогу</a>
 		</li>
 	</ul>
 
 
 	<div class="header_profile">
-		<!--<a href="#" class="login">Увійти</a>-->
+		<!--<a ng-href="#" class="login">Увійти</a>-->
 		<ul class="p">
 			<li class="p_top">
 				<img src="" alt="" class="p_top_link">
 				<ul class="p_inside">
-					<li class="">
-						<a href=" " class="p_link_inside">Мій профіль</a>
+					<li>
+						<a ng-href=" " class="p_link_inside">Мій профіль</a>
 					</li>
-					<li class="">
-						<a href="" class="p_link_inside">Налаштування</a>
+					<li>
+						<a ng-href="" class="p_link_inside">Налаштування</a>
 					</li>
-					<li class="">
-						<a href=""class="p_link_inside">Вийти</a>
+					<li>
+						<a ng-href="" class="p_link_inside">Вийти</a>
 					</li>
 				</ul>
 			</li>

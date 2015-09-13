@@ -1,0 +1,42 @@
+
+.btn
+    @extend .animate
+    width: 168px
+    height: 56px
+    line-height: 56px
+    border-radius: 27px
+    text-align: center
+
+    color: #58a5ff
+    font-size: 24px
+    font-weight: 300
+    
+    &:hover
+        color: #fff
+        background: #7DB1EE !important
+
+.btn--blue
+    color: #fff
+    background-color: #58aeee
+
+.btn-event
+    float: right
+    color: #fff
+    margin-bottom: 15px
+
+
+.btn-two
+    height: 56px
+    margin-right: 28px
+    display: inline-block
+    overflow: hidden
+    border: 1px solid #58a5ff
+    border-radius: 27px
+    font-size: 0
+
+    > .btn.is-active
+        color: #fff
+        background-color: #58a5ff
+
+    > .btn
+        border-radius: 0

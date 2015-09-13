@@ -34,6 +34,20 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
         templateUrl: 'template/pages/messages.html'
       }
     }
+  }).state('main.event', {
+    url: 'event',
+    views: {
+      '@': {
+        templateUrl: 'template/pages/event.html'
+      }
+    }
+  }).state('main.organization', {
+    url: 'organization',
+    views: {
+      '@': {
+        templateUrl: 'template/pages/organization.html'
+      }
+    }
   }).state('registration', {
     url: '/registration',
     templateUrl: 'template/pages/registration.html'

@@ -123,7 +123,7 @@ label {
   .c-blue:hover {
     color: cornflowerblue; }
 
-.animate, body, html, .m_inside, .p_inside, .filter__list, .msg__items, .modal-layout, .modal {
+.animate, body, html, .m_inside, .p_inside, .btn, .filter__list, .msg__items, .modal-layout, .modal {
   transition: all 0.5s ease; }
 
 .animate-transform {
@@ -131,6 +131,9 @@ label {
 
 .animate-opacity {
   transition: opacity 0.5s ease, visibility 0.5s ease; }
+
+body {
+  padding-bottom: 56px; }
 
 .container {
   max-width: 1050px;
@@ -198,31 +201,8 @@ header {
   line-height: 70px;
   font-size: 24px;
   font-weight: 900;
-  background-repeat: no-repeat;
-  background-position: 0% 50%; }
-
-.ikon_close {
-  background-image: url(../images/design/icon/icon-close.png); }
-
-.ikon_news {
-  background-image: url(../images/design/icon/icon-news.png); }
-
-.ikon_mail {
-  background-image: url(../images/design/icon/ikon_mail.png); }
-
-.ikon_network {
-  background-image: url(../images/design/icon/ikon_network.png); }
-
-.ikon_organization {
-  background-image: url(../images/design/icon/ikon_organization.png);
-  background-position: 3px 50%; }
-
-.ikon_map {
-  background-image: url(../images/design/icon/ikon_map.png);
-  background-position: 10px 50%; }
-
-.ikon_help {
-  background-image: url(../images/design/icon/ikon_help.png); }
+  background-position: 0 50%;
+  background-repeat: no-repeat; }
 
 .m_top_link {
   position: absolute;
@@ -272,7 +252,8 @@ header {
   font-size: 24px;
   font-weight: 300;
   line-height: 60px;
-  color: #fff; }
+  color: #fff;
+  cursor: pointer; }
 
 .p_top_link {
   text-decoration: none;
@@ -300,21 +281,116 @@ ul.p li.p_top:hover .p_inside {
 /************************************************************************************
  * end of header
  *************************************************************************************/
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 46px;
+  margin-top: -46px;
+  line-height: 46px;
+  color: #c5c5c5;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 400; }
+  footer .filter__list {
+    font-size: 16px; }
+
+.footer-site {
+  margin-right: 28px; }
+
+.footer-soc {
+  float: right; }
+  .footer-soc__item {
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 12px; }
+
+.btn {
+  width: 168px;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 27px;
+  text-align: center;
+  color: #58a5ff;
+  font-size: 24px;
+  font-weight: 300; }
+  .btn:hover {
+    color: #fff;
+    background: #7DB1EE !important; }
+
+.btn--blue {
+  color: #fff;
+  background-color: #58aeee; }
+
+.btn-event {
+  float: right;
+  color: #fff;
+  margin-bottom: 15px; }
+
+.btn-two {
+  height: 56px;
+  margin-right: 28px;
+  display: inline-block;
+  overflow: hidden;
+  border: 1px solid #58a5ff;
+  border-radius: 27px;
+  font-size: 0; }
+  .btn-two > .btn.is-active {
+    color: #fff;
+    background-color: #58a5ff; }
+  .btn-two > .btn {
+    border-radius: 0; }
+
+.icon-close {
+  background-image: url(../../images/design/icon/icon-close.png); }
+
+.icon-news {
+  background-image: url(../../images/design/icon/icon-news.png); }
+
+.icon-mail {
+  background-image: url(../../images/design/icon/icon-mail.png); }
+
+.icon-network {
+  background-image: url(../../images/design/icon/icon-network.png); }
+
+.icon-organization {
+  background-image: url(../../images/design/icon/icon-organization.png);
+  background-position: 3px 50%; }
+
+.icon-map {
+  background-image: url(../../images/design/icon/icon-map.png);
+  background-position: 10px 50%; }
+
+.icon-help {
+  background-image: url(../../images/design/icon/icon-help.png); }
+
+.icon-vk {
+  background: url(../../images/design/icon/icon-vk.png) no-repeat 50% 100%; }
+
+.icon-fb {
+  background: url(../../images/design/icon/icon-fb.png) no-repeat 50% 100%; }
+
 .filter-line {
-  margin: 40px auto; }
+  margin: 40px auto;
+  line-height: 56px; }
 
 .filter {
   position: relative;
-  padding: 5px 30px 15px 0;
+  height: 56px;
+  padding: 0 30px 0 0;
   margin-right: 26px;
   display: inline-block;
+  vertical-align: top;
   font-size: 20px;
   font-weight: 600;
   cursor: pointer; }
   .filter:after {
     content: '';
     position: absolute;
-    top: 10px;
+    top: 22px;
     right: 0;
     border-top: 7px solid #000;
     border-left: 8px solid transparent;
@@ -323,12 +399,35 @@ ul.p li.p_top:hover .p_inside {
   .filter:hover .filter__list {
     opacity: 1;
     visibility: visible; }
+  .filter--min {
+    height: auto;
+    padding: 0 15px 0 0;
+    font-size: 16px;
+    font-weight: 400; }
+    .filter--min:after {
+      top: 19px;
+      border-top: 6px solid #c5c5c5;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent; }
+    .filter--min .filter__list {
+      top: auto;
+      left: -1px;
+      right: auto;
+      bottom: 100%;
+      padding: 15px 10px 8px 6px;
+      border: 1px solid rgba(219, 219, 219, 0.61);
+      box-shadow: 2.3px 3.3px 5px rgba(0, 0, 0, 0.29); }
+      .filter--min .filter__list__item {
+        padding: 0;
+        margin: 0 0 14px; }
+        .filter--min .filter__list__item:before {
+          display: none; }
 
 .filter__list {
   position: absolute;
   top: 100%;
   right: -26px;
-  padding: 17px 41px 0 27px;
+  padding: 27px 41px 0 27px;
   font-size: 24px;
   font-weight: 300;
   line-height: 48px;
@@ -340,7 +439,11 @@ ul.p li.p_top:hover .p_inside {
     position: relative;
     padding-left: 31px;
     margin-bottom: 30px;
-    line-height: 1; }
+    white-space: nowrap;
+    line-height: 1;
+    cursor: pointer; }
+    .filter__list__item:last-child {
+      bottom: 0; }
     .filter__list__item:before {
       content: '';
       position: absolute;
@@ -352,6 +455,8 @@ ul.p li.p_top:hover .p_inside {
       background-color: #878787;
       border-radius: 2px;
       transform: translate(0, -50%); }
+    .filter__list__item.is-active:before {
+      background: url("../../images/design/check.png"); }
     .filter__list__item:hover {
       opacity: 0.6; }
 
@@ -412,25 +517,8 @@ ul.p li.p_top:hover .p_inside {
   background-size: cover;
   border-radius: 50%; }
 
-.btn {
-  width: 168px;
-  height: 56px;
-  line-height: 56px;
-  border-radius: 27px;
-  text-align: center;
-  color: #fff;
-  font-size: 24px;
-  font-weight: 300; }
-
-.btn--blue {
-  background-color: #58a5ff; }
-
-.btn-event {
-  float: right;
-  margin-bottom: 15px; }
-
 .events__text-info {
-  margin-top: 32px;
+  margin-top: 20px;
   line-height: 28px;
   font-size: 18px;
   font-weight: 400; }

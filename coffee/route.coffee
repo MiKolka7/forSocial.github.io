@@ -9,11 +9,8 @@ angular.module('app.config.route', [])
                     '@':
                         templateUrl: 'template/pages/events.html'
                     'header':
-                        #controller: 'mainBodyHeader'
                         templateUrl: 'template/header.html'
-
                     'footer':
-                        #controller: 'mainBodyFooter'
                         templateUrl: 'template/footer.html'
             )
             .state('main.friends',
@@ -34,6 +31,19 @@ angular.module('app.config.route', [])
                     '@':
                         templateUrl: 'template/pages/messages.html'
             )
+            .state('main.event',
+                url: 'event'
+                views:
+                    '@':
+                        templateUrl: 'template/pages/event.html'
+            )
+            .state('main.organization',
+                url: 'organization'
+                views:
+                    '@':
+                        templateUrl: 'template/pages/organization.html'
+            )
+
             .state('registration',
                 url: '/registration'
                 templateUrl: 'template/pages/registration.html'
