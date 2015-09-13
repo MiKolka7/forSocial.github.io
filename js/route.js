@@ -50,7 +50,14 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
     }
   }).state('registration', {
     url: '/registration',
-    templateUrl: 'template/pages/registration.html'
+    views: {
+      '@': {
+        templateUrl: 'template/pages/registration.html'
+      },
+      'footer': {
+        templateUrl: 'template/footer.html'
+      }
+    }
   });
   return true;
 });
