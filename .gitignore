@@ -30,7 +30,7 @@ node_modules
 /css/style.css
 
 # Design
-design
+/design
 
 # IDE
 .idea
