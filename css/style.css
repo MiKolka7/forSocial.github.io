@@ -345,33 +345,33 @@ footer {
     border-radius: 0; }
 
 .icon-close {
-  background-image: url(../../images/design/icon/icon-close.png); }
+  background-image: url(../images/design/icon/icon-close.png); }
 
 .icon-news {
-  background-image: url(../../images/design/icon/icon-news.png); }
+  background-image: url(../images/design/icon/icon-news.png); }
 
 .icon-mail {
-  background-image: url(../../images/design/icon/icon-mail.png); }
+  background-image: url(../images/design/icon/icon-mail.png); }
 
 .icon-network {
-  background-image: url(../../images/design/icon/icon-network.png); }
+  background-image: url(../images/design/icon/icon-network.png); }
 
 .icon-organization {
-  background-image: url(../../images/design/icon/icon-organization.png);
+  background-image: url(../images/design/icon/icon-organization.png);
   background-position: 3px 50%; }
 
 .icon-map {
-  background-image: url(../../images/design/icon/icon-map.png);
+  background-image: url(../images/design/icon/icon-map.png);
   background-position: 10px 50%; }
 
 .icon-help {
-  background-image: url(../../images/design/icon/icon-help.png); }
+  background-image: url(../images/design/icon/icon-help.png); }
 
 .icon-vk {
-  background: url(../../images/design/icon/icon-vk.png) no-repeat 50% 100%; }
+  background: url(../images/design/icon/icon-vk.png) no-repeat 50% 100%; }
 
 .icon-fb {
-  background: url(../../images/design/icon/icon-fb.png) no-repeat 50% 100%; }
+  background: url(../images/design/icon/icon-fb.png) no-repeat 50% 100%; }
 
 .filter-line {
   margin: 40px auto;
@@ -456,7 +456,7 @@ footer {
       border-radius: 2px;
       transform: translate(0, -50%); }
     .filter__list__item.is-active:before {
-      background: url("../../images/design/check.png"); }
+      background: url("../images/design/check.png"); }
     .filter__list__item:hover {
       opacity: 0.6; }
 
