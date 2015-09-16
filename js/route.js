@@ -4,6 +4,7 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
     url: "/",
     views: {
       '@': {
+        controller: 'eventsCtrl',
         templateUrl: 'template/pages/events.html'
       },
       'header': {
@@ -46,6 +47,13 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
     views: {
       '@': {
         templateUrl: 'template/pages/organization.html'
+      }
+    }
+  }).state('main.user', {
+    url: 'user',
+    views: {
+      '@': {
+        templateUrl: 'template/pages/user.html'
       }
     }
   }).state('registration', {

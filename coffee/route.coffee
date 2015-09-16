@@ -7,6 +7,7 @@ angular.module('app.config.route', [])
                 url: "/"
                 views:
                     '@':
+                        controller: 'eventsCtrl'
                         templateUrl: 'template/pages/events.html'
                     'header':
                         templateUrl: 'template/header.html'

@@ -53,9 +53,10 @@
 
 <div class="container">
 
-    <ul class="events">
+    <ul class="events" infinite-scroll>
 
-        <li class="events__item">
+        <li class="events__item"
+            ng-repeat="event in events track by $index">
             <img src="images/img1.png" alt="" class="events__item__img"/>
 
             <article class="events__item__container">
@@ -63,7 +64,7 @@
                     <address>Київ,</address>
                     <time datetime="12.06.93">12 червня</time>
                 </div>
-                <h4 class="events__item__title">Прибирання тереторії</h4>
+                <h4 class="events__item__title">{{$index}}. Прибирання тереторії</h4>
                 <p class="events__item__text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut labore et dolore magna aliqua.
