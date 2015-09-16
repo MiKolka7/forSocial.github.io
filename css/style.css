@@ -108,7 +108,7 @@ label {
 .no-select {
   user-select: none; }
 
-.clearfix:after, .events__item:after, .friends__item:after, .users:after, .msg__items:after, .msg_controls:after, .modal__main:after {
+.clearfix:after, .events__item:after, .friends__item:after, .users:after, .msg__items:after, .msg_controls:after, .activity-input-group:after, .modal__main:after {
   content: ' ';
   width: 0;
   height: 0;
@@ -123,7 +123,7 @@ label {
   .c-blue:hover {
     color: cornflowerblue; }
 
-.animate, body, html, .m_inside, .p_inside, .btn, .filter__list, .msg__items, .modal-layout, .modal {
+.animate, body, html, .m_inside, .p_inside, .btn, .filter__list, .msg__items, .modal-layout, .modal-company, .modal {
   transition: all 0.5s ease; }
 
 .animate-transform {
@@ -692,6 +692,99 @@ footer {
  ***************************/
 .organization__item {
   padding: 15px; }
+
+/************************************************************************************
+ * Modal Window for Company
+ *************************************************************************************/
+.modal-layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: table;
+  overflow: auto;
+  opacity: 0.01;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+  overflow-scrolling: touch;
+  animation-duration: 1s;
+  transform: translate3d(0, 0, 0); }
+  .modal-layout.is-visible {
+    opacity: 1;
+    visibility: visible; }
+    .modal-layout.is-visible > .modal-company {
+      opacity: 1;
+      visibility: visible;
+      transform: translate3d(0, -50%, 0) scale(1); }
+
+.modal-company {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 55%;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 3px 0 rgba(0, 1, 1, 0);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, -50%, 0) scale(0.1); }
+  .modal-company > h2 {
+    padding-left: 40px;
+    padding-top: 20px; }
+
+.modal-company__wrap {
+  width: 88%;
+  margin: 0 auto;
+  padding-bottom: 80px; }
+
+.modal-company__form > span {
+  clear: both;
+  display: block;
+  padding: 15px 0 5px 13px;
+  color: #383838; }
+
+.modal-company__form > label, .modal-company__form input[type="radio"] {
+  font-size: 12px;
+  float: left;
+  line-height: 10px;
+  margin-right: 8px;
+  padding-left: 10px;
+  color: #383838; }
+
+.modal-company__form > textarea {
+  width: 100%;
+  border: 1px solid #383838; }
+
+.modal-company__form > label:last-of-type {
+  display: block;
+  padding: 15px 0 0 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 18px;
+  float: none;
+  width: 100%; }
+  .modal-company__form > label:last-of-type > input {
+    margin-right: 15px;
+    margin-bottom: 0; }
+
+.activity-input-group > label {
+  font-size: 12px;
+  float: left;
+  width: 20%;
+  padding: 5px 0;
+  line-height: 10px;
+  color: #383838; }
+  .activity-input-group > label > input {
+    margin-right: 8px; }
+
+.activity-input-group > label:nth-of-type(3n-2) {
+  padding-left: 10px;
+  clear: both; }
 
 /************************************************************************************
  * Modal window
