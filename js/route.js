@@ -48,6 +48,13 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
         templateUrl: 'template/pages/organization.html'
       }
     }
+  }).state('main.user', {
+    url: 'user',
+    views: {
+      '@': {
+        templateUrl: 'template/pages/user.html'
+      }
+    }
   }).state('registration', {
     url: '/registration',
     views: {
