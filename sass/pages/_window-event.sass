@@ -1,5 +1,5 @@
 /************************************************************************************
- * Modal Window for Company
+ * Modal Window for event
  *************************************************************************************/
 
 .modal-layout
@@ -28,12 +28,12 @@
     opacity: 1
     visibility: visible
 
-    > .modal-company
+    > .modal-event
       opacity: 1
       visibility: visible
       transform: translate3d(0, -50%, 0) scale(1)
 
-.modal-company
+.modal-event
   @extend .animate
   position: absolute
   top: 50%
@@ -54,25 +54,18 @@
     padding-left: 40px
     padding-top: 20px
 
-.modal-company__wrap
+.modal-event__wrap
   width: 88%
   margin: 0 auto
   padding-bottom: 80px
 
-.modal-company__form
+.modal-event__form
   > span
-    clear: both
     display: block
     padding: 15px 0 5px 13px
     color: #383838
-  > label, input[type="radio"]
-    font-size: 12px
-    float: left
-    line-height: 10px
-    margin-right: 8px
-    padding-left: 10px
-    color: #383838
   > textarea
+    padding: 0
     width: 100%
     border: 1px solid #383838
   > label:last-of-type
@@ -87,18 +80,95 @@
       margin-right: 15px
       margin-bottom: 0
 
-.activity-input-group
+.city-date-row
   @extend .clearfix
+  
+.city-block
+  width: 50%
+  float: left
   > label
     font-size: 12px
     float: left
-    width: 20%
-    padding: 5px 0
-    line-height: 10px
+    line-height: 12px
+    margin: 0 8px 0 0
+    padding-left: 10px
     color: #383838
     > input
-      margin-right: 8px
-  > label:nth-of-type(3n-2)
-    padding-left: 10px
+      font-size: 12px
+      float: left
+      line-height: 10px
+      margin: 0 8px 0 0
+      color: #383838
+  > span
+    display: block
+    padding: 15px 0 5px 13px
+    color: #383838
+    
+.date-block
+  width: 50%
+  float: left
+  > span
+    display: block
+    padding: 7px 0 5px 18px
+    color: #383838
+  > input
+    width: 91px
+    height: 26px
+    border: 1px solid #383838
+    margin-left: 13px
+
+.event-check-input-group:before
+    content: ' '
+    width: 0
+    height: 0
+    display: table
+    font-size: 0
+    line-height: 0
+    visibility: hidden
     clear: both
 
+.category-input-group
+  width: 50%
+  float: left
+  overflow: hidden
+  > label
+    font-size: 12px
+    float: left
+    width: 30%
+    margin: 5px 5px
+    line-height: 12px
+    color: #383838
+    > input
+      position: relative
+      top: 3px
+      margin-right: 8px
+  > label:nth-of-type(3n-2)
+    margin-left: 10px
+    clear: both
+  > span
+    display: block
+    padding: 15px 0 5px 13px
+    color: #383838
+
+.skills-input-group
+  width: 50%
+  overflow: hidden
+  > label
+    font-size: 12px
+    float: left
+    width: 30%
+    margin: 5px 5px
+    line-height: 12px
+    vertical-align: middle
+    color: #383838
+    > input
+      position: relative
+      top: 3px
+      margin-right: 8px
+  > label:nth-of-type(odd)
+    padding-left: 10px
+    clear: both
+  > span
+    display: block
+    padding: 15px 0 5px 18px
+    color: #383838
