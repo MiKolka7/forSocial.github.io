@@ -49,6 +49,14 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
         templateUrl: 'template/pages/organization.html'
       }
     }
+  }).state('main.map', {
+    url: 'map',
+    views: {
+      '@': {
+        controller: 'mapCtrl',
+        templateUrl: 'template/pages/map.html'
+      }
+    }
   }).state('main.user', {
     url: 'user',
     views: {
