@@ -1,1 +1,1 @@
-angular.module('app', ['ui.router', 'app.config.route', 'app.controller.events', 'app.controller.map', 'app.directive.infiniteScroll', 'app.directive.map']);
+angular.module('app', ['ui.router', 'ngDialog', 'app.config.run', 'app.config.route', 'app.controller.events', 'app.controller.map', 'app.controller.login', 'app.controller.addEvent', 'app.controller.addOrganization', 'app.directive.infiniteScroll', 'app.directive.map']);

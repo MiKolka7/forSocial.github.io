@@ -46,7 +46,7 @@
         </ul>
     </div>
 
-    <button href="#" class="btn btn-event btn--blue btn--big">Створити</button>
+    <button ng-click="openPopup('addEvent')" class="btn btn-event btn--blue btn--big">Створити</button>
 
 </div>
 
@@ -64,11 +64,8 @@
                     <address>Київ,</address>
                     <time datetime="12.06.93">12 червня</time>
                 </div>
-<<<<<<< Updated upstream
                 <h4 class="events__item__title">{{$index}}. Прибирання тереторії</h4>
-=======
                 <h4 class="events__item__title">Прибирання території</h4>
->>>>>>> Stashed changes
                 <p class="events__item__text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut labore et dolore magna aliqua.
@@ -90,60 +87,3 @@
     </ul>
 
 </div>
-
-<!-- Modal window for Event -->
-<div class="modal-layout is-visible">
-    <div class="modal-event">
-        <h2>Створення заходу</h2>
-        <div class="modal-event__wrap">
-            <form class="modal-event__form">
-                <span>Назва заходу</span>
-                <textarea class="event-name" cols="130" rows="3"></textarea>
-                <div class="city-date-row">
-                    <div class="city-block">
-                        <span>Місто</span>
-                        <label><input type="radio" name="city"/>Київ</label>
-                        <label><input type="radio" name="city"/>Львів</label>
-                        <label><input type="radio" name="city"/>Одеса</label>
-                        <label><input type="radio" name="city"/>інше</label>
-                    </div>
-                    <div class="date-block">
-                        <span>Дата</span>
-                        <input type="date" name="date"/>
-                    </div>
-                </div>
-
-                <div class="event-check-input-group">
-                    <div class="category-input-group">
-                        <span>Категорія</span>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                    </div>
-                    <div class="skills-input-group">
-                        <span>Необхідні навички</span>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                        <label><input type="checkbox"/>Lorem Ipsum</label>
-                    </div>
-                </div>
-
-                <span>Опис</span>
-                <textarea class="event-description" cols="130" rows="12"></textarea>
-                <span>Сайт</span>
-                <textarea class="event-site" cols="130" rows="3"></textarea>
-                <label><input type="checkbox" required/>Я згоден з умовами використання ресурсу та даю згоду на обробку даних</label>
-                <button type="submit" class="btn btn-event btn--blue btn--big">Створити</button>
-            </form></div>
-    </div>
-</div>
-<!-- END Modal Window-->

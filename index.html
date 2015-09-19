@@ -10,6 +10,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/ngDialog/css/ngDialog.css">
+    <link rel="stylesheet" href="/bower_components/ngDialog/css/ngDialog-theme-default.css">
     <!-- endinject -->
 
     <link rel="stylesheet" href="css/style.css"/>
@@ -21,12 +23,18 @@
     <script src="/bower_components/angular-resource/angular-resource.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/ngDialog/js/ngDialog.js"></script>
+    <script src="/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
     <script src="/bower_components/underscore/underscore.js"></script>
     <!-- endinject -->
 
     <!-- app:js -->
+    <script src="/js/popup/loginCtrl.js"></script>
+    <script src="/js/popup/addOrganization.js"></script>
+    <script src="/js/popup/addEvent.js"></script>
     <script src="/js/controllers/mapCtrl.js"></script>
     <script src="/js/controllers/eventsCtrl.js"></script>
+    <script src="/js/run.js"></script>
     <script src="/js/route.js"></script>
     <script src="/js/modal.js"></script>
     <script src="/js/map.js"></script>
@@ -41,30 +49,11 @@
 
 <body ng-app="app">
 
-    <section ui-view="header">
-    </section>
+    <section ui-view="header"></section>
 
     <ui-view></ui-view>
 
     <footer ui-view="footer"></footer>
-
-    <!-- Modal window for authorization -->
-    <div class="modal-layout clearfix">
-        <div class="modal">
-            <div class="form_wrap">
-                <p>ВХІД</p>
-                <form class="modal-form">
-                    <span>Email:</span>
-                    <input type="email" required>
-                    <span>Пароль:</span>
-                    <input type="password" required>
-                    <a href="#">Нагадати пароль?</a>
-                    <button type="submit">Увійти</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- END -->
 
 </body>
 </html>
