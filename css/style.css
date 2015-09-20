@@ -108,6 +108,9 @@ label {
 .no-select {
   user-select: none; }
 
+* {
+  box-sizing: border-box; }
+
 html {
   font-size: 62.5%; }
 
@@ -713,8 +716,49 @@ footer {
     font-size: 3.2rem;
     font-weight: 100;
     color: #fff;
-    margin: 6rem 0 3rem;
+    margin: 6rem 0 5rem;
     text-align: center; }
+  .rg-banner__stage {
+    max-width: 674px;
+    padding: 0 25px; }
+
+.dot-item {
+  display: inline-block;
+  width: 25px;
+  margin: 18px 6px 0;
+  font-size: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  position: relative; }
+  .dot-item:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: -20px;
+    left: 10px;
+    border-radius: 50%;
+    background: #fff; }
+  .dot-item--active {
+    position: relative;
+    color: #fff; }
+    .dot-item--active:after {
+      content: '';
+      position: absolute;
+      top: -31px;
+      left: -1px;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.3); }
+
+.line-item {
+  display: inline-block;
+  width: 38%;
+  height: 1px;
+  vertical-align: top;
+  background: rgba(255, 255, 255, 0.3); }
 
 .organization__item {
   padding: 15px; }

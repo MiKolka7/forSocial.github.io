@@ -2,7 +2,7 @@
 	background: url('../../images/design/registration_bg.jpg') no-repeat
 	background-size: cover
 	&__overlay
-		background: rgba(#202f3e, .5)
+		background: $transp_blue
 		padding: 3.5rem 0 4.5rem
 	&__header
 		@extend .clearfix
@@ -16,7 +16,51 @@
 	&__title
 		font-size: 3.2rem
 		font-weight: 100
-		color: #fff
-		margin: 6rem 0 3rem
+		color: $white
+		margin: 6rem 0 5rem
 		text-align: center
+	&__stage
+		max-width: 674px
+		padding: 0 25px
+
+.dot-item
+	display: inline-block
+	width: 25px
+	margin: 18px 6px 0
+	font-size: 1rem
+	text-align: center
+	color: $transp_white
+	position: relative
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		width: 5px
+		height: 5px
+		top: -20px
+		left: 10px
+		border-radius: 50%
+		background: $white
+	&--active
+		position: relative
+		color: $white
+		&:after
+			content: ''
+			position: absolute
+			top: -31px
+			left: -1px
+			border-radius: 50%
+			width: 25px
+			height: 25px
+			border: 1px solid $transp_white
+
+
+.line-item
+	display: inline-block
+	width: 38%
+	height: 1px
+	vertical-align: top
+	background: $transp_white
+
+
 
