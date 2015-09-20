@@ -2,6 +2,7 @@
 angular.module 'app', [
     'ui.router'
     'ngDialog'
+    'textAngular'
 
     'app.config.run'
     'app.config.route'
