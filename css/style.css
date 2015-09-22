@@ -105,7 +105,7 @@ label {
 .no-select {
   user-select: none; }
 
-.clearfix:after, .events__item:after, .friends__item:after, .users:after, .msg__items:after, .msg_controls:after, .activity-input-group:after, .city-date-row:after, .modal__main:after {
+.clearfix:after, .events__item:after, .friends__item:after, .users:after, .msg__items:after, .msg_controls:after, .event__content:after, .activity-input-group:after, .city-date-row:after, .modal__main:after {
   content: ' ';
   width: 0;
   height: 0;
@@ -279,7 +279,7 @@ ul.p li.p_top:hover .p_inside {
  * end of header
  *************************************************************************************/
 footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -313,13 +313,16 @@ footer {
   line-height: 38px;
   border-radius: 19px;
   text-align: center;
+  text-transform: none;
   background-color: #58a5ff;
   color: #fff;
   font-size: 18px;
-  font-weight: 500; }
+  font-weight: 300; }
   .button:hover {
     color: #fff;
     background: #7DB1EE !important; }
+  .button + .button {
+    margin-right: 22px; }
 
 .btn--blue {
   color: #fff;
@@ -633,18 +636,24 @@ footer {
     display: none; }
   .msg__wrap > div ul li:nth-of-type(1) {
     display: block; }
-  .msg__wrap:active > div ul li {
+  .msg__wrap:active > div ul li,
+  .msg__wrap.js-clicked > div ul li {
     display: block; }
-    .msg__wrap:active > div ul li > span .icon_msg_item_delete {
+    .msg__wrap:active > div ul li > span .icon_msg_item_delete,
+    .msg__wrap.js-clicked > div ul li > span .icon_msg_item_delete {
       display: none; }
-  .msg__wrap:active > div.msg__area {
+  .msg__wrap:active > div.msg__area,
+  .msg__wrap.js-clicked > div.msg__area {
     visibility: visible; }
-  .msg__wrap:active > div .msg_time {
+  .msg__wrap:active > div .msg_time,
+  .msg__wrap.js-clicked > div .msg_time {
     display: block; }
-  .msg__wrap:active > div .msg_item_text {
+  .msg__wrap:active > div .msg_item_text,
+  .msg__wrap.js-clicked > div .msg_item_text {
     overflow: visible;
     display: block; }
-  .msg__wrap:active > div ul li:nth-last-of-type(1) {
+  .msg__wrap:active > div ul li:nth-last-of-type(1),
+  .msg__wrap.js-clicked > div ul li:nth-last-of-type(1) {
     margin-bottom: 70px; }
 
 .msg__area {
@@ -695,6 +704,39 @@ footer {
 
 .g-maps {
   height: 500px; }
+
+.event {
+  font-size: 28px; }
+
+.event__title {
+  margin: 42px 0;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .event__title .button {
+    margin-top: -5px; }
+
+.events__name {
+  margin-bottom: 15px;
+  text-transform: none; }
+
+.events__ava {
+  margin-left: 1%;
+  margin-bottom: 25px;
+  margin-right: 5.80952%;
+  width: 18.19048%;
+  float: left; }
+
+.event__info {
+  overflow: hidden;
+  float: left;
+  width: 74.19048%; }
+
+.event__text {
+  margin: 38px 0 25px;
+  color: #58595b;
+  font-weight: 400;
+  clear: both;
+  font-size: 18px; }
 
 /************************************************************************************
  * Modal Window for Company
