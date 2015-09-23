@@ -700,21 +700,15 @@ footer {
 /***************************
  Read message page -- END
  ***************************/
-.rg-banner-wrap {
-  height: 70.5rem;
-  overflow: hidden;
-  position: relative; }
-
 .rg-banner {
-  position: absolute;
   background: url("../../images/design/registration_bg.jpg") no-repeat 50% 0%;
-  background-size: 50%;
-  width: 230vw;
-  left: 50%;
-  margin-left: -115vw;
-  border-radius: 0 0 50% 50%;
-  border-bottom: 4px solid #58a5ff;
-  overflow: hidden; }
+  background-size: cover;
+  border-bottom: 5px solid #58a5ff;
+  border-bottom-left-radius: 50% 12%;
+  border-bottom-right-radius: 50% 12%;
+  overflow: hidden;
+  width: 120vw;
+  margin-left: -10vw; }
   .rg-banner__overlay {
     background: rgba(32, 47, 62, 0.9);
     padding: 3.5rem 0 4.5rem; }
@@ -737,7 +731,7 @@ footer {
     text-align: center; }
   .rg-banner__form {
     text-align: center;
-    width: 40%;
+    width: 70%;
     margin: 3rem auto 0;
     text-align: left; }
     .rg-banner__form label {
@@ -783,11 +777,14 @@ footer {
   vertical-align: top;
   background: rgba(255, 255, 255, 0.2); }
 
+.rg-input-wrap {
+  position: relative; }
+
 .rg-input {
   display: block;
   width: 100%;
   height: 5rem;
-  padding: 1rem 4.4rem;
+  padding: 1rem 5rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4rem;
   margin: 1rem auto;
@@ -796,33 +793,55 @@ footer {
   transition: all 0.4s ease; }
   .rg-input:focus {
     background: rgba(255, 255, 255, 0.3); }
+  .rg-input--sex {
+    padding: 0.5rem 1.5rem;
+    background: transparent; }
+    .rg-input--sex label {
+      padding: 0 3rem 0 1rem; }
 
-.rg-input-wrap {
-  position: relative; }
+.none {
+  display: none; }
+
+.narrow {
+  width: 60% !important;
+  margin: 0 auto; }
 
 .sprite-name,
 .sprite-mail,
-.sprite-lock {
+.sprite-lock,
+.sprite-calendar,
+.sprite-map {
   position: absolute;
-  bottom: 1rem;
-  left: 1.4rem;
+  display: block;
+  bottom: 1.6rem;
+  left: 2rem;
   background-image: url("../../images/design/sprite_form.png");
   background-repeat: no-repeat; }
 
 .sprite-name {
-  width: 20px;
-  height: 20px;
-  background-position: -45px 0; }
+  width: 18px;
+  height: 12px;
+  background-position: -86px -2px; }
 
 .sprite-mail {
-  width: 20px;
-  height: 24px;
-  background-position: -22px 0; }
+  width: 19px;
+  height: 15px;
+  background-position: -44px -2px; }
+
+.sprite-map {
+  width: 15px;
+  height: 22px;
+  background-position: -67px -2px; }
 
 .sprite-lock {
-  width: 20px;
-  height: 28px;
-  background-position: 0 0; }
+  width: 17px;
+  height: 21px;
+  background-position: -23px -2px; }
+
+.sprite-calendar {
+  width: 17px;
+  height: 19px;
+  background-position: -2px -2px; }
 
 .rg-btn {
   display: block;
@@ -840,6 +859,9 @@ footer {
     background: rgba(255, 255, 255, 0.2); }
   .rg-btn:active {
     background: rgba(255, 255, 255, 0.4); }
+  .rg-btn--active {
+    background: rgba(88, 165, 255, 0.9);
+    border: 0; }
 
 .rg-checkbox-wrap {
   text-align: center; }
@@ -849,6 +871,22 @@ footer {
 .rg-checkbox {
   display: inline-block;
   margin: 2rem 1rem; }
+
+.third-stage {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.7); }
+  .third-stage__item {
+    width: 50%;
+    display: inline-block;
+    margin-left: -4px;
+    vertical-align: top;
+    padding: 2rem 0 2rem 6rem; }
+    .third-stage__item + .third-stage__item {
+      padding: 2rem 2rem 2rem 4rem; }
+    .third-stage__item label {
+      padding-left: 1rem; }
+    .third-stage__item input {
+      margin: 0.5rem 0; }
 
 .rg-content {
   padding: 10rem 0 3rem;
@@ -860,6 +898,9 @@ footer {
     color: #6987a4;
     margin-bottom: 6.5rem;
     text-transform: uppercase; }
+  @media screen and (max-width: 640px) {
+    .rg-content {
+      line-height: 1.2; } }
   .rg-content__descript {
     text-align: center;
     font-size: 2.2rem;
@@ -881,7 +922,8 @@ footer {
       padding: 0 7rem; } }
   @media screen and (max-width: 640px) {
     .rg-item {
-      width: 100%; } }
+      width: 100%;
+      padding: 0 5rem; } }
   .rg-item__img {
     width: 5rem;
     height: 5rem;
