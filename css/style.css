@@ -879,7 +879,7 @@ footer {
     .rg-item {
       width: 50%;
       padding: 0 7rem; } }
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 640px) {
     .rg-item {
       width: 100%; } }
   .rg-item__img {
