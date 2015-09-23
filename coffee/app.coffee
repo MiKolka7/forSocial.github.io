@@ -6,6 +6,9 @@ angular.module 'app', [
 
     'app.config.run'
     'app.config.route'
+    'app.filters'
+
+    'app.directives'
 
     'app.controller.events'
     'app.controller.map'

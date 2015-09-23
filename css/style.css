@@ -459,7 +459,7 @@ footer {
       border-radius: 2px;
       transform: translate(0, -50%); }
     .filter__list__item.is-active:before {
-      background: url("../../images/design/check.png"); }
+      background: #fefefe url("../images/design/check.png") no-repeat 50% 50%; }
     .filter__list__item:hover {
       opacity: 0.6; }
 

@@ -4,14 +4,11 @@
     <div class="filter">
         Місто
         <ul class="filter__list">
-            <li class="filter__list__item">
-                Київ
-            </li>
-            <li class="filter__list__item">
-                Львів
-            </li>
-            <li class="filter__list__item">
-                Мюнхен
+            <li class="filter__list__item"
+                ng-repeat="item in events | unique : 'city'"
+                ng-click="addFilter('city', item)"
+                ng-bind="item"
+                is-check>
             </li>
         </ul>
     </div>
@@ -19,14 +16,11 @@
     <div class="filter">
         Місяць
         <ul class="filter__list">
-            <li class="filter__list__item">
-                Січень
-            </li>
-            <li class="filter__list__item">
-                Лютий
-            </li>
-            <li class="filter__list__item">
-                Квітень
+            <li class="filter__list__item"
+                ng-repeat="item in events | unique : 'month'"
+                ng-click="addFilter('month', item)"
+                ng-bind="item"
+                is-check>
             </li>
         </ul>
     </div>
@@ -34,14 +28,11 @@
     <div class="filter">
         Категорія
         <ul class="filter__list">
-            <li class="filter__list__item">
-                1
-            </li>
-            <li class="filter__list__item">
-                2
-            </li>
-            <li class="filter__list__item">
-                3
+            <li class="filter__list__item"
+                ng-repeat="item in events | unique : 'type'"
+                ng-click="addFilter('type', item)"
+                ng-bind="item"
+                is-check>
             </li>
         </ul>
     </div>
@@ -56,7 +47,7 @@
     <ul class="events" infinite-scroll>
 
         <li class="events__item"
-            ng-repeat="event in events track by $index">
+            ng-repeat="event in events | allKeyfilter : chooseFilter">
             <img src="images/img1.png" alt="" class="events__item__img"/>
 
             <article class="events__item__container">
