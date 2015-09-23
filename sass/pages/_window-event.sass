@@ -1,0 +1,167 @@
+/************************************************************************************
+ * Modal Window for event
+ *************************************************************************************/
+
+.modal-layout
+    @extend .animate
+    position: fixed
+    top: 0
+    left: 0
+
+    width: 100%
+    height: 100%
+    margin: 0
+    display: table
+    overflow: auto
+    opacity: 0.01
+    visibility: hidden
+
+    background: rgba(#000, .55)
+    z-index: 1000
+
+    //will-change: opacity
+    overflow-scrolling: touch
+    animation-duration: 1s
+    transform: translate3d(0, 0, 0)
+
+    &.is-visible
+        opacity: 1
+        visibility: visible
+
+        > .modal-event
+            opacity: 1
+            visibility: visible
+            transform: translate3d(0, -50%, 0) scale(1)
+
+.modal-event
+    @extend .animate
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+
+    width: 813px
+    margin: 0 auto
+
+    background-color: #fff
+    box-shadow: 0 3px 0 rgba(0, 1, 1, 0)
+    z-index: 1001
+
+    opacity: 0
+    visibility: hidden
+    transform: translate3d(0, -50%, 0) scale(0.1)
+
+    > h2
+        padding-left: 40px
+        padding-top: 20px
+
+.modal-event__wrap
+    width: 88%
+    margin: 0 auto
+    padding-bottom: 80px
+
+.modal-event__form
+    > span
+        display: block
+        padding: 15px 0 5px 13px
+        color: #383838
+
+    label
+        display: inline-block
+        padding-left: 10px
+        color: #383838
+        font-size: 14px
+        line-height: 16px
+        font-weight: 300
+
+        > input
+            font-size: 12px
+            float: left
+            line-height: 10px
+            margin: 0 8px 0 0
+            color: #383838
+
+    > textarea, input
+        width: 100%
+        padding: 10px
+        box-sizing: border-box
+        border: 1px solid #383838
+
+        &[type=checkbox],
+        &[type=radio]
+            width: auto
+
+    > label:last-of-type
+        display: block
+        padding: 15px 0 0 10px
+        margin-bottom: 20px
+        font-size: 16px
+        line-height: 18px
+        float: none
+        width: 100%
+
+        > input
+            margin-right: 15px
+            margin-bottom: 0
+
+.city-date-row
+    @extend .clearfix
+
+.city-block
+    width: 50%
+    float: left
+
+    > span
+        display: block
+        padding: 15px 0 5px 13px
+        color: #383838
+
+.date-block
+    width: 50%
+    float: left
+    > span
+        display: block
+        padding: 7px 0 5px 18px
+        color: #383838
+    > input
+        width: 121px
+        height: 26px
+        border: 1px solid #383838
+        margin-left: 13px
+
+.event-check-input-group:before
+    content: ' '
+    width: 0
+    height: 0
+    display: table
+    font-size: 0
+    line-height: 0
+    visibility: hidden
+    clear: both
+
+.category-input-group
+    width: 50%
+    float: left
+    overflow: hidden
+
+    > label:nth-of-type(3n-2)
+        margin-left: 10px
+        clear: both
+
+    > span
+        display: block
+        padding: 15px 0 5px 13px
+        color: #383838
+
+.skills-input-group
+    width: 50%
+    overflow: hidden
+
+    > label:nth-of-type(odd)
+        padding-left: 10px
+        clear: both
+
+    > span
+        display: block
+        padding: 15px 0 5px 18px
+        color: #383838

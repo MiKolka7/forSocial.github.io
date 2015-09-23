@@ -1,0 +1,104 @@
+/************************************************************************************
+ * Modal Window for Company
+ *************************************************************************************/
+
+.modal-layout
+  @extend .animate
+  position: fixed
+  top: 0
+  left: 0
+
+  width: 100%
+  height: 100%
+  margin: 0
+  display: table
+  overflow: auto
+  opacity: 0.01
+  visibility: hidden
+
+  background: rgba(#000, .55)
+  z-index: 1000
+
+  //will-change: opacity
+  overflow-scrolling: touch
+  animation-duration: 1s
+  transform: translate3d(0, 0, 0)
+
+  &.is-visible
+    opacity: 1
+    visibility: visible
+
+    > .modal-company
+      opacity: 1
+      visibility: visible
+      transform: translate3d(0, -50%, 0) scale(1)
+
+.modal-company
+  @extend .animate
+  position: absolute
+  top: 50%
+  left: 0
+  right: 0
+
+  width: 813px
+  margin: 0 auto
+
+  background-color: #fff
+  box-shadow: 0 3px 0 rgba(0, 1, 1, 0)
+  z-index: 1001
+
+  opacity: 0
+  visibility: hidden
+  transform: translate3d(0, -50%, 0) scale(0.1)
+  > h2
+    padding-left: 40px
+    padding-top: 20px
+
+.modal-company__wrap
+  width: 88%
+  margin: 0 auto
+  padding-bottom: 80px
+
+.modal-company__form
+  > span
+    clear: both
+    display: block
+    padding: 15px 0 5px 13px
+    color: #383838
+  > label, input[type="radio"]
+    font-size: 12px
+    float: left
+    line-height: 10px
+    margin-right: 8px
+    padding-left: 10px
+    color: #383838
+  > textarea
+    width: 100%
+    border: 1px solid #383838
+  > label:last-of-type
+    display: block
+    padding: 15px 0 0 10px
+    margin-bottom: 20px
+    font-size: 16px
+    line-height: 18px
+    float: none
+    width: 100%
+    > input
+      margin-right: 15px
+      margin-bottom: 0
+
+.activity-input-group
+  @extend .clearfix
+  > label
+    font-size: 12px
+    float: left
+    width: 20%
+    padding: 5px 0
+    line-height: 10px
+    color: #383838
+    > input
+      margin-right: 8px
+  > label:nth-of-type(3n-2)
+    padding-left: 10px
+    clear: both
+

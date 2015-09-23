@@ -1,5 +1,5 @@
 ## Дизайн 
-https://cloud.mail.ru/public/BYvq/uw3CUwZac
+https://yadi.sk/d/XhVRNmzCidQG2
 
 ## Інструкція по запуску проекту
 - встановити https://nodejs.org/ (перевірити чи стоїть галочка біля npm)

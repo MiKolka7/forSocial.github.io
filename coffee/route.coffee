@@ -7,6 +7,7 @@ angular.module('app.config.route', [])
                 url: "/"
                 views:
                     '@':
+                        controller: 'eventsCtrl'
                         templateUrl: 'template/pages/events.html'
                     'header':
                         templateUrl: 'template/header.html'
@@ -42,6 +43,13 @@ angular.module('app.config.route', [])
                 views:
                     '@':
                         templateUrl: 'template/pages/organization.html'
+            )
+            .state('main.map',
+                url: 'map'
+                views:
+                    '@':
+                        controller: 'mapCtrl'
+                        templateUrl: 'template/pages/map.html'
             )
             .state('main.user',
                 url: 'user'

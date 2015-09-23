@@ -1,0 +1,57 @@
+<h2>Створення заходу</h2>
+
+<div class="modal-event__wrap">
+    <form class="modal-event__form">
+        <span>Назва заходу</span>
+        <input type="text" class="event-name"/>
+
+        <div class="city-date-row">
+            <div class="city-block">
+                <span>Місто</span>
+                <label><input type="radio" name="city"/>Київ</label>
+                <label><input type="radio" name="city"/>Львів</label>
+                <label><input type="radio" name="city"/>Одеса</label>
+                <label><input type="radio" name="city"/>інше</label>
+            </div>
+            <label class="date-block">
+                <span>Дата</span>
+                <input type="date" name="date"/>
+            </label>
+        </div>
+
+        <filedest class="event-check-input-group">
+            <div class="category-input-group">
+                <span>Категорія</span>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+            </div>
+            <div class="skills-input-group">
+                <span>Необхідні навички</span>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label><input type="checkbox"/>Lorem Ipsum</label>
+            </div>
+        </filedest>
+
+        <span>Опис</span>
+        <text-angular class="event-description" cols="130" rows="12"></text-angular>
+        <span>Сайт</span>
+        <input type="text" class="event-site"/>
+        <label>
+            <input type="checkbox" required/>
+            Я згоден з умовами використання ресурсу та даю згоду на обробку даних
+        </label>
+
+        <button type="submit" class="btn btn-event btn--blue btn--big">Створити</button>
+    </form>
+</div>
