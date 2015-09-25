@@ -62,6 +62,7 @@ angular.module('app.config.route', [])
                 url: '/registration'
                 views:
                     '@':
+                        controller: 'registrationCtrl'
                         templateUrl: 'template/pages/registration.html'
                     'footer':
                         templateUrl: 'template/footer.html'

@@ -12,6 +12,7 @@ angular.module 'app', [
 
     'app.controller.events'
     'app.controller.map'
+    'app.controller.registration'
 
     'app.controller.login'
     'app.controller.addEvent'

@@ -1,182 +1,151 @@
-	<div class="rg-banner">
-		<div class="rg-banner__overlay">
-			<div class="container">
-				<div class="rg-banner__header">
-					<a href="#"><img class="rg-banner__logo" src="../../images/design/h_logo.png" height="20" width="178" alt=""></a>
-					<a href="#" class="rg-banner__btn">Увійти</a>
-				</div>
-				<h1 class="rg-banner__title">Вирішуємо великі та маленькі проблеми!</h1>
-				<div class="rg-banner__stage">
-					<a class="dot-item dot-item--active" href="#">1</a>
-					<span class="line-item"></span>
-					<a class="dot-item" href="#">2</a>
-					<span class="line-item"></span>
-					<a class="dot-item" href="#">3</a>
-				</div>
-				<div class="rg-banner__form">
-					<form action="">
-						<div class="first-stage narrow">
-							<label>Прізвище та ім'я
-								<div class="rg-input-wrap">
-									<i class="sprite-name"></i>
-									<input class="rg-input" type="text" required>
-								</div>
-							</label>
-							<label>Email
-								<div class="rg-input-wrap">
-									<i class="sprite-mail"></i>
-									<input class="rg-input" type="email" required>
-								</div>
-							</label>
-							<label>Пароль
-								<div class="rg-input-wrap">
-									<i class="sprite-lock"></i>
-									<input class="rg-input" type="password" required>
-								</div>
-							</label>
-							<a href="#" class="rg-btn">Продовжити</a>
-						</div>
-						<!-- /first-stage -->
-						<div class="second-stage narrow none">
-							<label>Місто
-								<div class="rg-input-wrap">
-									<i class="sprite-map"></i>
-									<input class="rg-input" type="text" required>
-								</div>
-							</label>
-							<label>Дата народження
-								<div class="rg-input-wrap">
-									<i class="sprite-calendar"></i>
-									<input class="rg-input" type="date" required>
-								</div>
-							</label>
-							<label>Стать
-								<div class="rg-input rg-input--sex">
-									<input type="radio" name="sex" id="male" value="male">
-									<label for="male">жіноча</label>
-									<input type="radio" name="sex" id="female" value="female">
-									<label for="female">чоловіча</label>
-								</div>
-							</label>
-							<a href="#" class="rg-btn">Продовжити</a>
-						</div>
-						<!-- /second-stage -->
-						<div class="third-stage none">
-							<div class="third-stage__item">
-								Хочу допомагати:
-								<br><br><br>
-								<input type="checkbox">
-								<label for="">допомога дітям</label>
-								<br>
-								<input type="checkbox">
-								<label for="">догляд за тваринами</label>
-								<br>
-								<input type="checkbox">
-								<label for="">АТО</label>
-								<br>
-								<input type="checkbox">
-								<label for="">навколишнє середовище</label>
-								<br>
-								<input type="checkbox">
-								<label for="">допомога літнім людям</label>
-								<br>
-								<input type="checkbox">
-								<label for="">освітня допомога</label>
-								<br>
-								<input type="checkbox">
-								<label for="">психологічна допомога</label>
-								<br>
-								<input type="checkbox">
-								<label for="">допомога переселенцям</label>
-								<br>
-								<input type="checkbox">
-								<label for="">фізична допомога</label>
-								<br>
-							</div>
-							<div class="third-stage__item">
-								Маю навики:
-								<br><br><br>
-								<input type="checkbox">
-								<label for="">медичні</label>
-								<br>
-								<input type="checkbox">
-								<label for="">технічні</label>
-								<br>
-								<input type="checkbox">
-								<label for="">кулінарні</label>
-								<br>
-								<input type="checkbox">
-								<label for="">IT</label>
-								<br>
-								<input type="checkbox">
-								<label for="">мистецькі</label>
-								<br>
-								<input type="checkbox">
-								<label for="">фінансові</label>
-								<br>
-								<input type="checkbox">
-								<label for="">психологічні</label>
-								<br>
-								<input type="checkbox">
-								<label for="">робота з тваринами</label>
-								<br>
-								<input type="checkbox">
-								<label for="">організаційні</label>
-								<br>
-							</div>
-							<div class=""></div>
-							<a href="#" class="rg-btn narrow">Зареєструватися</a>
-						</div>
-						<!-- /third-stage -->
-					</form>
-					<div class="rg-checkbox-wrap">
-						<label>
-							<input class="rg-checkbox" type="checkbox"> Згода на обробку даних</label>
-					</div>
-				</div>
-			</div>
-			<!-- /container -->
-		</div>
-	</div>
+<div class="rg-banner">
+    <div class="rg-banner__overlay" ng-init="sw = 1">
+        <div class="container container--min">
+            <div class="rg-banner__header">
+                <a href="#"><img class="rg-banner__logo" src="images/design/h_logo.png" height="20" width="178" alt=""></a>
+                <a href="" ng-click="openPopup('login')" class="rg-banner__btn">Увійти</a>
+            </div>
+            <h1 class="rg-banner__title">Вирішуємо великі та маленькі проблеми!</h1>
+
+            <div class="rg-banner__stage">
+                <a class="dot-item" ng-click="sw = 1" ng-class="{'dot-item--active': sw === 1}" href="">1</a>
+                <span class="line-item"></span>
+                <a class="dot-item" ng-click="sw = 2" ng-class="{'dot-item--active': sw === 2}" href="">2</a>
+                <span class="line-item"></span>
+                <a class="dot-item" ng-click="sw = 3" ng-class="{'dot-item--active': sw === 3}" href="">3</a>
+            </div>
+
+            <div class="rg-banner__form">
+                <form>
+                    <div ng-show="sw === 1" class="first-stage narrow">
+                        <label>
+                            Прізвище та ім'я
+                            <div class="rg-input-wrap">
+                                <i class="sprite-name"></i>
+                                <input class="rg-input" ng-model="r.user" type="text" required>
+                            </div>
+                        </label>
+                        <label>
+                            Email
+                            <div class="rg-input-wrap">
+                                <i class="sprite-mail"></i>
+                                <input class="rg-input" ng-model="r.mail" type="email" required>
+                            </div>
+                        </label>
+                        <label>
+                            Пароль
+                            <div class="rg-input-wrap">
+                                <i class="sprite-lock"></i>
+                                <input class="rg-input" ng-model="r.pass" type="password" required>
+                            </div>
+                        </label>
+                        <button ng-click="sw = 2"  class="rg-btn">Продовжити</button>
+                    </div>
+                    <!-- /first-stage -->
+                    <div ng-show="sw === 2" class="second-stage narrow">
+                        <label>
+                            Місто
+                            <div class="rg-input-wrap">
+                                <i class="sprite-map"></i>
+                                <input class="rg-input" ng-model="r.city" type="text" required>
+                            </div>
+                        </label>
+                        <label>
+                            Дата народження
+                            <div class="rg-input-wrap">
+                                <i class="sprite-calendar"></i>
+                                <input class="rg-input"  ng-model="r.date" type="date" required>
+                            </div>
+                        </label>
+                        <label>
+                            Стать
+                            <div class="rg-input rg-input--sex">
+                                <input type="radio" ng-model="r.gender" name="sex" id="male" value="male">
+                                <label for="male">жіноча</label>
+                                <input type="radio" ng-model="r.gender" name="sex" id="female" value="female">
+                                <label for="female">чоловіча</label>
+                            </div>
+                        </label>
+                        <button ng-click="sw = 3"  class="rg-btn">Продовжити</button>
+                    </div>
+                    <!-- /second-stage -->
+                    <div ng-show="sw === 3" class="third-stage">
+                        <div class="third-stage__item">
+                            Хочу допомагати:
+                            <br><br><br>
+                            <label ng-repeat="category in categories track by $index">
+                                <input type="checkbox" ng-model="getCategory[$index]" ng-value="category.idCategory">
+                                <span ng-bind="category.name"></span>
+                            </label>
+                        </div>
+                        <div class="third-stage__item">
+                            Маю навики:
+                            <br><br><br>
+                            <label ng-repeat="skill in skills track by $index">
+                                <input type="checkbox" ng-model="getSkill[$index]" ng-value="skill.idSkill">
+                                <span ng-bind="skill.name"></span>
+                            </label>
+                        </div>
+                        <a href="" ng-click="registr()" class="rg-btn narrow">Зареєструватися</a>
+                    </div>
+                    <!-- /third-stage -->
+                </form>
+                <div class="rg-checkbox-wrap">
+                    <label>
+                        <input class="rg-checkbox" type="checkbox"> Згода на обробку даних</label>
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+</div>
 <!-- /rg-banner -->
 <div class="rg-content">
-	<h2 class="rg-content__title">FORSOCIAL — територія небайдужих!</h2>
-	<h3 class="rg-content__descript">Хочеш допомогти або шукаєш допомогу ?</h3>
-	<div class="rg-item">
-		<img class="rg-item__img" src="../../images/design/icon/rg_1.png" alt="">
-		<h4 class="rg-item__title">Можливість</h4>
-		<p class="rg-item__descript">Тебе почують тисячі волонтерів по всій Україні</p>
-	</div>
-	<!-- /rg-content__item -->
-	<div class="rg-item">
-		<img class="rg-item__img" src="../../images/design/icon/rg_2.png" alt="">
-		<h4 class="rg-item__title">ШВИДКІСТЬ</h4>
-		<p class="rg-item__descript">Ти знайдеш швидке вірішення своєї проблеми</p>
-	</div>
-	<!-- /rg-item -->
-	<div class="rg-item">
-		<img class="rg-item__img" src="../../images/design/icon/rg_3.png" alt="">
-		<h4 class="rg-item__title">ОБ’єднання</h4>
-		<p class="rg-item__descript">Залучи однодумців до спільної реалізації твого проекту</p>
-	</div>
-	<!-- /rg-item -->
-	<div class="rg-item">
-		<img class="rg-item__img" src="../../images/design/icon/rg_4.png" alt="">
-		<h4 class="rg-item__title">ДОПОМОГА</h4>
-		<p class="rg-item__descript">Зроби чиєсь життя світлішим та&nbsp;покращи свою карму
-		</p>
-	</div>
-	<!-- /rg-item -->
-	<div class="rg-item">
-		<img class="rg-item__img" src="../../images/design/icon/rg_5.png" alt="">
-		<h4 class="rg-item__title">вибір</h4>
-		<p class="rg-item__descript">Знаходь нові волонтерські можливості відповідно до твоїх вподобань</p>
-	</div>
-	<!-- /rg-item -->
-	<div class="rg-item">
-		<img class="rg-item__img rg-item__img--ver" src="../../images/design/icon/rg_6.png" alt="">
-		<h4 class="rg-item__title">МАСШТАБНІСТЬ</h4>
-		<p class="rg-item__descript">Cтань частиною наймаштабнішого руху небайдужих</p>
-	</div>
-	<!-- /rg-item -->
+    <h2 class="rg-content__title">FORSOCIAL — територія небайдужих!</h2>
+
+    <h3 class="rg-content__descript">Хочеш допомогти або шукаєш допомогу ?</h3>
+
+    <div class="rg-item">
+        <img class="rg-item__img" src="images/design/icon/rg_1.png" alt="">
+        <h4 class="rg-item__title">Можливість</h4>
+
+        <p class="rg-item__descript">Тебе почують тисячі волонтерів по всій Україні</p>
+    </div>
+    <!-- /rg-content__item -->
+    <div class="rg-item">
+        <img class="rg-item__img" src="images/design/icon/rg_2.png" alt="">
+        <h4 class="rg-item__title">ШВИДКІСТЬ</h4>
+
+        <p class="rg-item__descript">Ти знайдеш швидке вірішення своєї проблеми</p>
+    </div>
+    <!-- /rg-item -->
+    <div class="rg-item">
+        <img class="rg-item__img" src="images/design/icon/rg_3.png" alt="">
+        <h4 class="rg-item__title">ОБ’єднання</h4>
+
+        <p class="rg-item__descript">Залучи однодумців до спільної реалізації твого проекту</p>
+    </div>
+    <!-- /rg-item -->
+    <div class="rg-item">
+        <img class="rg-item__img" src="images/design/icon/rg_4.png" alt="">
+        <h4 class="rg-item__title">ДОПОМОГА</h4>
+
+        <p class="rg-item__descript">Зроби чиєсь життя світлішим та&nbsp;покращи свою карму
+        </p>
+    </div>
+    <!-- /rg-item -->
+    <div class="rg-item">
+        <img class="rg-item__img" src="images/design/icon/rg_5.png" alt="">
+        <h4 class="rg-item__title">вибір</h4>
+
+        <p class="rg-item__descript">Знаходь нові волонтерські можливості відповідно до твоїх вподобань</p>
+    </div>
+    <!-- /rg-item -->
+    <div class="rg-item">
+        <img class="rg-item__img rg-item__img--ver" src="images/design/icon/rg_6.png" alt="">
+        <h4 class="rg-item__title">МАСШТАБНІСТЬ</h4>
+
+        <p class="rg-item__descript">Cтань частиною наймаштабнішого руху небайдужих</p>
+    </div>
+    <!-- /rg-item -->
 </div>

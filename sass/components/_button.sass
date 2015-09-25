@@ -16,7 +16,7 @@
     font-weight: 300
 
     &:hover
-        color: #fff
+        color: #fff !important
         background: #7DB1EE !important
 
     + .button
@@ -33,17 +33,21 @@
 
 
 .btn-two
-    height: 56px
+    height: 38px
     margin-right: 28px
     display: inline-block
     overflow: hidden
+    line-height: 38px
     border: 1px solid #58a5ff
-    border-radius: 27px
+    border-radius: 19px
     font-size: 0
 
-    > .btn.is-active
+    > .button.is-active
         color: #fff
         background-color: #58a5ff
 
-    > .btn
+    > .button
+        margin: 0
+        color: #58a5ff
         border-radius: 0
+        background-color: #fff
