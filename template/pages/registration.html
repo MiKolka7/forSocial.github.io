@@ -3,7 +3,7 @@
         <div class="container container--min">
             <div class="rg-banner__header">
                 <a href="#"><img class="rg-banner__logo" src="images/design/h_logo.png" height="20" width="178" alt=""></a>
-                <a href="" ng-click="openPopup('login')" class="rg-banner__btn">Увійти</a>
+                <a href="" ng-click="login()" class="rg-banner__btn">Увійти</a>
             </div>
             <h1 class="rg-banner__title">Вирішуємо великі та маленькі проблеми!</h1>
 
@@ -39,7 +39,7 @@
                                 <input class="rg-input" ng-model="r.pass" type="password" required>
                             </div>
                         </label>
-                        <button ng-click="sw = 2"  class="rg-btn">Продовжити</button>
+                        <button ng-click="sw = 2" class="rg-btn">Продовжити</button>
                     </div>
                     <!-- /first-stage -->
                     <div ng-show="sw === 2" class="second-stage narrow">
@@ -54,7 +54,7 @@
                             Дата народження
                             <div class="rg-input-wrap">
                                 <i class="sprite-calendar"></i>
-                                <input class="rg-input"  ng-model="r.date" type="date" required>
+                                <input class="rg-input" ng-model="r.date" type="date" required>
                             </div>
                         </label>
                         <label>
@@ -66,7 +66,7 @@
                                 <label for="female">чоловіча</label>
                             </div>
                         </label>
-                        <button ng-click="sw = 3"  class="rg-btn">Продовжити</button>
+                        <button ng-click="sw = 3" class="rg-btn">Продовжити</button>
                     </div>
                     <!-- /second-stage -->
                     <div ng-show="sw === 3" class="third-stage">

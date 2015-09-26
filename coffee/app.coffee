@@ -3,6 +3,7 @@ angular.module 'app', [
     'ui.router'
     'ngDialog'
     'textAngular'
+    'LocalStorageModule'
 
     'app.config.run'
     'app.config.route'
@@ -10,8 +11,10 @@ angular.module 'app', [
 
     'app.directives'
 
+    'app.controller.footer'
     'app.controller.events'
     'app.controller.map'
+    'app.controller.organizations'
     'app.controller.registration'
 
     'app.controller.login'

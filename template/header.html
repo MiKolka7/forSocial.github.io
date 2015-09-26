@@ -15,50 +15,55 @@
 			<li class="m_category">
 				<a ng-href="#/"
 				   ng-click="visibleMenu = visibleMenu ? false : true"
-				   class="link_inside icon-news">заходи</a>
+				   ng-bind="::lang.header.event"
+				   class="link_inside icon-news"></a>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/messages"
 				   ng-click="visibleMenu = visibleMenu ? false : true"
-				   class="link_inside icon-mail">повідомлення</a>
+				   ng-bind="::lang.header.mess"
+				   class="link_inside icon-mail"></a>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/friends"
 				   ng-click="visibleMenu = visibleMenu ? false : true"
-				   class="link_inside icon-network">коло знайомств</a>
+				   ng-bind="::lang.header.friend"
+				   class="link_inside icon-network"> </a>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/organizations"
 				   ng-click="visibleMenu = visibleMenu ? false : true"
-				   class="link_inside icon-organization">організації</a>
+				   ng-bind="::lang.header.organ"
+				   class="link_inside icon-organization"></a>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/map"
 				   ng-click="visibleMenu = visibleMenu ? false : true"
-				   class="link_inside icon-map">мапа</a>
+				   ng-bind="::lang.header.map"
+				   class="link_inside icon-map"></a>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/help"
 				   ng-click="visibleMenu = visibleMenu ? false : true"
-				   class="link_inside icon-help">шукаю допомогу</a>
+				   ng-bind="::lang.header.help"
+				   class="link_inside icon-help"></a>
 			</li>
 		</ul>
 
 
 		<div class="header_profile">
-			<!--<a ng-href="#" class="login">Увійти</a>-->
 			<ul class="p">
 				<li class="p_top">
 					<img src="" alt="" class="p_top_link">
 					<ul class="p_inside">
 						<li>
-							<a ng-href=" " class="p_link_inside">Мій профіль</a>
+							<a ng-href="" class="p_link_inside" ng-bind="::lang.header.profile"></a>
 						</li>
 						<li>
-							<a ng-href="" class="p_link_inside">Налаштування</a>
+							<a ng-href="" class="p_link_inside" ng-bind="::lang.header.customise"></a>
 						</li>
 						<li>
-							<a ng-href="" class="p_link_inside">Вийти</a>
+							<a ng-href="" class="p_link_inside" ng-bind="::lang.header.exit"></a>
 						</li>
 					</ul>
 				</li>

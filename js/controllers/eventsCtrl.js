@@ -1,35 +1,8 @@
-angular.module('app.controller.events', []).controller('eventsCtrl', function($scope) {
-  $scope.events = [
-    {
-      name: 1,
-      category: {
-        city: 'Київ',
-        month: 'Січень',
-        type: 1
-      }
-    }, {
-      name: 1,
-      category: {
-        city: 'Львів',
-        month: 'Січень',
-        type: 2
-      }
-    }, {
-      name: 1,
-      category: {
-        city: 'Мюнхен',
-        month: 'Лютий',
-        type: 1
-      }
-    }, {
-      name: 1,
-      category: {
-        city: 'Мюнхен',
-        month: 'Січень',
-        type: 3
-      }
-    }
-  ];
+angular.module('app.controller.events', []).controller('eventsCtrl', function($scope, $http) {
+  $http.get('http://api.prolaby.com/api/get/event/all').success(function(data) {
+    return $scope.events = data;
+  });
+  console.log($scope.events);
   $scope.chooseFilter = {
     city: [],
     month: [],
@@ -44,8 +17,7 @@ angular.module('app.controller.events', []).controller('eventsCtrl', function($s
       return $scope.chooseFilter[key].splice(i - 1, 1);
     }
   };
-  return $scope.events.nextPage = function() {
-    console.log('sd');
+  return $scope.nextPage = function() {
     return $scope.events.push([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
   };
 });

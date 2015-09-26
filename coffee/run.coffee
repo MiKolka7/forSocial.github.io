@@ -1,5 +1,10 @@
 angular.module('app.config.run', [])
-    .run ($rootScope, ngDialog, $http) ->
+    .run ($rootScope, ngDialog, $http, localStorageService) ->
+
+        lang = localStorageService.cookie.get('lang')
+
+        if (!lang)
+            lang = 'ua'
 
         $rootScope.openPopup = (name) ->
             ngDialog.open({
@@ -16,6 +21,12 @@ angular.module('app.config.run', [])
             .success((data) ->
                 $rootScope.categories = data
             )
+
+        $http.get("json/#{lang}.json")
+            .success((data) ->
+                data.language = lang
+                $rootScope.lang = data
+        )
 
 
 

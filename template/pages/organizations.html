@@ -2,22 +2,20 @@
 <div class="container filter-line">
 
     <div class="btn-two">
-        <button class="button is-active">Організації</button>
-        <button class="button ">Компанії</button>
+        <button class="button"
+                ng-class="type == 1 ? 'is-active' : ''"
+                ng-click="type = 1">Організації</button>
+        <button class="button"
+                ng-class="type == 2 ? 'is-active' : ''"
+                ng-click="type = 2">Компанії</button>
     </div>
 
     <div class="filter">
         Сфера діяльності
         <ul class="filter__list">
-            <li class="filter__list__item">
-                АТО
-            </li>
-            <li class="filter__list__item">
-                Лікарні
-            </li>
-            <li class="filter__list__item">
-                Покраска мостів в синьо жовтий колір
-            </li>
+            <li class="filter__list__item"
+                ng-repeat="s in scopes"
+                ng-bind="s.name"></li>
         </ul>
     </div>
 
@@ -28,24 +26,43 @@
 
 <div class="container">
 
-    <ul class="events organizations">
+    <ul class="events organizations" ng-if="type == 1">
 
-        <li class="events__item organization__item">
-            <img src="images/img1.png" alt="" class="events__item__img"/>
+        <li class="events__item organization__item" ng-repeat="item in organizations">
+            <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
 
             <article class="events__item__container">
-                <h4 class="events__item__title">Прибирання тереторії</h4>
-                <p class="events__item__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua.
-                </p>
+                <h4 class="events__item__title" ng-bind="item.description"></h4>
+                <p class="events__item__text" ng-bind="item.description"></p>
                 <p class="events__text-info">
                     Міста: Київ, Одеса, Львів, Харьків
                 </p>
                 <p class="events__text-info">
                     Сайт:
-                    <a class="c-blue" href="www.jciyoth.com">www.jciyoth.com</a>
+                    <a class="c-blue" ng-href="item.site" ng-bind="item.site"></a>
                 </p>
+                <a href="/index_blog.html"></a>
+            </article>
+        </li>
+
+    </ul>
+
+    <ul class="events organizations" ng-if="type == 2">
+
+        <li class="events__item organization__item" ng-repeat="item in companies">
+            <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
+
+            <article class="events__item__container">
+                <h4 class="events__item__title" ng-bind="item.description"></h4>
+                <p class="events__item__text" ng-bind="item.description"></p>
+                <p class="events__text-info">
+                    Міста: Київ, Одеса, Львів, Харьків
+                </p>
+                <p class="events__text-info">
+                    Сайт:
+                    <a class="c-blue" ng-href="item.site" ng-bind="item.site"></a>
+                </p>
+                <a href="/index_blog.html"></a>
             </article>
         </li>
 

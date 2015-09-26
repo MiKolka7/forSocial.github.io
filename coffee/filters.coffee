@@ -18,6 +18,8 @@ angular.module('app.filters', [])
 )
 .filter 'allKeyfilter', ->
     (obj, arr) ->
+        console.log obj
+        return obj
         newArr = []
         if _.isEmpty(obj)
             return false

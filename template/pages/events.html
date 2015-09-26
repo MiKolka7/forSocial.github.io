@@ -5,7 +5,7 @@
         Місто
         <ul class="filter__list">
             <li class="filter__list__item"
-                ng-repeat="item in events | unique : 'city'"
+                ng-repeat="item in city"
                 ng-click="addFilter('city', item)"
                 ng-bind="item"
                 is-check>
@@ -17,7 +17,7 @@
         Місяць
         <ul class="filter__list">
             <li class="filter__list__item"
-                ng-repeat="item in events | unique : 'month'"
+                ng-repeat="item in month"
                 ng-click="addFilter('month', item)"
                 ng-bind="item"
                 is-check>
@@ -29,7 +29,7 @@
         Категорія
         <ul class="filter__list">
             <li class="filter__list__item"
-                ng-repeat="item in events | unique : 'type'"
+                ng-repeat="item in type"
                 ng-click="addFilter('type', item)"
                 ng-bind="item"
                 is-check>
@@ -47,20 +47,16 @@
     <ul class="events" infinite-scroll>
 
         <li class="events__item"
-            ng-repeat="event in events | allKeyfilter : chooseFilter">
-            <img src="images/img1.png" alt="" class="events__item__img"/>
+            ng-repeat="event in events">
+            <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
 
             <article class="events__item__container">
                 <div class="events__item__info">
-                    <address>Київ,</address>
+                    <address ng-bind="item.place + ','"></address>
                     <time datetime="12.06.93">12 червня</time>
                 </div>
-                <h4 class="events__item__title">{{$index}}. Прибирання тереторії</h4>
-                <h4 class="events__item__title">Прибирання території</h4>
-                <p class="events__item__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua.
-                </p>
+                <h4 class="events__item__title" ng-bind="item.title"></h4>
+                <p class="events__item__text" ng-bind="item.description"></p>
                 <div class="events__item__users">
                     <p>30 учасників</p>
                     <ul class="users">
@@ -71,10 +67,9 @@
                         <li class="users__list" style="background: url('images/img1.png')"></li>
                     </ul>
                 </div>
-                <a href="#" class="button btn-event btn--blue btn--big">Допомогти</a>
+                <a ng-href="#/event/{{event.idEvent}}" class="button btn-event btn--blue btn--big">Допомогти</a>
             </article>
         </li>
-
     </ul>
 
 </div>

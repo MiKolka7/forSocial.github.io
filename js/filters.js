@@ -20,6 +20,8 @@ angular.module('app.filters', []).filter('unique', function() {
 }).filter('allKeyfilter', function() {
   return function(obj, arr) {
     var newArr;
+    console.log(obj);
+    return obj;
     newArr = [];
     if (_.isEmpty(obj)) {
       return false;

@@ -12,6 +12,7 @@ angular.module('app.config.route', [])
                     'header':
                         templateUrl: 'template/header.html'
                     'footer':
+                        controller: 'footerCtrl'
                         templateUrl: 'template/footer.html'
             )
             .state('main.friends',
@@ -24,6 +25,7 @@ angular.module('app.config.route', [])
                 url: 'organizations'
                 views:
                     '@':
+                        controller: 'organizationsCtrl'
                         templateUrl: 'template/pages/organizations.html'
             )
             .state('main.messages',

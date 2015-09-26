@@ -11,6 +11,7 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
         templateUrl: 'template/header.html'
       },
       'footer': {
+        controller: 'footerCtrl',
         templateUrl: 'template/footer.html'
       }
     }
@@ -25,6 +26,7 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
     url: 'organizations',
     views: {
       '@': {
+        controller: 'organizationsCtrl',
         templateUrl: 'template/pages/organizations.html'
       }
     }

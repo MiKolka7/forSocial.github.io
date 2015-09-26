@@ -1,4 +1,9 @@
-angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http) {
+angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, localStorageService) {
+  var lang;
+  lang = localStorageService.cookie.get('lang');
+  if (!lang) {
+    lang = 'ua';
+  }
   $rootScope.openPopup = function(name) {
     return ngDialog.open({
       template: "template/popup/" + name + ".html",
@@ -10,6 +15,10 @@ angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http) {
   });
   $http.get('http://api.prolaby.com/api/get/categories/all').success(function(data) {
     return $rootScope.categories = data;
+  });
+  $http.get("json/" + lang + ".json").success(function(data) {
+    data.language = lang;
+    return $rootScope.lang = data;
   });
   return true;
 });

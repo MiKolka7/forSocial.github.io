@@ -4,11 +4,11 @@
         <span class="footer-site">Forsocial ©2015</span>
 
         <div class="filter filter--min">
-            Українська
+            <span ng-bind="::language"></span>
             <ul class="filter__list">
-                <li class="filter__list__item">English</li>
-                <li class="filter__list__item">Русский</li>
-                <li class="filter__list__item">Українська</li>
+                <li class="filter__list__item" ng-click="setLang('en')">English</li>
+                <li class="filter__list__item" ng-click="setLang('ru')">Русский</li>
+                <li class="filter__list__item" ng-click="setLang('ua')">Українська</li>
             </ul>
         </div>
 

@@ -1,7 +1,7 @@
 angular.module('app.directive.infiniteScroll', []).directive('infiniteScroll', function($timeout, $window) {
   return {
     restrict: 'A',
-    link: function(scope, element, attr) {
+    link: function(scope) {
       return $timeout(function() {
         var docH, winH;
         winH = $window.innerHeight;
