@@ -31,10 +31,21 @@ header
         padding-top: 10px
         margin-bottom: 60px
 
+        @media screen and (max-height: 620px)
+            margin: 0
+
     &:last-child
         border-top: 1px solid rgba(#fff, 0.1)
         margin-top: 40px
         padding-top: 20px
+
+        @media screen and (max-height: 620px)
+            margin-top: 10px
+            padding-top: 10px
+
+
+    @media screen and (max-height: 700px)
+        margin: 0
 
 .m_inside
     @extend .animate

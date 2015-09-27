@@ -24,5 +24,3 @@ angular.module 'app.controller.registration', []
                 controller: "loginCtrl"
                 className: 'ngdialog-theme-default mini'
             })
-
-#
