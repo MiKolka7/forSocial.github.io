@@ -12,6 +12,7 @@ angular.module 'app', [
     'app.directives'
 
     'app.controller.footer'
+    'app.controller.event'
     'app.controller.events'
     'app.controller.map'
     'app.controller.organizations'

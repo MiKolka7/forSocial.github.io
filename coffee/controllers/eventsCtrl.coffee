@@ -6,9 +6,6 @@ angular.module 'app.controller.events', []
                 $scope.events = data
             )
 
-        console.log $scope.events
-
-
         $scope.chooseFilter =
             city: []
             month: []
@@ -25,4 +22,4 @@ angular.module 'app.controller.events', []
 
 
         $scope.nextPage = () ->
-            $scope.events.push [0..9]
+#            $scope.events.push [0..9]

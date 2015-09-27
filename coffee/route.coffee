@@ -35,9 +35,10 @@ angular.module('app.config.route', [])
                         templateUrl: 'template/pages/messages.html'
             )
             .state('main.event',
-                url: 'event'
+                url: 'event/{id}'
                 views:
                     '@':
+                        controller: 'eventCtrl'
                         templateUrl: 'template/pages/event.html'
             )
             .state('main.organization',

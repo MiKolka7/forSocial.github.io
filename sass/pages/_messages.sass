@@ -2,80 +2,83 @@
  Inbox/Outbox messages page -- START
  *******************************************************/
 .link_message_type
-  display: inline-block
-  color: #505961
-  margin: 55px 10px 55px 0
-  font-size: 20px
-  &.is-active
-    color: #000000
-    font-weight: 600
+    display: inline-block
+    color: #505961
+    margin: 55px 10px 55px 0
+    font-size: 20px
+    &.is-active
+        color: #000000
+        font-weight: 600
 
 .msg
-  border-top: 1px solid rgba(#000, .05)
+    border-top: 1px solid rgba(#000, .05)
 
 .msg__items
-  @extend .animate
-  @extend .clearfix
-  width: 100%
-  border: 1px solid rgba(#000, .05)
-  border-top: 0
-  position: relative
-  cursor: pointer
+    @extend .animate
+    @extend .clearfix
+    width: 100%
+    border: 1px solid rgba(#000, .05)
+    border-top: 0
+    position: relative
+    cursor: pointer
 
-  &:hover
-    background-color: #F4F4F4
+    &:hover
+        background-color: #F4F4F4
 
-  &:hover a.icon_msg_item_delete
-    background-image: url("../img/mouseover-icon-msg-delete.png")
+    &:hover a.icon_msg_item_delete
+        background-image: url("../img/mouseover-icon-msg-delete.png")
+
+    > ul > li
+        @extend .clearfix
 
 .msg_item_delete_wrap
-  display: block
-  position: relative
-  height: 40px
+    display: block
+    position: relative
+    height: 40px
 
 .icon_msg_item_delete
-  position: absolute
-  top: 10px
-  right: 10px
-  width: 18px
-  height: 19px
-  background-image: url(../img/icon-msg-delete.png)
+    position: absolute
+    top: 10px
+    right: 10px
+    width: 18px
+    height: 19px
+    background-image: url(../img/icon-msg-delete.png)
 
 .user_icon
-  display: block
-  width: 60px
-  height: 60px
-  margin: 0 30px 40px 25px
-  float: left
-  background-image: url(http://bit.ly/1LdzaZD)
-  background-repeat: no-repeat
-  border-radius: 30px
+    display: block
+    width: 60px
+    height: 60px
+    margin: 0 30px 40px 25px
+    float: left
+    background-image: url(http://bit.ly/1LdzaZD)
+    background-repeat: no-repeat
+    border-radius: 30px
 
 .msg_item_container
-  overflow: hidden
-  width: 70%
+    overflow: hidden
+    width: 70%
 
 .msg_time
-  display: none
-  position: absolute
-  right: 70px
-  color: lightgray
+    display: none
+    position: absolute
+    right: 70px
+    color: lightgray
 
 .msg_item_name
-  width: 80%
-  margin-bottom: 15px
-  font-size: 20px
-  font-weight: 900
+    width: 80%
+    margin-bottom: 15px
+    font-size: 20px
+    font-weight: 900
 
 .msg_item_text
-  font-size: 18px
-  font-weight: 400
-  overflow: hidden
-  text-overflow: ellipsis
-  line-height: 19px
-  display: -webkit-box
-  -webkit-line-clamp: 2
-  -webkit-box-orient: vertical
+    font-size: 18px
+    font-weight: 400
+    overflow: hidden
+    text-overflow: ellipsis
+    line-height: 19px
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
 /********************************************************
  Inbox/Outbox messages page -- END
  *******************************************************/
@@ -85,67 +88,67 @@
  *******************************************************/
 
 .msg__wrap
-  position: relative
-  > div ul li
-    display: none
-  > div ul li:nth-of-type(1)
-    display: block
-  &:active,
-  &.js-clicked
+    position: relative
     > div ul li
-      display: block
-      > span .icon_msg_item_delete
         display: none
-    > div.msg__area
-      visibility: visible
-    > div .msg_time
-      display: block
-    > div .msg_item_text
-      overflow: visible
-      display: block
-    > div ul li:nth-last-of-type(1)
-      margin-bottom: 70px
+    > div ul li:nth-of-type(1)
+        display: block
+    &:active,
+    &.js-clicked
+        > div ul li
+            display: block
+            > span .icon_msg_item_delete
+                display: none
+        > div.msg__area
+            visibility: visible
+        > div .msg_time
+            display: block
+        > div .msg_item_text
+            overflow: visible
+            display: block
+        > div ul li:nth-last-of-type(1)
+            margin-bottom: 70px
 
 .msg__area
-  position: absolute
-  width: 100%
-  border: 1px solid rgba(#000, .05)
-  border-top: 0
-  background-color: #FBFBFB
-  padding-top: 40px
-  padding-bottom: 60px
-  visibility: hidden
+    position: absolute
+    width: 100%
+    border: 1px solid rgba(#000, .05)
+    border-top: 0
+    background-color: #FBFBFB
+    padding-top: 40px
+    padding-bottom: 60px
+    visibility: hidden
 
 .msg-box-input
-  width: 70%
-  display: block
-  margin: 0 0 20px 115px
-  overflow: hidden
-  word-wrap: break-word
-  height: 75px
-  border-color: #C9C9C9
+    width: 70%
+    display: block
+    margin: 0 0 20px 115px
+    overflow: hidden
+    word-wrap: break-word
+    height: 75px
+    border-color: #C9C9C9
 
 .msg_controls
-  position: relative
-  width: 70%
-  margin-left: 115px
-  @extend .clearfix
+    position: relative
+    width: 70%
+    margin-left: 115px
+    @extend .clearfix
 
 .send-msg-btn
-  width: 120px
-  line-height: 30px
-  border: solid 1px #4191eb
-  border-radius: 15px
-  color: #4191eb
-  float: left
+    width: 120px
+    line-height: 30px
+    border: solid 1px #4191eb
+    border-radius: 15px
+    color: #4191eb
+    float: left
 
 .msg-attach
-  display: block
-  position: absolute
-  right: -4px
-  bottom: 10px
-  font-size: 14px
-  color: #4191eb
+    display: block
+    position: absolute
+    right: -4px
+    bottom: 10px
+    font-size: 14px
+    color: #4191eb
 
 /***************************
  Read message page -- END

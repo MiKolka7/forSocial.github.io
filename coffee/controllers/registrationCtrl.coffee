@@ -5,12 +5,18 @@ angular.module 'app.controller.registration', []
         $scope.getSkill = []
 
         $scope.registr = () ->
-            $scope.r.birthdate = $scope.r.date.getTime()
 
-            data = $scope.r
-            data.skills = $scope.getSkill
-            data.categories = $scope.getCategory
-            console.log data
+            if $scope.reg.$valid
+                $scope.r.birthdate = $scope.r.date.getTime()
+
+                data = $scope.r
+                data.skills = $scope.getSkill
+                data.categories = $scope.getCategory
+
+                $http.post('http://api.prolaby.com/api/post/user', data)
+                    .success( (data) ->
+                        console.log 'user reg', data
+                    )
 
         $scope.login = () ->
             ngDialog.open({
@@ -19,7 +25,4 @@ angular.module 'app.controller.registration', []
                 className: 'ngdialog-theme-default mini'
             })
 
-#            $http.post('http://api.prolaby.com/api/post/user', data)
-#                .success((data) ->
-#                    console.log 'user reg'
-#                )
+#

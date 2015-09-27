@@ -6,8 +6,8 @@
         <ul class="filter__list">
             <li class="filter__list__item"
                 ng-repeat="item in city"
-                ng-click="addFilter('city', item)"
-                ng-bind="item"
+                ng-click="addFilter('city', item.id)"
+                ng-bind="item.name"
                 is-check>
             </li>
         </ul>
@@ -29,9 +29,9 @@
         Категорія
         <ul class="filter__list">
             <li class="filter__list__item"
-                ng-repeat="item in type"
-                ng-click="addFilter('type', item)"
-                ng-bind="item"
+                ng-repeat="item in categories"
+                ng-click="addFilter('type', item.id)"
+                ng-bind="item.name"
                 is-check>
             </li>
         </ul>
@@ -47,7 +47,7 @@
     <ul class="events" infinite-scroll>
 
         <li class="events__item"
-            ng-repeat="event in events">
+            ng-repeat="item in events">
             <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
 
             <article class="events__item__container">
@@ -67,7 +67,7 @@
                         <li class="users__list" style="background: url('images/img1.png')"></li>
                     </ul>
                 </div>
-                <a ng-href="#/event/{{event.idEvent}}" class="button btn-event btn--blue btn--big">Допомогти</a>
+                <a ng-href="#/event/{{item.idEvent}}" class="button btn-event btn--blue btn--big">Допомогти</a>
             </article>
         </li>
     </ul>

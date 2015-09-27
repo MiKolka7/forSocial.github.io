@@ -38,9 +38,10 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
       }
     }
   }).state('main.event', {
-    url: 'event',
+    url: 'event/{id}',
     views: {
       '@': {
+        controller: 'eventCtrl',
         templateUrl: 'template/pages/event.html'
       }
     }
