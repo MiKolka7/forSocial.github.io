@@ -1,6 +1,7 @@
-angular.module('app.controller.footer', []).controller('footerCtrl', function($scope, $rootScope, localStorageService) {
+angular.module('app.controller.footer', []).controller('footerCtrl', function($scope, $rootScope, localStorageService, $state) {
   $scope.setLang = function(lang) {
-    return localStorageService.cookie.set('lang', lang);
+    localStorageService.cookie.set('lang', lang);
+    return $state.reload();
   };
   if ($rootScope.lang.language === 'ua') {
     return $scope.language = 'Українська';

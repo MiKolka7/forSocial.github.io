@@ -3,11 +3,15 @@ angular.module('app.controller.registration', []).controller('registrationCtrl',
   $scope.getSkill = [];
   $scope.registr = function() {
     var data;
-    $scope.r.birthdate = $scope.r.date.getTime();
-    data = $scope.r;
-    data.skills = $scope.getSkill;
-    data.categories = $scope.getCategory;
-    return console.log(data);
+    if ($scope.reg.$valid) {
+      $scope.r.birthdate = $scope.r.date.getTime();
+      data = $scope.r;
+      data.skills = $scope.getSkill;
+      data.categories = $scope.getCategory;
+      return $http.post('http://api.prolaby.com/api/post/user', data).success(function(data) {
+        return console.log('user reg', data);
+      });
+    }
   };
   return $scope.login = function() {
     return ngDialog.open({

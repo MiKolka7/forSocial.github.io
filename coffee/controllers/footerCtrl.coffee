@@ -1,8 +1,9 @@
 angular.module 'app.controller.footer', []
-    .controller 'footerCtrl', ($scope, $rootScope, localStorageService) ->
+    .controller 'footerCtrl', ($scope, $rootScope, localStorageService, $state) ->
 
         $scope.setLang = (lang) ->
             localStorageService.cookie.set('lang', lang)
+            $state.reload()
 
         if $rootScope.lang.language is 'ua'
             $scope.language = 'Українська'
