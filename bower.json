@@ -29,6 +29,8 @@
     "ngInfiniteScroll": "1.0.0",
     "textAngular": "~1.4.5",
     "underscore": "~1.8.3",
-    "gmaps": "~0.4.19"
+    "gmaps": "~0.4.19",
+    "angular-google-maps": "~2.2.1",
+    "ngmap": "~1.13.7"
   }
 }

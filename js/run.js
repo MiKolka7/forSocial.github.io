@@ -1,9 +1,7 @@
 angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, localStorageService) {
   var lang;
   lang = localStorageService.cookie.get('lang');
-  if (!lang) {
-    lang = 'ua';
-  }
+  lang = 'ua';
   $rootScope.openPopup = function(name) {
     return ngDialog.open({
       template: "template/popup/" + name + ".html",

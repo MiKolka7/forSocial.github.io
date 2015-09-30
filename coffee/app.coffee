@@ -4,6 +4,7 @@ angular.module 'app', [
     'ngDialog'
     'textAngular'
     'LocalStorageModule'
+    'ngMap'
 
     'app.config.run'
     'app.config.route'

@@ -2,11 +2,11 @@ angular.module 'app.directive.map', []
 .directive 'map', () ->
     restrict: 'A'
     link: (scope, element) ->
-        map = new GMaps({
-            div: '#map',
-            lat: -12.043333,
-            lng: -77.028333
-        });
+#        map = new GMaps({
+#            div: '#map',
+#            lat: -12.043333,
+#            lng: -77.028333
+#        });
 
 #        gMap = (lat, lon) ->
 #            settings =
@@ -15,13 +15,13 @@ angular.module 'app.directive.map', []
 #                mapTypeId: google.maps.MapTypeId.ROADMAP
 #
 #            map = new google.maps.Map(element[0], settings)
-#
+
 #        gMap()
 
-        map.geolocate(
-            success: (position) ->
-                map.setCenter(position.coords.latitude, position.coords.longitude)
-        )
+#        map.geolocate(
+#            success: (position) ->
+#                map.setCenter(position.coords.latitude, position.coords.longitude)
+#        )
 
         scope.addMapPoint = () ->
             map = new google.maps.Marker(

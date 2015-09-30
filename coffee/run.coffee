@@ -3,8 +3,8 @@ angular.module('app.config.run', [])
 
         lang = localStorageService.cookie.get('lang')
 
-        if (!lang)
-            lang = 'ua'
+#        if (!lang)
+        lang = 'ua'
 
         $rootScope.openPopup = (name) ->
             ngDialog.open({
@@ -27,7 +27,6 @@ angular.module('app.config.run', [])
                 data.language = lang
                 $rootScope.lang = data
         )
-
 
 
 #        if (!$cookieStore.get('authorization'))
