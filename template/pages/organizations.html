@@ -15,11 +15,15 @@
         <ul class="filter__list">
             <li class="filter__list__item"
                 ng-repeat="s in scopes"
-                ng-bind="s.name"></li>
+                ng-bind="s.name"
+                ng-click="addFilter(s.idscope)"
+                is-check>
+            </li>
         </ul>
     </div>
 
-    <button ng-click="openPopup('addOrganization')" class="button btn-event btn--blue btn--big">Створити</button>
+    <button ng-click="openPopup('addOrganization')"
+            class="button btn-event btn--blue btn--big">Створити</button>
 
 </div>
 
@@ -28,7 +32,7 @@
 
     <ul class="events organizations" ng-if="type == 1">
 
-        <li class="events__item organization__item" ng-repeat="item in organizations">
+        <li class="events__item organization__item" ng-repeat="item in organizations | allKeyfilter : chooseFilter">
             <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
 
             <article class="events__item__container">
@@ -49,7 +53,7 @@
 
     <ul class="events organizations" ng-if="type == 2">
 
-        <li class="events__item organization__item" ng-repeat="item in companies">
+        <li class="events__item organization__item" ng-repeat="item in companies | allKeyfilter : chooseFilter">
             <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
 
             <article class="events__item__container">

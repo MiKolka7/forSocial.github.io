@@ -4,8 +4,14 @@ angular.module('app.directives', [])
     link: (scope, element) ->
 
         element.on 'click', () ->
-            console.log _.filter(@.classList, 'is-active')
-            if _.has(@.classList, 'is-active')
+            active = null
+
+            _.forEach(@.classList, (item) ->
+                if item is 'is-active'
+                    active = true
+            )
+
+            if active
                 element.removeClass('is-active')
             else
                 element.addClass('is-active')

@@ -2,10 +2,15 @@
     <div class="rg-banner__overlay" ng-init="sw = 1">
         <div class="container container--min">
             <div class="rg-banner__header">
-                <a href="#"><img class="rg-banner__logo" src="images/design/h_logo.png" height="20" width="178" alt=""></a>
-                <a href="" ng-click="login()" class="rg-banner__btn">Увійти</a>
+                <a href="#">
+                    <img class="rg-banner__logo" src="images/design/h_logo.png" height="20" width="178" alt="">
+                </a>
+                <a href=""
+                   ng-click="login()"
+                   class="rg-banner__btn"
+                   ng-bind="::lang.header.enter"></a>
             </div>
-            <h1 class="rg-banner__title">Вирішуємо великі та маленькі проблеми!</h1>
+            <h1 class="rg-banner__title" ng-bind="::lang.registration.header"></h1>
 
             <div class="rg-banner__stage">
                 <a class="dot-item" ng-click="sw = 1" ng-class="{'dot-item--active': sw === 1}" href="">1</a>
@@ -19,21 +24,21 @@
                 <form name="reg">
                     <div ng-show="sw === 1" class="first-stage narrow">
                         <label>
-                            Прізвище та ім'я
+                            <span ng-bind="::lang.registration.form.name"></span>
                             <div class="rg-input-wrap">
                                 <i class="sprite-name"></i>
-                                <input class="rg-input" ng-model="r.user" type="text" required>
+                                <input class="rg-input" ng-model="r.name" type="text" required>
                             </div>
                         </label>
                         <label>
-                            Email
+                            <span ng-bind="::lang.registration.form.email"></span>
                             <div class="rg-input-wrap">
                                 <i class="sprite-mail"></i>
-                                <input class="rg-input" ng-model="r.mail" type="email" required>
+                                <input class="rg-input" ng-model="r.email" type="email" required>
                             </div>
                         </label>
                         <label>
-                            Пароль
+                            <span ng-bind="::lang.registration.form.pass"></span>
                             <div class="rg-input-wrap">
                                 <i class="sprite-lock"></i>
                                 <input class="rg-input" ng-model="r.pass" type="password" required>
@@ -44,14 +49,16 @@
                     <!-- /first-stage -->
                     <div ng-show="sw === 2" class="second-stage narrow">
                         <label>
-                            Місто
+                            <span ng-bind="::lang.registration.form.city"></span>
                             <div class="rg-input-wrap">
                                 <i class="sprite-map"></i>
-                                <input class="rg-input" ng-model="r.city" type="text" required>
+                                <select class="rg-input" ng-model="r.idcity">
+                                    <option ng-repeat="item in city" value="{{item.idCity}}" ng-bind="item.name"></option>
+                                </select>
                             </div>
                         </label>
                         <label>
-                            Дата народження
+                            <span ng-bind="::lang.registration.form.birthdate"></span>
                             <div class="rg-input-wrap">
                                 <i class="sprite-calendar"></i>
                                 <input class="rg-input" ng-model="r.date" type="date" required>
@@ -61,39 +68,43 @@
                             Стать
                             <div class="rg-input rg-input--sex">
                                 <input type="radio" ng-model="r.gender" name="sex" id="male" value="male">
-                                <label for="male">жіноча</label>
+                                <label for="male" ng-bind="::lang.registration.form.woman"></label>
                                 <input type="radio" ng-model="r.gender" name="sex" id="female" value="female">
-                                <label for="female">чоловіча</label>
+                                <label for="female" ng-bind="::lang.registration.form.man"></label>
                             </div>
                         </label>
-                        <button ng-click="sw = 3" class="rg-btn">Продовжити</button>
+                        <button ng-click="sw = 3" class="rg-btn"
+                                ng-bind="::lang.registration.form.continue"></button>
                     </div>
                     <!-- /second-stage -->
                     <div ng-show="sw === 3" class="third-stage">
                         <div class="third-stage__item">
-                            Хочу допомагати:
+                            <span ng-bind="::lang.registration.form.toHelp + ':'"></span>
                             <br><br><br>
                             <label ng-repeat="category in categories track by $index">
-                                <input type="checkbox" ng-model="getCategory[$index]" ng-value="category.idCategory">
+                                <input type="checkbox" ng-model="getCategory[$index]" value="{{category.idCategory}}">
                                 <span ng-bind="category.name"></span>
                             </label>
                         </div>
                         <div class="third-stage__item">
-                            Маю навики:
+                            <span ng-bind="::lang.registration.form.skills + ':'"></span>
                             <br><br><br>
                             <label ng-repeat="skill in skills track by $index">
-                                <input type="checkbox" ng-model="getSkill[$index]" ng-value="skill.idSkill">
+                                <input type="checkbox" ng-model="getSkill[$index]" value="{{skill.idSkill}}">
                                 <span ng-bind="skill.name"></span>
                             </label>
                         </div>
-                        <a href="" ng-click="registr()" class="rg-btn narrow">Зареєструватися</a>
+                        <a href=""
+                           ng-click="registr()"
+                           class="rg-btn narrow"
+                           ng-bind="::lang.registration.form.registration"></a>
                     </div>
                     <!-- /third-stage -->
                 </form>
                 <div class="rg-checkbox-wrap">
                     <label>
                         <input class="rg-checkbox" type="checkbox" required>
-                        Згода на обробку даних
+                        <span ng-bind="::lang.registration.form.dataProcessing"></span>
                     </label>
                 </div>
             </div>
@@ -103,47 +114,15 @@
 </div>
 <!-- /rg-banner -->
 <div class="rg-content">
-    <h2 class="rg-content__title">FORSOCIAL — територія небайдужих!</h2>
+    <h2 class="rg-content__title" ng-bind="'FORSOCIAL — ' + lang.registration.info.title + ' !'"></h2>
 
-    <h3 class="rg-content__descript">Хочеш допомогти або шукаєш допомогу ?</h3>
+    <h3 class="rg-content__descript" ng-bind="::lang.registration.info.subTitle + '?'"></h3>
 
     <ul class="rg-list">
-        <li class="rg-item">
-            <img class="rg-item__img" src="images/design/icon/rg_1.png" alt="">
-            <h4 class="rg-item__title">Можливість</h4>
-
-            <p class="rg-item__descript">Тебе почують тисячі волонтерів по всій Україні</p>
-        </li>
-        <li class="rg-item">
-            <img class="rg-item__img" src="images/design/icon/rg_2.png" alt="">
-            <h4 class="rg-item__title">ШВИДКІСТЬ</h4>
-
-            <p class="rg-item__descript">Ти знайдеш швидке вірішення своєї проблеми</p>
-        </li>
-        <li class="rg-item">
-            <img class="rg-item__img" src="images/design/icon/rg_3.png" alt="">
-            <h4 class="rg-item__title">ОБ’єднання</h4>
-
-            <p class="rg-item__descript">Залучи однодумців до спільної реалізації твого проекту</p>
-        </li>
-        <li class="rg-item">
-            <img class="rg-item__img" src="images/design/icon/rg_4.png" alt="">
-            <h4 class="rg-item__title">ДОПОМОГА</h4>
-
-            <p class="rg-item__descript">Зроби чиєсь життя світлішим та&nbsp;покращи свою карму
-            </p>
-        </li>
-        <li class="rg-item">
-            <img class="rg-item__img" src="images/design/icon/rg_5.png" alt="">
-            <h4 class="rg-item__title">вибір</h4>
-
-            <p class="rg-item__descript">Знаходь нові волонтерські можливості відповідно до твоїх вподобань</p>
-        </li>
-        <li class="rg-item">
-            <img class="rg-item__img rg-item__img--ver" src="images/design/icon/rg_6.png" alt="">
-            <h4 class="rg-item__title">МАСШТАБНІСТЬ</h4>
-
-            <p class="rg-item__descript">Cтань частиною наймаштабнішого руху небайдужих</p>
+        <li class="rg-item" ng-repeat="item in ::lang.registration.info.item track by $index">
+            <img class="rg-item__img" src="images/design/icon/rg_{{::$index + 1}}.png" alt="">
+            <h4 class="rg-item__title" ng-bind="::item.title"></h4>
+            <p class="rg-item__descript" ng-bind="::item.text"></p>
         </li>
     </ul>
 </div>
