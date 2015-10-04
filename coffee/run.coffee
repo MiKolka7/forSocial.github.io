@@ -3,14 +3,19 @@ angular.module('app.config.run', [])
 
         lang = localStorageService.cookie.get('lang')
 
-#        if (!lang)
-        lang = 'ua'
+        if (!lang)
+            lang = 'ua'
 
         $rootScope.openPopup = (name) ->
             ngDialog.open({
                 template: "template/popup/#{name}.html",
                 controller: "#{name}Ctrl"
             })
+
+        $http.get('http://api.prolaby.com/api/get/city/all')
+            .success((data) ->
+                $rootScope.city = data
+            )
 
         $http.get('http://api.prolaby.com/api/get/skills/all')
             .success((data) ->
@@ -38,6 +43,6 @@ angular.module('app.config.run', [])
         return true
 
 
-#    .config(function(cfpLoadingBarProvider) {
+#    .config( (cfpLoadingBarProvider) ->
 #        cfpLoadingBarProvider.includeSpinner = true
-#    })
+#    )

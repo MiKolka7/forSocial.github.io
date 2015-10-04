@@ -10,6 +10,7 @@ angular.module('app.config.route', [])
                         controller: 'eventsCtrl'
                         templateUrl: 'template/pages/events.html'
                     'header':
+                        controller: 'headerCtrl'
                         templateUrl: 'template/header.html'
                     'footer':
                         controller: 'footerCtrl'

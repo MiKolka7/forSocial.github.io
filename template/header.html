@@ -3,48 +3,48 @@
 	<div class="header_menu">
 		<a class="m_top_link"
 		   href=""
-		   ng-click="visibleMenu = visibleMenu ? false : true">
+		   ng-click="changeVisibleMenu()">
 		</a>
+		<h5 class="header_menu_title" ng-bind="page"></h5>
 
 		<ul class="m_inside" ng-class="{'is-active' : visibleMenu}">
 			<li class="m_category"
-				ng-click="visibleMenu = visibleMenu ? false : true">
-				<a ng-href=""
-				   class="link_inside icon-close"></a>
+				ng-click="changeVisibleMenu()">
+				<i class="link_inside icon-close"></i>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/"
-				   ng-click="visibleMenu = visibleMenu ? false : true"
+				   ng-click="changeVisibleMenu()"
 				   ng-bind="::lang.header.event"
 				   class="link_inside icon-news"></a>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/messages"
-				   ng-click="visibleMenu = visibleMenu ? false : true"
+				   ng-click="changeVisibleMenu()"
 				   ng-bind="::lang.header.mess"
 				   class="link_inside icon-mail"></a>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/friends"
-				   ng-click="visibleMenu = visibleMenu ? false : true"
+				   ng-click="changeVisibleMenu()"
 				   ng-bind="::lang.header.friend"
 				   class="link_inside icon-network"> </a>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/organizations"
-				   ng-click="visibleMenu = visibleMenu ? false : true"
+				   ng-click="changeVisibleMenu()"
 				   ng-bind="::lang.header.organ"
 				   class="link_inside icon-organization"></a>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/map"
-				   ng-click="visibleMenu = visibleMenu ? false : true"
+				   ng-click="changeVisibleMenu()"
 				   ng-bind="::lang.header.map"
 				   class="link_inside icon-map"></a>
 			</li>
 			<li class="m_category">
 				<a ng-href="#/help"
-				   ng-click="visibleMenu = visibleMenu ? false : true"
+				   ng-click="changeVisibleMenu()"
 				   ng-bind="::lang.header.help"
 				   class="link_inside icon-help"></a>
 			</li>
@@ -57,13 +57,20 @@
 					<img src="" alt="" class="p_top_link">
 					<ul class="p_inside">
 						<li>
-							<a ng-href="" class="p_link_inside" ng-bind="::lang.header.profile"></a>
+							<a class="p_link_inside"
+							   ng-href=""
+							   ng-bind="::lang.header.profile"></a>
 						</li>
 						<li>
-							<a ng-href="" class="p_link_inside" ng-bind="::lang.header.customise"></a>
+							<a class="p_link_inside"
+							   ng-href=""
+							   ng-bind="::lang.header.customise"></a>
 						</li>
 						<li>
-							<a ng-href="" class="p_link_inside" ng-bind="::lang.header.exit"></a>
+							<a class="p_link_inside"
+							   ng-href=""
+							   ng-click="logout()"
+							   ng-bind="::lang.header.exit"></a>
 						</li>
 					</ul>
 				</li>
