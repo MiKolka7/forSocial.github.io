@@ -3,53 +3,20 @@
     <div class="filter">
         Місто
         <ul class="filter__list">
-            <li class="filter__list__item">
-                Київ
-            </li>
-            <li class="filter__list__item">
-                Львів
-            </li>
-            <li class="filter__list__item">
-                Мюнхен
+            <li class="filter__list__item"
+                ng-repeat="item in city"
+                ng-click="selectCity(item.id)"
+                ng-bind="item.name"
+                is-check>
             </li>
         </ul>
     </div>
 
-    <div class="filter">
-        Місяць
-        <ul class="filter__list">
-            <li class="filter__list__item">
-                Січень
-            </li>
-            <li class="filter__list__item">
-                Лютий
-            </li>
-            <li class="filter__list__item">
-                Квітень
-            </li>
-        </ul>
-    </div>
-
-    <div class="filter">
-        Категорія
-        <ul class="filter__list">
-            <li class="filter__list__item">
-                1
-            </li>
-            <li class="filter__list__item">
-                2
-            </li>
-            <li class="filter__list__item">
-                3
-            </li>
-        </ul>
-    </div>
-
-    <button class="btn btn-event btn--blue btn--big">Створити</button>
+    <button class="button btn-event btn--blue btn--big">Створити</button>
 
 </div>
 
 
-<div class="container">
-    <!--<ui-gmap-google-map class="g-maps"></ui-gmap-google-map>-->
-</div>
+<main class="container">
+    <section id="map" class="g-maps" gmap></section>
+</main>

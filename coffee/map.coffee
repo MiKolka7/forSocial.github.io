@@ -1,32 +1,34 @@
 angular.module 'app.directive.map', []
-.directive 'map', () ->
+.directive 'gmap', ($http) ->
     restrict: 'A'
     link: (scope, element) ->
-#        map = new GMaps({
-#            div: '#map',
-#            lat: -12.043333,
-#            lng: -77.028333
-#        });
+        map = new GMaps(
+            el: '#map'
+            lat: 50.449743916340445
+            lng: 30.454806312918663
+        )
 
-#        gMap = (lat, lon) ->
-#            settings =
-#                center: new google.maps.LatLng(lat, lon)
-#                zoom: 15
-#                mapTypeId: google.maps.MapTypeId.ROADMAP
-#
-#            map = new google.maps.Map(element[0], settings)
+        MapsGeolocate = ->
+            GMaps.geolocate success: (position) ->
+                map.setCenter position.coords.latitude, position.coords.longitude
+                return
+            return
 
-#        gMap()
+        MapsGeolocate()
 
-#        map.geolocate(
-#            success: (position) ->
-#                map.setCenter(position.coords.latitude, position.coords.longitude)
-#        )
+        scope.MapAddMarker = (data) ->
+            content = '' +
+                '<h6 style="font-size: 16px; margin-bottom: 5px;">' + data.title + '</h6>' +
+                '<p><img src="images/' + data.cover + '" width="300" alt=""></p>' +
+                '<p>Дата: ' + data.date_start + '</p>' +
+                '<p><a href="event/' + data.idEvent + '">Читати</a></p>'
 
-        scope.addMapPoint = () ->
-            map = new google.maps.Marker(
-                position: new google.maps.LatLng(lat, lan)
-                map: map
-            )
+            map.addMarker
+                lat: data.lat
+                lng: data.lon
+                title: data.title
+                infoWindow:
+                    content: content
+            return
 
         return true

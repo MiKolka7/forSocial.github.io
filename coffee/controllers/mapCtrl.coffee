@@ -1,19 +1,26 @@
 angular.module 'app.controller.map', []
-    .controller 'mapCtrl', ($scope) ->
+    .controller 'mapCtrl', ($scope, $http) ->
 
-        GmapStreet = (lat, lon) ->
-            city = undefined
-            street = undefined
-            num = undefined
+        selectCity = []
 
-            $http.post('http://maps.google.com/maps/api/geocode/json?latlng=' + lat + ',' + lon).success( (data) ->
-                address = data.results[0].address_components
-
-                city = address[4].short_name
-                street = address[2].long_name
-                num = address[0].short_name
+        $http.get('http://api.prolaby.com/api/get/event/all?map')
+            .success( (data) ->
+                _.forEach(data, (item)->
+                    $scope.MapAddMarker item
+                )
             )
 
-            result = city + ', ' + street + ', ' + num
+        $scope.selectCity = () ->
+            i = _.indexOf(selectCity[key], val) + 1
 
+            if !i
+                selectCity[key].push val
+            else
+                selectCity[key].splice i - 1, 1
 
+            $http.get('http://api.prolaby.com/api/get/event/all?map', {params: {city: selectCity}} )
+                .success( (data) ->
+                _.forEach(data, (item)->
+                    $scope.MapAddMarker item
+                )
+            )
