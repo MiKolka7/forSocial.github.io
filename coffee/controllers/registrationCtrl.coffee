@@ -12,10 +12,13 @@ angular.module 'app.controller.registration', []
                 data = $scope.r
                 data.skills = $scope.getSkill
                 data.categories = $scope.getCategory
+                delete data.date
 
-                $http.get('http://api.prolaby.com/api/post/user', data)
+                console.log data
+                $http.get('http://api.prolaby.com/api/post/user', {params: data} )
                     .success( (data) ->
                         if data
+                            console.log data
                             openLoginPopup()
                     )
 

@@ -1,10 +1,14 @@
 angular.module 'app.controller.login', []
-    .controller 'loginCtrl', ($scope, $http) ->
+    .controller 'loginCtrl', ($scope, $http, localStorageService, $location) ->
+
 
         $scope.auth = () ->
             if $scope.login.$valid
-                console.log $scope.user
                 $http.get('http://api.prolaby.com/api/get/user/auth', {params: $scope.user})
                     .success( (data) ->
-                        console.log 'user auth', data
+                        console.log data
+                        if data
+                            $scope.closeThisDialog()
+                            localStorageService.cookie.set('user', data[0])
+                            $location.url('/events')
                     )

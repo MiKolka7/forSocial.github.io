@@ -1,18 +1,22 @@
 <div class="form_wrap">
-    <h4>ВХІД</h4>
+    <h4 ng-bind="::lang.header.enter"></h4>
 
     <form class="modal-form" name="login">
+
         <lable>
-            <span>Email:</span>
-            <input type="email" ng-model="user.email" required>
+            <span ng-bind="::lang.registration.form.email + ':'"></span>
+            <input type="email" ng-model="user.email" required/>
         </lable>
+        
         <label>
-            <span>Пароль:</span>
-            <input type="password" ng-model="user.pass" required>
+            <span ng-bind="::lang.registration.form.pass + ':'"></span>
+            <input type="password" ng-model="user.pass" required/>
         </label>
 
-        <a href="#">Нагадати пароль?</a>
+        <a href="" ng-bind="::lang.registration.form.remindPass + '?'"></a>
 
-        <button type="submit" ng-click="auth()">Увійти</button>
+        <button type="submit"
+                ng-click="auth()"
+                ng-bind="::lang.header.login"></button>
     </form>
 </div>
