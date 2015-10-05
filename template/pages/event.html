@@ -4,14 +4,22 @@
     <article class="event">
         <h3 class="event__title">
             <span ng-bind="event.title"></span>
-            <a href="#" class="button btn-event btn--blue btn--big" ng-click="join()">Приєднатись</a>
+            <button
+                    class="button btn-event btn--blue btn--big"
+                    ng-click="join()"
+                    ng-bind="joinText">
+            </button>
             <!--<a href="#" class="button btn-event btn&#45;&#45;blue btn&#45;&#45;big">Повідомлення</a>-->
         </h3>
 
         <div class="event__content">
             <img src="images/events/{{event.photo}}" alt="avatar" class="events__ava"/>
             <div class="event__info">
-                <h6 class="events__name"></h6>
+                <h6 class="events__name" ng-bind="event.name"></h6>
+                <p>
+                    <span ng-bind="event.date_start"></span> - <span ng-bind="event.date_end"></span>
+                </p>
+                <p ng-bind="event.address"></p>
             </div>
             <p class="event__text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -33,16 +41,19 @@
                         </span>
 
                         <time class="msg_time"
-                              datetime="{{item.createDate}}"
-                              ng-bind="item.createDate | date : 'H:MM dd:MM:yyyy'"></time>
+                              datetime="{{::item.createDate}}"
+                              ng-bind="::item.createDate | date : 'H:MM dd:MM:yyyy'"></time>
 
-                        <a href="#"
-                           class="user_icon"
-                           style="background-image: url(images/users/{{ item.user.photo }})"></a>
+                        <a class="user_icon"
+                           ng-href="#/user/{{ item.user.idUser }}"
+                           style="background-image: url(images/users/{{ ::item.user.photo }})"></a>
 
                         <article class="msg_item_container">
-                            <h4 class="msg_item_name" ng-bind="item.user.name"></h4>
-                            <p class="msg_item_text" ng-bind="item.text"></p>
+                            <a class="msg_item_name"
+                               ng-href="#/user/{{ item.user.idUser }}"
+                               ng-bind="::item.user.name">
+                            </a>
+                            <p class="msg_item_text" ng-bind="::item.text"></p>
                         </article>
                     </li>
                 </ul>

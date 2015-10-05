@@ -48,26 +48,29 @@
 
         <li class="events__item"
             ng-repeat="item in events">
-            <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
+            <img ng-src="images/{{::item.cover}}" alt="" class="events__item__img"/>
 
             <article class="events__item__container">
                 <div class="events__item__info">
-                    <address ng-bind="item.place + ','"></address>
+                    <address ng-bind="::item.city + ','"></address>
                     <time datetime="12.06.93">12 червня</time>
                 </div>
-                <h4 class="events__item__title" ng-bind="item.title"></h4>
-                <p class="events__item__text" ng-bind="item.description"></p>
+                <h4 class="events__item__title" ng-bind="::item.title"></h4>
+                <p class="events__item__text" ng-bind="::item.description"></p>
                 <div class="events__item__users">
-                    <p>30 учасників</p>
-                    <ul class="users">
-                        <li class="users__list" style="background: url('images/img1.png')"></li>
-                        <li class="users__list" style="background: url('images/img1.png')"></li>
-                        <li class="users__list" style="background: url('images/img1.png')"></li>
-                        <li class="users__list" style="background: url('images/img1.png')"></li>
-                        <li class="users__list" style="background: url('images/img1.png')"></li>
-                    </ul>
+                    <p ng-bind="::item.users.length + ' учасників'"></p>
+                    <div class="users">
+                        <a class="users__list"
+                           ng-repeat="user in ::item.users"
+                           ng-href="'#/user/' + user.idUser"
+                           style="background: url('images/{{::user.photo}}')">
+                        </a>
+                    </div>
                 </div>
-                <a ng-href="#/event/{{item.idEvent}}" class="button btn-event btn--blue btn--big">Допомогти</a>
+                <a ng-href="#/event/{{::item.idEvent}}"
+                   class="button btn-event btn--blue btn--big"
+                   ng-bind="::lang.btn.help">
+                </a>
             </article>
         </li>
     </ul>

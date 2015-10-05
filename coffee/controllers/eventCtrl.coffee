@@ -1,5 +1,11 @@
 angular.module 'app.controller.event', []
-    .controller 'eventCtrl', ($scope, $http, $stateParams) ->
+    .controller 'eventCtrl', ($scope, $http, $stateParams, localStorageService) ->
+
+        user = localStorageService.cookie.get('user')
+        console.log user
+
+
+        $scope.joinText = 'Приєднатись'
 
         $http.get('http://api.prolaby.com/api/get/event/', {params: {id: $stateParams.id}})
             .success( (data) ->
@@ -29,20 +35,22 @@ angular.module 'app.controller.event', []
             $http.get('http://api.prolaby.com/api/post/event/comment',
                 {params:
                     idEvent: $stateParams.id
-                    idUser: 17
+                    idUser: user.idUser
                     text: $scope.comment
                 })
                 .success( (data) ->
                     if data
-                        $scope.comment = ''
-
                         newComment =
-                            idUser: 17
+                            user: {
+                                idUser: user.idUser
+                                name: user.name
+                            }
                             text: $scope.comment
                             createDate: new Date()
 
+                        $scope.comment = ''
+
                         $scope.commments.push(newComment)
-                        usersInfo(newComment)
             )
 
         $scope.join = () ->

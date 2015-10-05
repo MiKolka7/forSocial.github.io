@@ -1,5 +1,5 @@
 angular.module 'app.directive.infiniteScroll', []
-.directive 'infiniteScroll', ($timeout, $window) ->
+.directive 'infiniteScroll', ($timeout, $window, $rootScope) ->
     restrict: 'A'
     link: (scope) ->
         $timeout(() ->
@@ -12,6 +12,6 @@ angular.module 'app.directive.infiniteScroll', []
 
             scope.load = () ->
                 scope.loading = true
-                scope.loading = false
+                scope.nextPage()
+                docH = $('body').height()
         )
-
