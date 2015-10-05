@@ -1,5 +1,5 @@
 angular.module 'app.controller.friends', []
-    .controller 'friendsCtrl', ($scope, $http) ->
+    .controller 'friendsCtrl', ($scope, $http, localStorageService) ->
 
         user = localStorageService.cookie.get('user')
 
