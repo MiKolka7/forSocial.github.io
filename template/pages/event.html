@@ -21,10 +21,7 @@
                 </p>
                 <p ng-bind="event.address"></p>
             </div>
-            <p class="event__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua.
-            </p>
+            <p class="event__text" ng-bind="event.description"></p>
         </div>
     </article>
 
@@ -42,15 +39,16 @@
 
                         <time class="msg_time"
                               datetime="{{::item.createDate}}"
-                              ng-bind="::item.createDate | date : 'H:MM dd:MM:yyyy'"></time>
+                              ng-bind="::item.createDate | date : 'H:MM dd:MM:yyyy'">
+                        </time>
 
                         <a class="user_icon"
-                           ng-href="#/user/{{ item.user.idUser }}"
+                           ng-href="#/user/{{ ::item.user.idUser }}"
                            style="background-image: url(images/users/{{ ::item.user.photo }})"></a>
 
                         <article class="msg_item_container">
                             <a class="msg_item_name"
-                               ng-href="#/user/{{ item.user.idUser }}"
+                               ng-href="#/user/{{ ::item.user.idUser }}"
                                ng-bind="::item.user.name">
                             </a>
                             <p class="msg_item_text" ng-bind="::item.text"></p>
