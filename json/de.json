@@ -1,0 +1,79 @@
+{
+    "header": {
+        "event": "Veranstaltungen",
+        "mess": "Nachrichten",
+        "friend": "Freunde",
+        "organ": "Gesellschaften",
+        "map": "Karte",
+        "help": "Suche Hilfe",
+        "profile": "Mein Profil",
+        "customise": "Einstellungen",
+        "exit": "Ausgang",
+        "login": "Login",
+        "enter": "Eingang"
+    },
+
+    "filter": {
+        "city": "Stadt",
+        "mouth": "Monat",
+        "category": "Kategorie",
+        "scope": "Bereich"
+    },
+
+    "btn": {
+        "input": "Ankommende",
+        "output": "Hesendete",
+        "add": "Schaffen",
+        "help": "Helfen"
+    }
+
+    "registration": {
+        "header": "Enscheiden große und kleine Probleme!",
+        "form": {
+            "name": "Familiename und Name",
+            "email": "Email",
+            "pass": "Parole",
+            "city": "Stadt",
+            "birthday": "Geburgsdatum",
+            "gender": "Geschlecht",
+            "woman": "Femininum",
+            "man": "Maskulinum",
+            "toHelp": "Möchte helfen",
+            "skills": "Habe Fertigkeiten",
+            "continue": "Gehenweiter",
+            "registration": "Registrierung",
+            "remindPass": "Errinern an Parole",
+            "dataProcessing": "Zustimmung zur Verarbeitung der Daten"
+        },
+        "info": {
+            "title": "Territorium der nicht Gleichgültigen",
+            "subTitle": "Möchten helfen oder suchen Hilfe",
+            "item": [
+                {
+                    "title": "Möglichkeit",
+                    "text": "Sie werden von tausenden Freiwilligen gehört worden"
+                },
+                {
+                    "title": "Schelligkeit",
+                    "text": "Sie werden schnelle Entscheidung ihres Problems finden"
+                },
+                {
+                    "title": "Vereinigung",
+                    "text": "Verführen Sie die Gleichgesinnte zur Realisierung ihrem Projekt"
+                },
+                {
+                    "title": "Hilfe",
+                    "text": "Machen Sie jemandes Leben klärer und verbessen Sie ihre Karma"
+                },
+                {
+                    "title": "Auswahl",
+                    "text": "Finden Sie neue freiwillige Möglichkeiten entsprechend ihren Geschmäcke"
+                },
+                {
+                    "title": "Maßstabgröße",
+                    "text": "Werden Sie den Teil maßstabgrößter Bewegung den nicht Gleichgültigen"
+                }
+            ]
+        }
+    }
+}

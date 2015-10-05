@@ -9,8 +9,13 @@ angular.module('app.controller.registration', []).controller('registrationCtrl',
       data = $scope.r;
       data.skills = $scope.getSkill;
       data.categories = $scope.getCategory;
-      return $http.get('http://api.prolaby.com/api/post/user', data).success(function(data) {
+      delete data.date;
+      console.log(data);
+      return $http.get('http://api.prolaby.com/api/post/user', {
+        params: data
+      }).success(function(data) {
         if (data) {
+          console.log(data);
           return openLoginPopup();
         }
       });

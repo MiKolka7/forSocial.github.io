@@ -20,25 +20,18 @@ angular.module('app.filters', []).filter('unique', function() {
 }).filter('allKeyfilter', function() {
   return function(obj, arr) {
     var newArr;
-    console.log(obj);
-    return obj;
     newArr = [];
     if (_.isEmpty(obj)) {
       return false;
     }
-    obj.forEach(function(item) {
-      _.forEach(item.category, function(item2, i) {
-        if (!_.isEmpty(arr)) {
-          if (_.intersection(item2, item.category[i])) {
-            return newArr = item;
-          }
-        }
-      });
+    _.forEach(arr, function(item) {
+      return newArr.push(_.filter(obj, function(a) {
+        return a.type === item;
+      }));
     });
     if (_.isEmpty(arr)) {
       newArr = obj;
     }
-    console.log(newArr, obj);
-    return newArr;
+    return newArr = _.flatten(newArr);
   };
 });

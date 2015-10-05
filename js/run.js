@@ -1,13 +1,18 @@
 angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, localStorageService) {
   var lang;
   lang = localStorageService.cookie.get('lang');
-  lang = 'ua';
+  if (!lang) {
+    lang = 'ua';
+  }
   $rootScope.openPopup = function(name) {
     return ngDialog.open({
       template: "template/popup/" + name + ".html",
       controller: name + "Ctrl"
     });
   };
+  $http.get('http://api.prolaby.com/api/get/city/all').success(function(data) {
+    return $rootScope.city = data;
+  });
   $http.get('http://api.prolaby.com/api/get/skills/all').success(function(data) {
     return $rootScope.skills = data;
   });
@@ -19,4 +24,6 @@ angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, l
     return $rootScope.lang = data;
   });
   return true;
+}).config(function(cfpLoadingBarProvider) {
+  return cfpLoadingBarProvider.includeSpinner = true;
 });

@@ -3,8 +3,14 @@ angular.module('app.directives', []).directive('isCheck', function() {
     restrict: 'A',
     link: function(scope, element) {
       return element.on('click', function() {
-        console.log(_.filter(this.classList, 'is-active'));
-        if (_.has(this.classList, 'is-active')) {
+        var active;
+        active = null;
+        _.forEach(this.classList, function(item) {
+          if (item === 'is-active') {
+            return active = true;
+          }
+        });
+        if (active) {
           return element.removeClass('is-active');
         } else {
           return element.addClass('is-active');

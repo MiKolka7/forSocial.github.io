@@ -8,6 +8,7 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
         templateUrl: 'template/pages/events.html'
       },
       'header': {
+        controller: 'headerCtrl',
         templateUrl: 'template/header.html'
       },
       'footer': {
@@ -19,6 +20,7 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
     url: 'friends',
     views: {
       '@': {
+        controller: 'friendsCtrl',
         templateUrl: 'template/pages/friends.html'
       }
     }

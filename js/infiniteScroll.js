@@ -1,4 +1,4 @@
-angular.module('app.directive.infiniteScroll', []).directive('infiniteScroll', function($timeout, $window) {
+angular.module('app.directive.infiniteScroll', []).directive('infiniteScroll', function($timeout, $window, $rootScope) {
   return {
     restrict: 'A',
     link: function(scope) {
@@ -13,7 +13,8 @@ angular.module('app.directive.infiniteScroll', []).directive('infiniteScroll', f
         });
         return scope.load = function() {
           scope.loading = true;
-          return scope.loading = false;
+          scope.nextPage();
+          return docH = $('body').height();
         };
       });
     }

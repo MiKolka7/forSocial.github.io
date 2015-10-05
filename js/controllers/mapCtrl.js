@@ -1,17 +1,25 @@
-angular.module('app.controller.map', []).controller('mapCtrl', function($scope) {
-  var GmapStreet;
-  return GmapStreet = function(lat, lon) {
-    var city, num, result, street;
-    city = void 0;
-    street = void 0;
-    num = void 0;
-    $http.post('http://maps.google.com/maps/api/geocode/json?latlng=' + lat + ',' + lon).success(function(data) {
-      var address;
-      address = data.results[0].address_components;
-      city = address[4].short_name;
-      street = address[2].long_name;
-      return num = address[0].short_name;
+angular.module('app.controller.map', []).controller('mapCtrl', function($scope, $http) {
+  var selectCity;
+  selectCity = [];
+  $http.get('http://api.prolaby.com/api/get/event/all?map').success(function(data) {
+    return _.forEach(data, function(item) {
+      return $scope.MapAddMarker(item);
     });
-    return result = city + ', ' + street + ', ' + num;
+  });
+  return $scope.selectCity = function() {
+    var i;
+    i = _.indexOf(selectCity[key], val) + 1;
+    if (!i) {
+      selectCity[key].push(val);
+    } else {
+      selectCity[key].splice(i - 1, 1);
+    }
+    return $http.get('http://api.prolaby.com/api/get/event/all?map', {
+      params: {
+        city: selectCity
+      }
+    }).success(function(data) {}, _.forEach(data, function(item) {
+      return $scope.MapAddMarker(item);
+    }));
   };
 });
