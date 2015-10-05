@@ -20,6 +20,7 @@ angular.module('app.config.route', [])
                 url: 'friends'
                 views:
                     '@':
+                        controller: 'friendsCtrl'
                         templateUrl: 'template/pages/friends.html'
             )
             .state('main.organizations',

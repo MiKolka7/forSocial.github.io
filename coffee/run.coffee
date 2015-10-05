@@ -43,6 +43,6 @@ angular.module('app.config.run', [])
         return true
 
 
-#    .config( (cfpLoadingBarProvider) ->
-#        cfpLoadingBarProvider.includeSpinner = true
-#    )
+    .config( (cfpLoadingBarProvider) ->
+        cfpLoadingBarProvider.includeSpinner = true
+    )

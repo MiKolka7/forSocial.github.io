@@ -1,71 +1,26 @@
 
-<div class="container filter-line">
+<!--<div class="container filter-line">-->
 
-    <div class="filter">
-        Місто
-        <ul class="filter__list">
-            <li class="filter__list__item">
-                Київ
-            </li>
-            <li class="filter__list__item">
-                Львів
-            </li>
-            <li class="filter__list__item">
-                Мюнхен
-            </li>
-        </ul>
-    </div>
-
-    <div class="filter">
-        Місяць
-        <ul class="filter__list">
-            <li class="filter__list__item">
-                Січень
-            </li>
-            <li class="filter__list__item">
-                Лютий
-            </li>
-            <li class="filter__list__item">
-                Квітень
-            </li>
-        </ul>
-    </div>
-
-    <div class="filter">
-        Категорія
-        <ul class="filter__list">
-            <li class="filter__list__item">
-                1
-            </li>
-            <li class="filter__list__item">
-                2
-            </li>
-            <li class="filter__list__item">
-                3
-            </li>
-        </ul>
-    </div>
-</div>
+<!--</div>-->
 
 
 <div class="container">
 
     <ul class="friends">
 
-        <li class="friends__item">
+        <li class="friends__item" ng-repeat="user in users">
             <img src="http://bit.ly/1OnlZbL" alt="" class="friends__item__img"/>
 
             <article class="friends__item__container">
                 <h4 class="friends__item__name">Name</h4>
                 <p class="friends__item__text activity">
-                    Організатор заходів
                 </p>
-                <p class="friends__item__text age">
-                    28 років
-                </p>
+                <!--<p class="friends__item__text age">-->
+                    <!--28 років-->
+                <!--</p>-->
                 <div class="actions">
-                    <a href="#" class="friends__action send__message">Написати повідомлення</a>
-                    <a href="#" class="friends__action delete">Видалити з кола</a>
+                    <a href="#" class="friends__action send__message" ng-click="setMessage(user.idUser)">Написати повідомлення</a>
+                    <a href="#" class="friends__action delete" ng-click="friend()">Видалити з кола</a>
                 </div>
             </article>
         </li>
