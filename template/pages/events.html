@@ -5,39 +5,39 @@
         Місто
         <ul class="filter__list">
             <li class="filter__list__item"
-                ng-repeat="item in city"
+                ng-repeat="item in ::city"
                 ng-click="addFilter('city', item.id)"
-                ng-bind="item.name"
+                ng-bind="::item.name"
                 is-check>
             </li>
         </ul>
     </div>
 
-    <div class="filter">
-        Місяць
-        <ul class="filter__list">
-            <li class="filter__list__item"
-                ng-repeat="item in month"
-                ng-click="addFilter('month', item)"
-                ng-bind="item"
-                is-check>
-            </li>
-        </ul>
-    </div>
+    <!--<div class="filter">-->
+        <!--Місяць-->
+        <!--<ul class="filter__list">-->
+            <!--<li class="filter__list__item"-->
+                <!--ng-repeat="item in month"-->
+                <!--ng-click="addFilter('month', item)"-->
+                <!--ng-bind="item"-->
+                <!--is-check>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
 
     <div class="filter">
         Категорія
         <ul class="filter__list">
             <li class="filter__list__item"
-                ng-repeat="item in categories"
+                ng-repeat="item in ::categories"
                 ng-click="addFilter('type', item.id)"
-                ng-bind="item.name"
+                ng-bind="::item.name"
                 is-check>
             </li>
         </ul>
     </div>
 
-    <button ng-click="openPopup('addEvent')" class="button btn-event btn--blue btn--big">Створити</button>
+    <button ng-click="openPopup('addEvent')" class="button btn-event btn--blue btn--big" ng-bind="::lang.btn.add"></button>
 
 </div>
 
@@ -48,26 +48,26 @@
 
         <li class="events__item"
             ng-repeat="item in events">
-            <img ng-src="images/{{::item.cover}}" alt="" class="events__item__img"/>
+            <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
 
             <article class="events__item__container">
                 <div class="events__item__info">
-                    <address ng-bind="::item.city + ','"></address>
-                    <time datetime="12.06.93">12 червня</time>
+                    <address ng-bind="item.city + ','"></address>
+                    <time ng-bind="item.date_end | date : 'dd.mm.yyyy'"></time>
                 </div>
                 <h4 class="events__item__title" ng-bind="::item.title"></h4>
                 <p class="events__item__text" ng-bind="::item.description"></p>
                 <div class="events__item__users">
-                    <p ng-bind="::item.users.length + ' учасників'"></p>
+                    <p ng-bind="item.users.length + ' учасників'"></p>
                     <div class="users">
                         <a class="users__list"
-                           ng-repeat="user in ::item.users"
+                           ng-repeat="user in item.users"
                            ng-href="'#/user/' + user.idUser"
                            style="background: url('images/{{::user.photo}}')">
                         </a>
                     </div>
                 </div>
-                <a ng-href="#/event/{{::item.idEvent}}"
+                <a ng-href="#/event/{{item.idEvent}}"
                    class="button btn-event btn--blue btn--big"
                    ng-bind="::lang.btn.help">
                 </a>

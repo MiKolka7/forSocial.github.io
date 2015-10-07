@@ -4,8 +4,8 @@ angular.module 'app', [
     'ngDialog'
     'textAngular'
     'LocalStorageModule'
-    'ngMap'
-    'slick'
+#    'ngMap'
+#    'slick'
     'chieffancypants.loadingBar'
 #    'ngFileUpload'
 

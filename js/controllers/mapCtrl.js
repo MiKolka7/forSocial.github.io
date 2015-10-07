@@ -1,25 +1,36 @@
 angular.module('app.controller.map', []).controller('mapCtrl', function($scope, $http) {
-  var selectCity;
+  var allCity, selectCity;
   selectCity = [];
+  allCity = [];
   $http.get('http://api.prolaby.com/api/get/event/all?map').success(function(data) {
+    allCity = data;
     return _.forEach(data, function(item) {
       return $scope.MapAddMarker(item);
     });
   });
-  return $scope.selectCity = function() {
-    var i;
-    i = _.indexOf(selectCity[key], val) + 1;
+  return $scope.selectCity = function(val) {
+    var filterCity, i, result;
+    filterCity = [];
+    i = _.indexOf(selectCity, val) + 1;
     if (!i) {
-      selectCity[key].push(val);
+      selectCity.push(val);
     } else {
-      selectCity[key].splice(i - 1, 1);
+      selectCity.splice(i - 1, 1);
     }
-    return $http.get('http://api.prolaby.com/api/get/event/all?map', {
-      params: {
-        city: selectCity
-      }
-    }).success(function(data) {}, _.forEach(data, function(item) {
+    _.forEach(selectCity, function(selectCityItem, i) {
+      return filterCity[i] = _.filter(allCity, function(item) {
+        return selectCityItem === item.idcity;
+      });
+    });
+    result = [];
+    _.forEach(filterCity, function(arr) {
+      return _.forEach(arr, function(item) {
+        return result.push(item);
+      });
+    });
+    console.log(result);
+    return _.forEach(result, function(item) {
       return $scope.MapAddMarker(item);
-    }));
+    });
   };
 });

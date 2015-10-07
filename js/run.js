@@ -1,5 +1,9 @@
-angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, localStorageService) {
-  var lang;
+angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, localStorageService, $location) {
+  var lang, user;
+  user = localStorageService.cookie.get('user');
+  if (!user) {
+    $location.path('/registration');
+  }
   lang = localStorageService.cookie.get('lang');
   if (!lang) {
     lang = 'ua';
@@ -24,6 +28,4 @@ angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, l
     return $rootScope.lang = data;
   });
   return true;
-}).config(function(cfpLoadingBarProvider) {
-  return cfpLoadingBarProvider.includeSpinner = true;
 });

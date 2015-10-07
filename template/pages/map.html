@@ -4,9 +4,9 @@
         Місто
         <ul class="filter__list">
             <li class="filter__list__item"
-                ng-repeat="item in city"
-                ng-click="selectCity(item.id)"
-                ng-bind="item.name"
+                ng-repeat="item in ::city"
+                ng-click="selectCity(item.idCity)"
+                ng-bind="::item.name"
                 is-check>
             </li>
         </ul>

@@ -13,15 +13,15 @@
         </h3>
 
         <div class="event__content">
-            <img src="images/events/{{event.photo}}" alt="avatar" class="events__ava"/>
+            <img src="images/events/{{::event.photo}}" alt="avatar" class="events__ava"/>
             <div class="event__info">
-                <h6 class="events__name" ng-bind="event.name"></h6>
+                <h6 class="events__name" ng-bind="::event.name"></h6>
                 <p>
-                    <span ng-bind="event.date_start"></span> - <span ng-bind="event.date_end"></span>
+                    <span ng-bind="::event.date_start"></span> - <span ng-bind="::event.date_end"></span>
                 </p>
-                <p ng-bind="event.address"></p>
+                <p ng-bind="::event.address"></p>
             </div>
-            <p class="event__text" ng-bind="event.description"></p>
+            <p class="event__text" ng-bind="::event.description"></p>
         </div>
     </article>
 
