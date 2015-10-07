@@ -58,6 +58,15 @@ header
     @media screen and (max-height: 700px)
         margin: 0
 
+    @media screen and (max-width: 480px)
+        &:first-child
+            margin-bottom: 20px
+        &:last-child
+            margin: 0
+
+        > a
+            background-position: 0 50%
+
 .m_inside
     @extend .animate
     position: fixed
@@ -75,6 +84,10 @@ header
 
     &.is-active
         transform: translate(0, 0)
+
+    @media screen and (max-width: 480px)
+        width: 240px
+
 
 .link_inside
     display: block
@@ -94,6 +107,14 @@ header
     background:
         position: 0 50%
         repeat: no-repeat
+
+    @media screen and (max-width: 480px)
+        height: 30px
+        padding: 0 0 0 30px
+        margin: 0 0 0 10px
+        line-height: 30px
+        font-size: 16px
+        background-size: 8%
 
 
 .m_top_link

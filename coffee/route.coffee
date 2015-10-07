@@ -70,6 +70,7 @@ angular.module('app.config.route', [])
                         controller: 'registrationCtrl'
                         templateUrl: 'template/pages/registration.html'
                     'footer':
+                        controller: 'footerCtrl'
                         templateUrl: 'template/footer.html'
             )
 

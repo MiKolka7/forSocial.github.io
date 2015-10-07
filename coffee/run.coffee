@@ -29,7 +29,7 @@ angular.module('app.config.run', [])
 
         $http.get("json/#{lang}.json")
             .success((data) ->
-                data.language = lang
+                data.name = lang
                 $rootScope.lang = data
         )
 

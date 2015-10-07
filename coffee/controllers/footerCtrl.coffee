@@ -3,12 +3,12 @@ angular.module 'app.controller.footer', []
 
         $scope.setLang = (lang) ->
             localStorageService.cookie.set('lang', lang)
-            $state.reload()
+            location.reload()
 
-        if $rootScope.lang.language is 'ua'
+        if $rootScope.lang.name is 'ua'
             $scope.language = 'Українська'
-        else if $rootScope.lang.language is 'ru'
+        else if $rootScope.lang.name is 'ru'
             $scope.language = 'Русский'
-        else if $rootScope.lang.language is 'en'
-            $scope.language = 'English'
+        else if $rootScope.lang.name is 'de'
+            $scope.language = 'Deutsch'
 

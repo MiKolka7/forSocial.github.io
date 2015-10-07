@@ -20,7 +20,7 @@ angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, l
     return $rootScope.categories = data;
   });
   $http.get("json/" + lang + ".json").success(function(data) {
-    data.language = lang;
+    data.name = lang;
     return $rootScope.lang = data;
   });
   return true;

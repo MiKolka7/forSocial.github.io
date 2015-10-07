@@ -77,6 +77,7 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
         templateUrl: 'template/pages/registration.html'
       },
       'footer': {
+        controller: 'footerCtrl',
         templateUrl: 'template/footer.html'
       }
     }
