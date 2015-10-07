@@ -1,0 +1,76 @@
+{
+    "header": {
+        "event": "Events",
+        "mess": "Messages",
+        "friend": "Circles",
+        "organ": "Organizations",
+        "map": "Map",
+        "help": "ask a help",
+        "profile": "My Account",
+        "customise": "Settings",
+        "exit": "Exit",
+        "login": "Enter",
+        "enter": "Login"
+    },
+    "filter": {
+        "city": "City",
+        "mouth": "Month",
+        "category": "Category",
+        "scope": "Scope"
+    },
+    "btn": {
+        "input": "Inbox",
+        "output": "Sent",
+        "add": "Create",
+        "help": "Help"
+    },
+    "registration": {
+        "header": "The territory of those, who cares",
+        "form": {
+            "name": "Name and surname",
+            "email": "Email",
+            "pass": "Password",
+            "city": "City",
+            "birthday": "Birthday",
+            "gender": "Gender",
+            "woman": "female",
+            "man": "Men",
+            "toHelp": "want to help",
+            "skills": "Skills",
+            "continue": "Continue",
+            "registration": "Register",
+            "remindPass": "Remind password",
+            "dataProcessing": "I consent to the processing of my personal data"
+        },
+        "info": {
+            "title": " The territory of those, who cares ",
+            "subTitle": "Want to help or looking for a help",
+            "item": [
+                {
+                    "title": "Opportunity",
+                    "text": "You will be heard by thousands of volunteers throughout Ukraine"
+                },
+                {
+                    "title": "Speed",
+                    "text": "You will find a quick resolving of your problem"
+                },
+                {
+                    "title": "Unite",
+                    "text": "engage like-minded people to implement your project"
+                },
+                {
+                    "title": "Help",
+                    "text": "Make someone's life brighter and improve their karma"
+                },
+                {
+                    "title": "Choice",
+                    "text": "Find new volunteer opportunities according to your preference"
+                },
+                {
+                    "title": "Scale",
+                    "text": "Be a part of the biggest volunteer movement "
+                }
+            ]
+        }
+    }
+}

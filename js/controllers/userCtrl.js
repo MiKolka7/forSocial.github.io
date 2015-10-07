@@ -1,5 +1,5 @@
-angular.module('app.controller.user', []).controller('userCtrl', function($scope, $http) {
-  var user, usersInfo;
+angular.module('app.controller.user', []).controller('userCtrl', function($scope, $http, localStorageService, $stateParams) {
+  var usersInfo;
   $scope.slides = [
     {
       "name": "Slide 1",
@@ -24,18 +24,22 @@ angular.module('app.controller.user', []).controller('userCtrl', function($scope
       "url": "http://cdn.intertech.com/Blog/wp-content/uploads/2014/12/angular-js-icon.jpg"
     }
   ];
-  usersInfo = function(obj) {
+  usersInfo = function(id) {
     return $http.get('http://api.prolaby.com/api/get/user', {
       params: {
-        idUser: obj.idUser
+        idUser: id
       }
     }).success(function(data) {
-      return $scope.user = data;
+      _.forEach(data.events, function(item) {
+        item.date_start = new Date(item.date_start || new Date());
+        return item.date_end = new Date(item.date_end || new Date());
+      });
+      $scope.user = data;
+      return console.log($scope.user);
     });
   };
-  user = usersInfo({
-    idUser: 50
-  });
+  console.log($stateParams.id);
+  usersInfo($stateParams.id);
   return $scope.setRating = function($index) {
     return $http.get('http://api.prolaby.com/api/post/user/rating', {
       params: {

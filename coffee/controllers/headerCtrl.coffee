@@ -12,7 +12,10 @@ angular.module 'app.controller.header', []
             page($state.current.url)
         )
 
+
+        $scope.user = localStorageService.cookie.get('user')
+
         page = (name) ->
 #            $scope.page = name
 
-        page()
+#        page()

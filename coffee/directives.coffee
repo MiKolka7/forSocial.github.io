@@ -16,8 +16,9 @@ angular.module('app.directives', [])
             else
                 element.addClass('is-active')
 )
+
+
 .directive('mySlider', ($timeout) ->
-    {
     restrict: 'A'
     link: (scope, element) ->
         $timeout ->
@@ -27,8 +28,9 @@ angular.module('app.directives', [])
                 slidesToShow: 5
                 slidesToScroll: 1
                 arrows: true
-    }
 )
+
+
 .directive('isClicked', ->
     restrict: 'A'
     link: (scope, element, attr) ->

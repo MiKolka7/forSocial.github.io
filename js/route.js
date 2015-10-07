@@ -63,7 +63,7 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
       }
     }
   }).state('main.user', {
-    url: 'user',
+    url: 'user/{id}',
     views: {
       '@': {
         controller: 'userCtrl',

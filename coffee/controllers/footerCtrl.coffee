@@ -11,4 +11,6 @@ angular.module 'app.controller.footer', []
             $scope.language = 'Русский'
         else if $rootScope.lang.name is 'de'
             $scope.language = 'Deutsch'
+        else if $rootScope.lang.name is 'en'
+            $scope.language = 'English'
 

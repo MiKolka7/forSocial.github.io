@@ -57,7 +57,7 @@ angular.module('app.config.route', [])
                         templateUrl: 'template/pages/map.html'
             )
             .state('main.user',
-                url: 'user'
+                url: 'user/{id}'
                 views:
                     '@':
                         controller: 'userCtrl'

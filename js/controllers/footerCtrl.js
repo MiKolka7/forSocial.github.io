@@ -9,5 +9,7 @@ angular.module('app.controller.footer', []).controller('footerCtrl', function($s
     return $scope.language = 'Русский';
   } else if ($rootScope.lang.name === 'de') {
     return $scope.language = 'Deutsch';
+  } else if ($rootScope.lang.name === 'en') {
+    return $scope.language = 'English';
   }
 });
