@@ -13,8 +13,8 @@
 
             <div class="user__info__item">
                 <span class="user__tel contacts-sprite">
-                    <input class="user__data"/>
-                    <input class="user__data"/>
+                    <input class="user__data" b-ng-model=""/>
+                    <input class="user__data" b-ng-model=""/>
                 </span>
                 <a href=""
                    class="user__fb contacts-sprite"
@@ -35,9 +35,11 @@
 
         <h1 class="user__slider__title">Галерея проектів:</h1>
         <div class="user__slider">
-            <div my-slider="slides">
-                <img ng-src="{{::item.url}}" alt="{{::item.name}}" ng-repeat="item in ::slides"/>
-            </div>
+            <a my-slider="slides"
+               ng-repeat="item in ::user.events"
+               ng-href="#/event/{{item.idEvent}}">
+                <img ng-src="{{::item.cover}}" alt="{{::item.title}}"/>
+            </a>
         </div>
 
         <div class="user__about">
@@ -62,7 +64,7 @@
 
             <nav class="activity-log">
                 <a class="activity-log-item"
-                    ng-href="event/{{item.idEvent}}"
+                    ng-href="#/event/{{item.idEvent}}"
                     ng-repeat="item in user.events">
 
                     <span class="activity-log-date">
