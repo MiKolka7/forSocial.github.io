@@ -1,0 +1,120 @@
+<div class="container">
+
+
+    <article class="user">
+        <h3 class="user__title">
+            <span ng-bind="user.name"></span>
+            <a href="#" class="button btn-event btn--blue btn--big" ng-click="">Повідомлення</a>
+        </h3>
+
+        <div class="user__info">
+
+            <img src="images/img1.png" alt="" class="user__ava "/>
+
+            <div class="user__info__item">
+                <span class="user__tel contacts-sprite">
+                    <a href="tel:+380979999999" class="">+38 097 999 99 99</a>
+                    <a href="tel:+380635555555" class="">+38 063 555 55 55</a>
+                </span>
+                <a href="#"
+                   class="user__fb contacts-sprite"
+                   ng-bind="user.email">
+                </a>
+                <p class="user__address contacts-sprite">Київ, вул. Ломоносова 59</p>
+            </div>
+
+            <div class="user__info__item">
+                <p class="scale">Рейтинг: <span>4/10</span></p>
+                <p class="hours">Соціально-активних годин: <span>299</span></p>
+                <p class="projectsnum">Кількість проектів: <span>9</span></p>
+            </div>
+
+        </div>
+
+        <h1 class="user__slider__title">Галерея проектів:</h1>
+        <div class="user__slider">
+            <div my-slider="slides">
+                <img ng-src="{{item.url}}" alt="{{item.name}}" ng-repeat="item in slides"/>
+            </div>
+        </div>
+
+        <div class="user__about">
+
+            <p class="interests">
+                Інтереси: <span class="interests-item">книги, подорожі</span>
+            </p>
+            <!--test-->
+            <p class="interests">
+                Інтереси: <span class="interests-item"
+                                ng-bind="user.skills[0][0]"></span>
+            </p>
+            <!--test-->
+            <p class="skills">
+                Навички: <span class="skills-item">психологічні, організаційні</span>
+            </p>
+
+            <p class="activity">Історія активностей:</p>
+            <ul class="activity-log">
+                <li class="activity-log-item">
+                    <date class="activity-log-date">15.07.2015</date>
+                    <p>"Помощь малоимущим детям", Фонд Виктора Пинчука</p>
+                </li>
+                <li class="activity-log-item">
+                    <date class="activity-log-date">17.06.2015</date>
+                    <p>"Сбор средств в помощь АТО"</p>
+                </li>
+            </ul>
+            <p class="rate">Оцінити: </p>
+            <ul class="user__rate">
+                <li class="user__rate__item"
+                    ng-repeat="i in [0, 1, 2, 3, 4 ,5, 6, 7, 8, 9] track by $index"
+                    ng-click="setRating($index)"
+                    is-clicked="$index"></li>
+            </ul>
+        </div>
+
+    </article>
+
+
+    <div class="user__feedback__container">
+        <p class="user__feedback">Відгуки:</p>
+        <ul class="msg">
+
+            <li class="msg__wrap js-clicked">
+
+                <div class="msg__items">
+                    <ul>
+                        <li>
+                            <span class="msg_item_delete_wrap"><a class="icon_msg_item_delete" href=""></a></span>
+                            <time class="msg_time" datetime="12.06.93">2 дні назад</time>
+                            <a href="#" class="user_icon"></a>
+                            <article class="msg_item_container">
+                                <h4 class="msg_item_name">Name Surname</h4>
+                                <p class="msg_item_text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </article>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="msg__area">
+                    <form class="send-msg ng-pristine ng-valid" action="">
+                        <div class="msg_frame">
+                            <textarea class="msg-box-input" name=""></textarea>
+                        </div>
+                        <div class="msg_controls">
+                            <input class="send-msg-btn" type="submit" value="Відправити">
+                        </div>
+                    </form>
+                </div>
+
+            </li>
+
+        </ul>
+    </div>
+
+</div>

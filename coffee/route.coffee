@@ -60,6 +60,7 @@ angular.module('app.config.route', [])
                 url: 'user'
                 views:
                     '@':
+                        controller: 'userCtrl'
                         templateUrl: 'template/pages/user.html'
             )
 

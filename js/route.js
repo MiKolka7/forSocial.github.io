@@ -66,6 +66,7 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
     url: 'user',
     views: {
       '@': {
+        controller: 'userCtrl',
         templateUrl: 'template/pages/user.html'
       }
     }

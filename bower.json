@@ -32,6 +32,8 @@
     "gmaps": "~0.4.19",
     "angular-google-maps": "~2.2.1",
     "ngmap": "~1.13.7",
+    "angular-slick": "~0.2.1",
+    "ngmap": "~1.13.7",
     "angular-loading-bar": "~0.8.0"
   }
 }

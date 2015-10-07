@@ -4,6 +4,8 @@ angular.module 'app', [
     'ngDialog'
     'textAngular'
     'LocalStorageModule'
+    'ngMap'
+    'slick'
     'chieffancypants.loadingBar'
 #    'ngFileUpload'
 
@@ -21,6 +23,7 @@ angular.module 'app', [
     'app.controller.map'
     'app.controller.organizations'
     'app.controller.registration'
+    'app.controller.user'
 
     'app.controller.login'
     'app.controller.addEvent'
