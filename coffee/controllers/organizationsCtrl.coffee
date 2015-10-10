@@ -1,14 +1,14 @@
 angular.module 'app.controller.organizations', []
-    .controller 'organizationsCtrl', ($scope, $http) ->
+    .controller 'organizationsCtrl', ($scope, $http, $serializeDate) ->
 
         $http.get('http://api.prolaby.com/api/get/company/all', {params: {type: 1}})
             .success( (data) ->
-                $scope.organizations = data
+                $scope.organizations = $serializeDate(data)
         )
 
         $http.get('http://api.prolaby.com/api/get/company/all', {params: {type: 2}})
             .success( (data) ->
-                $scope.companies = data
+                $scope.companies = $serializeDate(data)
         )
 
         $http.get('http://api.prolaby.com/api/get/scopes/all')

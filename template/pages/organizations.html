@@ -32,20 +32,24 @@
 
     <ul class="events organizations" ng-if="type == 1">
 
-        <li class="events__item organization__item" ng-repeat="item in organizations | allKeyfilter : chooseFilter">
+        <li class="events__item organization__item"
+            ng-repeat="item in organizations | allKeyfilter : chooseFilter">
+
             <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
 
             <article class="events__item__container">
-                <h4 class="events__item__title" ng-bind="item.description"></h4>
+                <a class="events__item__title"
+                    ng-href="#/organization/{{item.idCompany}}"
+                    ng-bind="item.name"></a>
                 <p class="events__item__text" ng-bind="item.description"></p>
                 <p class="events__text-info">
                     Міста: Київ, Одеса, Львів, Харьків
                 </p>
                 <p class="events__text-info">
                     Сайт:
-                    <a class="c-blue" ng-href="item.site" ng-bind="item.site"></a>
+                    <a class="c-blue" ng-href="{{item.site}}" ng-bind="item.site"></a>
                 </p>
-                <a href="/index_blog.html"></a>
+                <a target="_blank" href="/index_blog.html"></a>
             </article>
         </li>
 
@@ -53,20 +57,24 @@
 
     <ul class="events organizations" ng-if="type == 2">
 
-        <li class="events__item organization__item" ng-repeat="item in companies | allKeyfilter : chooseFilter">
+        <li class="events__item organization__item"
+            ng-repeat="item in companies | allKeyfilter : chooseFilter">
+
             <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
 
             <article class="events__item__container">
-                <h4 class="events__item__title" ng-bind="item.description"></h4>
+                <a class="events__item__title"
+                   ng-href="#/organization/{{item.idCompany}}"
+                   ng-bind="item.name"></a>
                 <p class="events__item__text" ng-bind="item.description"></p>
                 <p class="events__text-info">
                     Міста: Київ, Одеса, Львів, Харьків
                 </p>
                 <p class="events__text-info">
                     Сайт:
-                    <a class="c-blue" ng-href="item.site" ng-bind="item.site"></a>
+                    <a class="c-blue" ng-href="{{item.site}}" ng-bind="item.site"></a>
                 </p>
-                <a href="/index_blog.html"></a>
+                <a target="_blank" href="/index_blog.html"></a>
             </article>
         </li>
 

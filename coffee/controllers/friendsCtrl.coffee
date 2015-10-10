@@ -18,7 +18,7 @@ angular.module 'app.controller.friends', []
                 $scope.friends = data
             )
 
-        $scope.friend = (id) ->
+        $scope.addFriend = (id) ->
             $http.get('http://api/post/user/addFriend', {
                 params:
                     idUser: user.idUser
@@ -27,4 +27,3 @@ angular.module 'app.controller.friends', []
                 .success( (data) ->
                     $scope.users = data
                 )
-

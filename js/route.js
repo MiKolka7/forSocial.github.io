@@ -32,11 +32,26 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
         templateUrl: 'template/pages/organizations.html'
       }
     }
+  }).state('main.organization', {
+    url: 'organization/{id}',
+    views: {
+      '@': {
+        controller: 'organizationCtrl',
+        templateUrl: 'template/pages/organization.html'
+      }
+    }
   }).state('main.messages', {
     url: 'messages',
     views: {
       '@': {
         templateUrl: 'template/pages/messages.html'
+      }
+    }
+  }).state('main.messages.send', {
+    url: '/send/{id}',
+    views: {
+      '@': {
+        templateUrl: 'template/pages/messages-send.html'
       }
     }
   }).state('main.event', {
@@ -45,13 +60,6 @@ angular.module('app.config.route', []).config(function($stateProvider, $urlRoute
       '@': {
         controller: 'eventCtrl',
         templateUrl: 'template/pages/event.html'
-      }
-    }
-  }).state('main.organization', {
-    url: 'organization',
-    views: {
-      '@': {
-        templateUrl: 'template/pages/organization.html'
       }
     }
   }).state('main.map', {

@@ -12,6 +12,7 @@ angular.module 'app', [
     'app.config.run'
     'app.config.route'
     'app.filters'
+    'app.factory.serializeDate'
 
     'app.directives'
 
@@ -21,6 +22,7 @@ angular.module 'app', [
     'app.controller.events'
     'app.controller.friends'
     'app.controller.map'
+    'app.controller.organization'
     'app.controller.organizations'
     'app.controller.registration'
     'app.controller.user'

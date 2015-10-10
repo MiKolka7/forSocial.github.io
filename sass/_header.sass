@@ -37,6 +37,12 @@ header
 
 .m_category
     margin: 0 0 20px 0
+    cursor: pointer
+
+    > a
+        @extend .animate
+        &:hover
+            color: darken(#fff, 15)
 
     &:first-child
         padding-top: 10px

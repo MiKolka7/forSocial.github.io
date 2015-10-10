@@ -1,25 +1,73 @@
 
 <div class="container">
 
-    <ul class="events organizations">
+    <div class="organizations">
 
-        <li class="events__item organization__item">
+        <article class="organization-page">
             <img src="images/img1.png" alt="" class="events__item__img"/>
 
-            <article class="events__item__container">
-                <h4 class="events__item__title">Прибирання тереторії</h4>
-                <p class="events__item__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua.
-                </p>
+            <div class="events__item__container">
+                <h4 class="events__item__title" ng-bind="::organization.company_name"></h4>
                 <p class="events__text-info">
                     Міста: Київ, Одеса, Львів, Харьків
                 </p>
                 <p class="events__text-info">
                     Сайт:
-                    <a class="c-blue" href="www.jciyoth.com">www.jciyoth.com</a>
+                    <a class="c-blue" ng-href="{{::organization.site}}" ng-bind="::organization.site"></a>
                 </p>
-            </article>
+                <p class="events__text-info">
+                    Рейтинг:
+                    <span ng-bind="::rating"></span>
+                    <span>/10</span>
+                </p>
+            </div>
+        </article>
+        <p class="events__item__text" ng-bind="::organization.description"></p>
+
+    </div>
+
+    <ul class="msg">
+
+        <li class="msg__wrap js-clicked">
+
+            <div class="msg__items">
+                <ul>
+                    <li ng-repeat="item in commments">
+                        <span class="msg_item_delete_wrap">
+                            <a class="icon_msg_item_delete" href=""></a>
+                        </span>
+
+                        <time class="msg_time"
+                              datetime="{{::item.createDate}}"
+                              ng-bind="::item.createDate | date : 'H:MM dd:MM:yyyy'">
+                        </time>
+
+                        <a class="user_icon"
+                           ng-href="#/user/{{ ::item.user.idUser }}"
+                           style="background-image: url(images/users/{{ ::item.user.photo }})"></a>
+
+                        <article class="msg_item_container">
+                            <a class="msg_item_name"
+                               ng-href="#/user/{{ ::item.user.idUser }}"
+                               ng-bind="::item.user.name">
+                            </a>
+                            <p class="msg_item_text" ng-bind="::item.text"></p>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="msg__area">
+                <form class="send-msg">
+                    <div class="msg_frame">
+                        <textarea class="msg-box-input" ng-model="comment"></textarea>
+                    </div>
+                    <div class="msg_controls">
+                        <input class="send-msg-btn" type="submit" value="Відправити" ng-click="addComment()">
+                    </div>
+                </form>
+            </div>
+
         </li>
 
     </ul>

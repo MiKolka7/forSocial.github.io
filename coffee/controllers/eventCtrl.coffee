@@ -1,25 +1,22 @@
 angular.module 'app.controller.event', []
-    .controller 'eventCtrl', ($scope, $http, $stateParams, localStorageService) ->
+    .controller 'eventCtrl', ($scope, $http, $stateParams, localStorageService, $serializeDate) ->
 
         user = localStorageService.cookie.get('user')
-        console.log user
-
 
         $scope.joinText = 'Приєднатись'
 
-        $http.get('http://api.prolaby.com/api/get/event/', {params: {id: $stateParams.id}})
+        $http.get('http://api.prolaby.com/api/get/event', {params: {id: $stateParams.id}})
             .success( (data) ->
-                $scope.event = data[0]
-                console.log(data[0])
+                $scope.event = $serializeDate(data[0])
             )
 
         $http.get('http://api.prolaby.com/api/get/event/comments', {params: {idEvent: $stateParams.id}})
             .success( (data) ->
-                _.forEach(data, (item) ->
-                    item.createDate = new Date(item.createDate)
-                )
+#                _.forEach(data, (item) ->
+#                    item.createDate = new Date(item.createDate)
+#                )
 
-                $scope.commments = data
+                $scope.commments = $serializeDate(data)
                 usersInfo($scope.commments)
             )
 
@@ -27,7 +24,7 @@ angular.module 'app.controller.event', []
             _.forEach(obj, (item) ->
                 $http.get('http://api.prolaby.com/api/get/user', {params: {idUser: item.idUser}})
                 .success( (data) ->
-                    item.user = data
+                    item.user = $serializeDate(data)
                 )
             )
 

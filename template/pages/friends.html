@@ -12,15 +12,14 @@
             <img src="http://bit.ly/1OnlZbL" alt="" class="friends__item__img"/>
 
             <article class="friends__item__container">
-                <h4 class="friends__item__name">Name</h4>
-                <p class="friends__item__text activity">
-                </p>
-                <!--<p class="friends__item__text age">-->
-                    <!--28 років-->
-                <!--</p>-->
+                <a class="friends__item__name"
+                   ng-href="#/user/{{user.idUser}}"
+                   ng-bind="user.name"></a>
+                <p class="friends__item__text activity"></p>
+                <!--<p class="friends__item__text age"></p>-->
                 <div class="actions">
-                    <a href="#" class="friends__action send__message" ng-click="setMessage(user.idUser)">Написати повідомлення</a>
-                    <a href="#" class="friends__action delete" ng-click="friend()">Видалити з кола</a>
+                    <a href="#" class="friends__action send__message" ng-href="#/messages/send/{{user.idUser}}">Написати повідомлення</a>
+                    <a href="#" class="friends__action delete" ng-click="addFriend(user.idUser)">Видалити з кола</a>
                 </div>
             </article>
         </li>

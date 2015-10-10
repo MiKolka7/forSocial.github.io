@@ -17,7 +17,8 @@
             <div class="event__info">
                 <h6 class="events__name" ng-bind="::event.name"></h6>
                 <p>
-                    <span ng-bind="::event.date_start"></span> - <span ng-bind="::event.date_end"></span>
+                    <span ng-bind="::event.date_start | date : 'H:MM dd:MM:yyyy'"></span> -
+                    <span ng-bind="::event.date_end | date : 'H:MM dd:MM:yyyy'"></span>
                 </p>
                 <p ng-bind="::event.address"></p>
             </div>

@@ -1,17 +1,17 @@
-angular.module('app.controller.organizations', []).controller('organizationsCtrl', function($scope, $http) {
+angular.module('app.controller.organizations', []).controller('organizationsCtrl', function($scope, $http, $serializeDate) {
   $http.get('http://api.prolaby.com/api/get/company/all', {
     params: {
       type: 1
     }
   }).success(function(data) {
-    return $scope.organizations = data;
+    return $scope.organizations = $serializeDate(data);
   });
   $http.get('http://api.prolaby.com/api/get/company/all', {
     params: {
       type: 2
     }
   }).success(function(data) {
-    return $scope.companies = data;
+    return $scope.companies = $serializeDate(data);
   });
   $http.get('http://api.prolaby.com/api/get/scopes/all').success(function(data) {
     return $scope.scopes = data;
