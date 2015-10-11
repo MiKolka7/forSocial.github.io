@@ -1,4 +1,20 @@
 angular.module('app.controller.user', []).controller('userCtrl', function($scope, $http, localStorageService, $stateParams) {
+  var usersInfo;
+  usersInfo = function(id) {
+    return $http.get('http://api.prolaby.com/api/get/user', {
+      params: {
+        idUser: id
+      }
+    }).success(function(data) {
+      _.forEach(data.events, function(item) {
+        item.date_start = new Date(item.date_start || new Date());
+        return item.date_end = new Date(item.date_end || new Date());
+      });
+      $scope.user = data;
+      return console.log($scope.user);
+    });
+  };
+  usersInfo($stateParams.id);
   $scope.user = localStorageService.cookie.get('user');
   _.forEach($scope.user.events, function(item) {
     item.date_start = new Date(item.date_start || new Date());

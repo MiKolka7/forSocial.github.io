@@ -50,3 +50,8 @@ angular.module('app.directives', [])
               elements.eq(i).addClass 'is-clicked'
               i--
 )
+
+.directive 'uploadFile', ->
+    restrict: 'A'
+    templateUrl: 'template/uploadFile.html'
+    controller: 'uploadFileCtrl'

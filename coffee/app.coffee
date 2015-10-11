@@ -4,10 +4,9 @@ angular.module 'app', [
     'ngDialog'
     'textAngular'
     'LocalStorageModule'
-#    'ngMap'
-#    'slick'
     'chieffancypants.loadingBar'
-#    'ngFileUpload'
+    'ngFileUpload'
+    'checklist-model'
 
     'app.config.run'
     'app.config.route'
@@ -15,6 +14,8 @@ angular.module 'app', [
     'app.factory.serializeDate'
 
     'app.directives'
+
+    'app.controller.upload'
 
     'app.controller.header'
     'app.controller.footer'

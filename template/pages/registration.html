@@ -82,7 +82,9 @@
                             <span ng-bind="::lang.registration.form.toHelp + ':'"></span>
                             <br><br><br>
                             <label ng-repeat="category in categories track by $index">
-                                <input type="checkbox" ng-model="getCategory[$index]" value="{{category.idCategory}}">
+                                <input type="checkbox"
+                                       checklist-model="r.categories"
+                                       checklist-value="category.idCategory"/>
                                 <span ng-bind="category.name"></span>
                             </label>
                         </div>
@@ -90,7 +92,9 @@
                             <span ng-bind="::lang.registration.form.skills + ':'"></span>
                             <br><br><br>
                             <label ng-repeat="skill in skills track by $index">
-                                <input type="checkbox" ng-model="getSkill[$index]" value="{{skill.idSkill}}">
+                                <input type="checkbox"
+                                       checklist-model="r.skills"
+                                       checklist-value="skill.idSkill"/>
                                 <span ng-bind="skill.name"></span>
                             </label>
                         </div>

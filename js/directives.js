@@ -60,4 +60,10 @@ angular.module('app.directives', []).directive('isCheck', function() {
       });
     }
   };
+}).directive('uploadFile', function() {
+  return {
+    restrict: 'A',
+    templateUrl: 'template/uploadFile.html',
+    controller: 'uploadFileCtrl'
+  };
 });

@@ -1,17 +1,12 @@
 angular.module 'app.controller.registration', []
     .controller 'registrationCtrl', ($scope, $http, ngDialog) ->
 
-        $scope.getCategory = []
-        $scope.getSkill = []
-
         $scope.registr = () ->
 
             if $scope.reg.$valid
                 $scope.r.birthdate = $scope.r.date.getTime()
 
                 data = $scope.r
-                data.skills = $scope.getSkill
-                data.categories = $scope.getCategory
                 delete data.date
 
                 console.log data

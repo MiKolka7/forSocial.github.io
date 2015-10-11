@@ -1,57 +1,62 @@
 <h2>Створення заходу</h2>
 
 <div class="modal-event__wrap">
-    <form class="modal-event__form">
+    <form class="modal-event__form" name="formAddEvent">
         <span>Назва заходу</span>
-        <input type="text" class="event-name"/>
+        <input type="text" class="event-name" ng-model="event.title"/>
+
+        <div upload-file></div>
 
         <div class="city-date-row">
             <div class="city-block">
                 <span>Місто</span>
-                <label><input type="radio" name="city"/>Київ</label>
-                <label><input type="radio" name="city"/>Львів</label>
-                <label><input type="radio" name="city"/>Одеса</label>
-                <label><input type="radio" name="city"/>інше</label>
+                <label ng-repeat="item in city">
+                    <input type="checkbox" value="{{item.idCity}}"/>
+                    <span ng-bind="item.name"></span>
+                </label>
             </div>
             <label class="date-block">
-                <span>Дата</span>
-                <input type="date" name="date"/>
+                <span>Дата початку</span>
+                <input type="datetime-local" ng-model="event.date_start"/>
+            </label>
+            <label class="date-block">
+                <span>Дата кінця</span>
+                <input type="datetime-local" ng-model="event.date_end"/>
             </label>
         </div>
 
         <filedest class="event-check-input-group">
             <div class="category-input-group">
                 <span>Категорія</span>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label ng-repeat="category in categories">
+                    <input type="checkbox"
+                           checklist-model="event.categories"
+                           checklist-value="category.idCategory"/>
+                    <span ng-bind="category.name"></span>
+                </label>
             </div>
             <div class="skills-input-group">
                 <span>Необхідні навички</span>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
-                <label><input type="checkbox"/>Lorem Ipsum</label>
+                <label ng-repeat="skill in skills">
+                    <input type="checkbox"
+                           checklist-model="event.skills"
+                           checklist-value="skill.idSkill"/>
+                    <span ng-bind="skill.name"></span>
+                </label>
             </div>
         </filedest>
 
         <span>Опис</span>
-        <text-angular class="event-description" cols="130" rows="12"></text-angular>
-        <span>Сайт</span>
-        <input type="text" class="event-site"/>
+        <text-angular class="event-description" cols="130" rows="12" ng-model="event.description"></text-angular>
+
         <label>
-            <input type="checkbox" required/>
+            <input type="checkbox" required="required"/>
             Я згоден з умовами використання ресурсу та даю згоду на обробку даних
         </label>
 
-        <button type="submit" class="btn btn-event btn--blue btn--big">Створити</button>
+        <button type="submit"
+                class="button btn-event btn--blue btn--big"
+                ng-click="addEvent()"
+                ng-bind="::lang.btn.add"></button>
     </form>
 </div>
