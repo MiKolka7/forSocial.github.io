@@ -33,63 +33,64 @@ angular.module('app.directives', []).directive('isCheck', function() {
       });
     }
   };
-}).directive('userRatestyle', function() {
+}).directive('userRatestyle', function($timeout) {
   return {
     restrict: 'A',
     link: function(scope, element, attr) {
-      element.on('mouseleave', function() {
-        var elements, i, results;
+      return $timeout(function() {
+        var elements;
         elements = angular.element(document.getElementsByClassName("user__rate__item"));
-        i = 0;
-        results = [];
-        while (i <= elements.length) {
-          elements.eq(i).removeClass('is-hovered').removeClass('unclicked');
-          results.push(i++);
-        }
-        return results;
-      });
-      element.on('mouseover', function() {
-        var elements, i, mr, results, results1;
-        elements = angular.element(document.getElementsByClassName("user__rate__item"));
-        mr = scope.$eval(attr.userRatestyle);
-        if (element.hasClass('is-clicked')) {
-          i = mr++;
+        element.on('mouseleave', function() {
+          var i, results;
+          i = 0;
           results = [];
           while (i <= elements.length) {
-            elements.eq(i + 1).addClass('unclicked');
+            elements.eq(i).removeClass('is-hovered unclicked');
             results.push(i++);
           }
           return results;
-        } else {
-          i = 0;
-          results1 = [];
-          while (i <= mr) {
-            elements.eq(i).addClass('is-hovered');
-            results1.push(i++);
+        });
+        element.on('mouseover', function() {
+          var i, mr, results, results1;
+          mr = scope.$eval(attr.userRatestyle);
+          if (element.hasClass('is-clicked')) {
+            i = mr++;
+            results = [];
+            while (i <= elements.length) {
+              elements.eq(i + 1).addClass('unclicked');
+              results.push(i++);
+            }
+            return results;
+          } else {
+            i = 0;
+            results1 = [];
+            while (i <= mr) {
+              elements.eq(i).addClass('is-hovered');
+              results1.push(i++);
+            }
+            return results1;
           }
-          return results1;
-        }
-      });
-      return element.on('click', function() {
-        var elements, i, results, results1;
-        elements = angular.element(document.getElementsByClassName("user__rate__item"));
-        i = scope.$eval(attr.userRatestyle);
-        if (element.hasClass('is-clicked')) {
-          i++;
-          results = [];
-          while (i <= elements.length - 1) {
-            elements.eq(i).removeClass('is-clicked');
-            results.push(i++);
+        });
+        return element.on('click', function() {
+          var i, results, results1;
+          i = scope.$eval(attr.userRatestyle);
+          if (element.hasClass('is-clicked')) {
+            i++;
+            results = [];
+            while (i <= elements.length - 1) {
+              elements.eq(i).removeClass('is-clicked');
+              results.push(i++);
+            }
+            return results;
+          } else {
+            results1 = [];
+            while (i >= 0) {
+              elements.eq(i).addClass('is-clicked');
+              results1.push(i--);
+            }
+            return results1;
           }
-          return results;
-        } else {
-          results1 = [];
-          while (i >= 0) {
-            elements.eq(i).addClass('is-clicked');
-            results1.push(i--);
-          }
-          return results1;
-        }
+        });
       });
     }
   };
