@@ -33,16 +33,49 @@ angular.module('app.directives', []).directive('isCheck', function() {
       });
     }
   };
-}).directive('isClicked', function() {
+}).directive('userRatestyle', function() {
   return {
     restrict: 'A',
     link: function(scope, element, attr) {
+      element.on('mouseleave', function() {
+        var elements, i, results;
+        elements = angular.element(document.getElementsByClassName("user__rate__item"));
+        i = 0;
+        results = [];
+        while (i <= elements.length) {
+          elements.eq(i).removeClass('is-hovered').removeClass('unclicked');
+          results.push(i++);
+        }
+        return results;
+      });
+      element.on('mouseover', function() {
+        var elements, i, mr, results, results1;
+        elements = angular.element(document.getElementsByClassName("user__rate__item"));
+        mr = scope.$eval(attr.userRatestyle);
+        if (element.hasClass('is-clicked')) {
+          i = mr++;
+          results = [];
+          while (i <= elements.length) {
+            elements.eq(i + 1).addClass('unclicked');
+            results.push(i++);
+          }
+          return results;
+        } else {
+          i = 0;
+          results1 = [];
+          while (i <= mr) {
+            elements.eq(i).addClass('is-hovered');
+            results1.push(i++);
+          }
+          return results1;
+        }
+      });
       return element.on('click', function() {
         var elements, i, results, results1;
         elements = angular.element(document.getElementsByClassName("user__rate__item"));
-        i = scope.$eval(attr.isClicked);
+        i = scope.$eval(attr.userRatestyle);
         if (element.hasClass('is-clicked')) {
-          ++i;
+          i++;
           results = [];
           while (i <= elements.length - 1) {
             elements.eq(i).removeClass('is-clicked');

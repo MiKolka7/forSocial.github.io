@@ -31,17 +31,40 @@ angular.module('app.directives', [])
 )
 
 
-.directive('isClicked', ->
+.directive('userRatestyle', ->
     restrict: 'A'
     link: (scope, element, attr) ->
 
-        element.on 'click', ->
-
+        element.on 'mouseleave', ->
           elements = angular.element(document.getElementsByClassName("user__rate__item"))
-          i = scope.$eval(attr.isClicked)
+          i=0
+          while i <= elements.length
+            elements.eq(i)
+            .removeClass 'is-hovered'
+            .removeClass 'unclicked'
+            i++
+
+        element.on 'mouseover', ->
+          elements = angular.element(document.getElementsByClassName("user__rate__item"))
+          mr = scope.$eval(attr.userRatestyle)
 
           if element.hasClass('is-clicked')
-            ++i
+            i = mr++
+            while i <= elements.length
+              elements.eq(i+1).addClass 'unclicked'
+              i++
+          else
+            i=0
+            while i <= mr
+              elements.eq(i).addClass 'is-hovered'
+              i++
+
+        element.on 'click', ->
+          elements = angular.element(document.getElementsByClassName("user__rate__item"))
+          i = scope.$eval(attr.userRatestyle)
+
+          if element.hasClass('is-clicked')
+            i++
             while i <= elements.length-1
               elements.eq(i).removeClass 'is-clicked'
               i++
