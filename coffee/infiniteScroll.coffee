@@ -2,9 +2,12 @@ angular.module 'app.directive.infiniteScroll', []
 .directive 'infiniteScroll', ($timeout, $window, $rootScope) ->
     restrict: 'A'
     link: (scope) ->
-        $timeout(() ->
+        $timeout( () ->
             winH = $window.innerHeight
             docH = $('body').height()
+
+            scope.$watch 'events', () ->
+                docH = $('body').height()
 
             angular.element($window).on 'scroll', (e) ->
                 if (e.target.scrollingElement.scrollTop + winH > docH - 10) and !scope.loading

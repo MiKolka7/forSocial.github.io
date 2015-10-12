@@ -1,4 +1,4 @@
-angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, localStorageService, $location) {
+angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, localStorageService, $location, $sce) {
   var lang, user;
   user = localStorageService.cookie.get('user');
   if (!user) {
@@ -27,5 +27,8 @@ angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, l
     data.name = lang;
     return $rootScope.lang = data;
   });
+  $rootScope.getHTML = function(data) {
+    return $sce.trustAsHtml(data);
+  };
   return true;
 });

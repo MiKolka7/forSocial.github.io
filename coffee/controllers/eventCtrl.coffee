@@ -1,8 +1,6 @@
 angular.module 'app.controller.event', []
     .controller 'eventCtrl', ($scope, $http, $stateParams, localStorageService, $serializeDate) ->
 
-        user = localStorageService.cookie.get('user')
-
         $scope.joinText = 'Приєднатись'
 
         $http.get('http://api.prolaby.com/api/get/event', {params: {id: $stateParams.id}})
@@ -51,11 +49,33 @@ angular.module 'app.controller.event', []
             )
 
         $scope.join = () ->
-            $http.get('http://api.prolaby.com/api/post/user/join',
+            $http.get("http://api.prolaby.com/api/#{typeJoin}/user/join",
                 {params:
                     idEvent: $stateParams.id
-                    idUser: 14
+                    idUser: user.idUser
                 })
                 .success( (data) ->
-                    console.log data
+                    if data
+                        if typeJoin is 'post'
+                            $scope.joinText = 'Відєднатись'
+                            typeJoin = 'post'
+                        else
+                            $scope.joinText = 'Приєднатись'
+                            typeJoin = 'delete'
+            )
+
+        user = localStorageService.cookie.get('user')
+        typeJoin = 'post'
+
+        $http.get('http://api.prolaby.com/api/get/user', {params: {idUser: user.idUser}})
+            .success( (data) ->
+                user = $serializeDate(data)
+                console.log user
+
+                _.forEach(user.events, (item) ->
+                    if item.idEvent is String($stateParams.id)
+                        typeJoin = 'delete'
+                        $scope.joinText = 'Відєднатись'
+                        return
                 )
+            )

@@ -1,30 +1,62 @@
 <h2>Створення компанії</h2>
 
 <div class="modal-company__wrap">
-    <form class="modal-company__form">
+    <form class="modal-company__form" ng-submit="addCompany()" name="formAddCompany">
+
         <span>Назва</span>
-        <textarea class="company-name" cols="130" rows="3"></textarea>
+        <input class="company-name" ng-model="company.title"/>
+
         <span>Тип</span>
-        <label><input type="radio" name="type"/>організація</label>
-        <label><input type="radio" name="type"/>компанія</label>
+        <label>
+            <input type="radio"
+                   checklist-model="company.city"
+                   checklist-value="1"
+                   name="type"/>
+            організація
+        </label>
+        <label>
+            <input type="radio"
+                   checklist-vmodelalue="company.idCity"
+                   checklist-value="2"
+                   name="type"/>
+            компанія
+        </label>
+
         <span>Сфера діяльності</span>
 
         <div class="activity-input-group">
-            <label><input type="radio"/>благодійність</label>
-            <label><input type="radio"/>екологія</label>
-            <label><input type="radio"/>спорт</label>
-            <label><input type="radio"/>мистецтво/культура</label>
-            <label><input type="radio"/>охорона здоров`я</label>
-            <label><input type="radio"/>захист прав</label>
-            <label><input type="radio"/>бізнес</label>
-            <label><input type="radio"/>освіта і наука</label>
-            <label><input type="radio"/>інше</label>
+            <label ng-repeat="category in categories">
+                <input type="checkbox"
+                       checklist-model="company.categories"
+                       checklist-value="category.idCategory"/>
+                <span ng-bind="category.name"></span>
+            </label>
         </div>
+
         <span>Опис</span>
-        <textarea class="company-description" cols="130" rows="12"></textarea>
+        <text-angular class="event-description" cols="130" rows="12" ng-model="company.description"></text-angular>
+
         <span>Сайт</span>
-        <textarea class="company-site" cols="130" rows="3"></textarea>
-        <label><input type="checkbox"/>Я згоден з умовами використання ресурсу та даю згоду на обробку даних</label>
+        <input class="company-site" ng-model="company.site"></input>
+
+        <label class="date-block">
+            <span>Longitude</span>
+            <input type="text" ng-model="event.long" required="required"/>
+        </label>
+        <label class="date-block">
+            <span>Latitude</span>
+            <input type="text" ng-model="event.lat" required="required"/>
+        </label>
+        <label class="date-block">
+            <span>Адреса</span>
+            <input type="text" ng-model="event.address" required="required"/>
+        </label>
+
+        <label>
+            <input type="checkbox"/>
+            Я згоден з умовами використання ресурсу та даю згоду на обробку даних
+        </label>
+
         <button type="submit" class="btn btn-event btn--blue btn--big">Створити</button>
     </form>
 </div>

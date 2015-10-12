@@ -37,3 +37,8 @@ angular.module('app.filters', [])
 #        console.log newArr
 
         newArr = _.flatten(newArr)
+#        if !newArr.length
+#            newArr = obj
+#
+#        console.log newArr
+#        return newArr

@@ -11,10 +11,10 @@ angular.module 'app.controller.addEvent', []
 
                 event.date_start = +event.date_start
                 event.date_end = +event.date_end
+                event.iduser = +user.idUser
                 event.cover = event.photo
-                console.log event
 
-                $http.get('http://api.prolaby.com/api/post/event', {params: ''})
+                $http.get('http://api.prolaby.com/api/post/event', { params: event })
                     .success( (data) ->
                         console.log data
                     )

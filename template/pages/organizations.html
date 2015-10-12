@@ -33,7 +33,7 @@
     <ul class="events organizations" ng-if="type == 1">
 
         <li class="events__item organization__item"
-            ng-repeat="item in organizations | allKeyfilter : chooseFilter">
+            ng-repeat="item in organizations">
 
             <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
 

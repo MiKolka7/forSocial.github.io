@@ -11,21 +11,24 @@
 
             <img src="images/img1.png" alt="" class="user__ava "/>
 
-            <div class="user__info__item">
-                <span class="user__tel contacts-sprite">
-                    <input class="user__data" b-ng-model=""/>
-                    <input class="user__data" b-ng-model=""/>
-                </span>
-                <a href=""
-                   class="user__fb contacts-sprite"
-                   ng-bind="::user.email">
-                </a>
-                <input class="user__address contacts-sprite" b-ng-model="">
-            </div>
+            <!--<div class="user__info__item">-->
+                <!--<span class="user__tel contacts-sprite">-->
+                    <!--<input class="user__data" b-ng-model=""/>-->
+                    <!--<input class="user__data" b-ng-model=""/>-->
+                <!--</span>-->
+                <!--<a href=""-->
+                   <!--class="user__fb contacts-sprite"-->
+                   <!--ng-bind="::user.email">-->
+                <!--</a>-->
+                <!--<input class="user__address contacts-sprite" b-ng-model="">-->
+            <!--</div>-->
 
             <div class="user__info__item">
-                <p class="scale">Рейтинг: <span>4/10</span></p>
-                <p class="hours">Соціально-активних годин: <span>299</span></p>
+                <p class="scale">Рейтинг:
+                    <span ng-bind="rating"></span>
+                    <span>/10</span>
+                </p>
+                <!--<p class="hours">Соціально-активних годин: <span>299</span></p>-->
                 <p class="projectsnum">
                     Кількість проектів: <span ng-bind="::user.events.length"></span>
                 </p>

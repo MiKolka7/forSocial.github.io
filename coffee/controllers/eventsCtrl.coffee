@@ -1,12 +1,15 @@
 angular.module 'app.controller.events', []
-    .controller 'eventsCtrl', ($scope, $http, $rootScope) ->
+    .controller 'eventsCtrl', ($scope, $http, $rootScope, $sce) ->
 
         page = 0
+        $scope.events = []
 
         pageData = () ->
             $http.get('http://api.prolaby.com/api/get/event/all', {params: {page: page}})
                 .success( (data) ->
-                    $scope.events = data
+                    console.log data
+                    if !_.isEmpty data
+                        $scope.events = [].concat $scope.events, data
                     $scope.loading = false
                 )
 
@@ -28,3 +31,5 @@ angular.module 'app.controller.events', []
                 $scope.chooseFilter[key].push val
             else
                 $scope.chooseFilter[key].splice i - 1, 1
+
+            console.log $scope.chooseFilter

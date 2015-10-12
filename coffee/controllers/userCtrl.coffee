@@ -27,12 +27,18 @@ angular.module('app.controller.user', [])
     console.log $scope.user
 
 
+    $http.get('http://api.prolaby.com/Api/get/user/rating?id=' + $stateParams.id)
+        .success( (data) ->
+            $scope.rating = data.ave || 0
+            console.log data
+        )
+
     $scope.setRating = ($index) ->
         $http.get('http://api.prolaby.com/api/post/user/rating',
             {
                 params:
-                    id: user.idUser
-                    idUser: 100
+                    id: $stateParams.id
+                    idUser: $scope.user.idUser
                     rate: ++$index
             })
         .success((data) ->

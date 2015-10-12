@@ -1,7 +1,7 @@
 <h2>Створення заходу</h2>
 
 <div class="modal-event__wrap">
-    <form class="modal-event__form" name="formAddEvent">
+    <form class="modal-event__form" name="formAddEvent" ng-submit="addEvent()">
         <span>Назва заходу</span>
         <input type="text" class="event-name" ng-model="event.title"/>
 
@@ -11,7 +11,9 @@
             <div class="city-block">
                 <span>Місто</span>
                 <label ng-repeat="item in city">
-                    <input type="checkbox" value="{{item.idCity}}"/>
+                    <input type="checkbox"
+                           checklist-model="event.city"
+                           checklist-value="item.idCity"/>
                     <span ng-bind="item.name"></span>
                 </label>
             </div>
@@ -46,6 +48,19 @@
             </div>
         </filedest>
 
+        <label class="date-block">
+            <span>Longitude</span>
+            <input type="text" ng-model="event.long" required="required"/>
+        </label>
+        <label class="date-block">
+            <span>Latitude</span>
+            <input type="text" ng-model="event.lat" required="required"/>
+        </label>
+        <label class="date-block">
+            <span>Адреса</span>
+            <input type="text" ng-model="event.address" required="required"/>
+        </label>
+
         <span>Опис</span>
         <text-angular class="event-description" cols="130" rows="12" ng-model="event.description"></text-angular>
 
@@ -56,7 +71,6 @@
 
         <button type="submit"
                 class="button btn-event btn--blue btn--big"
-                ng-click="addEvent()"
                 ng-bind="::lang.btn.add"></button>
     </form>
 </div>

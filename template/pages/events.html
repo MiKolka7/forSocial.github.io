@@ -53,11 +53,11 @@
 
             <article class="events__item__container">
                 <div class="events__item__info">
-                    <address ng-bind="item.city + ','"></address>
+                    <address ng-bind="item.city || + ','"></address>
                     <time ng-bind="item.date_end | date : 'dd.mm.yyyy'"></time>
                 </div>
-                <h4 class="events__item__title" ng-bind="::item.title"></h4>
-                <p class="events__item__text" ng-bind="::item.description"></p>
+                <h4 class="events__item__title" ng-bind="item.title"></h4>
+                <p class="events__item__text" ng-bind-html="getHTML(item.description)"></p>
                 <div class="events__item__users">
                     <p ng-bind="item.users.length + ' учасників'"></p>
                     <div class="users">

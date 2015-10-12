@@ -22,7 +22,7 @@
                 </p>
                 <p ng-bind="::event.address"></p>
             </div>
-            <p class="event__text" ng-bind="::event.description"></p>
+            <p class="event__text" ng-bind="::getHTML(item.description)"></p>
         </div>
     </article>
 

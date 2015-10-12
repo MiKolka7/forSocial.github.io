@@ -8,10 +8,10 @@ angular.module('app.controller.addEvent', []).controller('addEventCtrl', functio
       event = _.clone($scope.event);
       event.date_start = +event.date_start;
       event.date_end = +event.date_end;
+      event.iduser = +user.idUser;
       event.cover = event.photo;
-      console.log(event);
       return $http.get('http://api.prolaby.com/api/post/event', {
-        params: ''
+        params: event
       }).success(function(data) {
         return console.log(data);
       });

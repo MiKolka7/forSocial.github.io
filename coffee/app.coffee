@@ -2,6 +2,7 @@
 angular.module 'app', [
     'ui.router'
     'ngDialog'
+    'ngSanitize'
     'textAngular'
     'LocalStorageModule'
     'chieffancypants.loadingBar'

@@ -36,6 +36,7 @@ angular.module 'app.controller.organization', []
                     text: $scope.comment
                 })
             .success( (data) ->
+                console.log data
                 if data
                     newComment =
                         user: {
@@ -48,4 +49,17 @@ angular.module 'app.controller.organization', []
                     $scope.comment = ''
 
                     $scope.commments.push(newComment)
+            )
+
+
+        $scope.setRating = ($index) ->
+            $http.get('http://api.prolaby.com/api/post/company/rating',
+                {
+                    params:
+                        id: $stateParams.id
+                        idUser: user.idUser
+                        rate: ++$index
+                })
+            .success((data) ->
+                console.log data
             )

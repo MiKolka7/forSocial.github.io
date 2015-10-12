@@ -1,5 +1,6 @@
 angular.module('app.config.run', [])
-.run ($rootScope, ngDialog, $http, localStorageService, $location) ->
+.run ($rootScope, ngDialog, $http, localStorageService, $location, $sce) ->
+
     user = localStorageService.cookie.get('user')
     if (!user)
         $location.path('/registration')
@@ -35,6 +36,9 @@ angular.module('app.config.run', [])
         data.name = lang
         $rootScope.lang = data
     )
+
+    $rootScope.getHTML = (data) ->
+        $sce.trustAsHtml(data)
 
 
     return true

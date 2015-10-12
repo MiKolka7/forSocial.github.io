@@ -3,14 +3,16 @@ angular.module 'app.controller.addOrganization', []
 
         user = localStorageService.cookie.get('user')
 
-        $scope.addOrg = () ->
-            if ($scope.formAddEvent.$valid)
+        $scope.addCompany = () ->
+            if ($scope.formAddCompany.$valid)
 
                 event = {}
                 event = _.clone($scope.event)
 
                 event.date_start = +event.date_start
                 event.date_end = +event.date_end
+                event.cover = event.photo
+                event.iduser = +user.idUser
                 event.cover = event.photo
                 console.log event
 
