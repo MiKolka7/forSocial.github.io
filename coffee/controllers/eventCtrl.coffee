@@ -5,7 +5,8 @@ angular.module 'app.controller.event', []
 
         $http.get('http://api.prolaby.com/api/get/event', {params: {id: $stateParams.id}})
             .success( (data) ->
-                $scope.event = $serializeDate(data[0])
+                $scope.event = $serializeDate(data)[0]
+                console.log $scope.event
             )
 
         $http.get('http://api.prolaby.com/api/get/event/comments', {params: {idEvent: $stateParams.id}})

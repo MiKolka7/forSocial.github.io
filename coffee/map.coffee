@@ -1,12 +1,25 @@
 angular.module 'app.directive.map', []
-.directive 'gmap', ($http) ->
+.directive 'gMap', () ->
     restrict: 'A'
-    link: (scope, element) ->
-        map = new GMaps(
-            el: '#map'
-            lat: 50.449743916340445
-            lng: 30.454806312918663
-        )
+    link: (scope, element, attrs) ->
+        if attrs.gMap is 'setPoint'
+            map = new GMaps(
+                el: element[0]
+                lat: 50.449743916340445
+                lng: 30.454806312918663
+                click: (e) ->
+                    scope.setLatLng(e.latLng.lat(), e.latLng.lng())
+                    map.removeMarkers()
+                    map.addMarker
+                        lat: e.latLng.lat()
+                        lng: e.latLng.lng()
+            )
+        else
+            map = new GMaps(
+                el: element[0]
+                lat: 50.449743916340445
+                lng: 30.454806312918663
+            )
 
         MapsGeolocate = ->
             GMaps.geolocate success: (position) ->
@@ -31,4 +44,4 @@ angular.module 'app.directive.map', []
                     content: content
             return
 
-        return true
+        return

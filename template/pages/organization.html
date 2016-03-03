@@ -29,7 +29,7 @@
                 </ul>
             </div>
         </article>
-        <p class="events__item__text" ng-bind="::organization.description"></p>
+        <p class="events__item__text" ng-bind-html="getHTML(organization.description)"></p>
 
     </div>
 

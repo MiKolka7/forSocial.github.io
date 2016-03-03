@@ -17,12 +17,12 @@
             <div class="event__info">
                 <h6 class="events__name" ng-bind="::event.name"></h6>
                 <p>
-                    <span ng-bind="::event.date_start | date : 'H:MM dd:MM:yyyy'"></span> -
-                    <span ng-bind="::event.date_end | date : 'H:MM dd:MM:yyyy'"></span>
+                    <span ng-bind="::event.date_start | date : 'hh:mm dd:MM:yyyy'"></span> -
+                    <span ng-bind="::event.date_end | date : 'hh:mm dd:MM:yyyy'"></span>
                 </p>
                 <p ng-bind="::event.address"></p>
             </div>
-            <p class="event__text" ng-bind="::getHTML(item.description)"></p>
+            <p class="event__text" ng-bind-html="getHTML(event.description)"></p>
         </div>
     </article>
 
@@ -64,7 +64,7 @@
                         <textarea class="msg-box-input" ng-model="comment"></textarea>
                     </div>
                     <div class="msg_controls">
-                        <input class="send-msg-btn" type="submit" value="Відправити" ng-click="addComment()">
+                        <input class="send-msg-btn" type="submit" value="{{::lang.btn.send}}" ng-click="addComment()">
                     </div>
                 </form>
             </div>

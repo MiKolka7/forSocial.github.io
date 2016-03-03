@@ -1,4 +1,4 @@
-angular.module('app.controller.events', []).controller('eventsCtrl', function($scope, $http, $rootScope, $sce) {
+angular.module('app.controller.events', []).controller('eventsCtrl', function($scope, $http) {
   var page, pageData;
   page = 0;
   $scope.events = [];
@@ -12,6 +12,9 @@ angular.module('app.controller.events', []).controller('eventsCtrl', function($s
       if (!_.isEmpty(data)) {
         $scope.events = [].concat($scope.events, data);
       }
+      _.forEach($scope.events, function(item) {
+        return item.date_end = new Date(item.date_end);
+      });
       return $scope.loading = false;
     });
   };

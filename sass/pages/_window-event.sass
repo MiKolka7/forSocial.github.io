@@ -81,6 +81,10 @@
             margin: 0 8px 0 0
             color: #383838
 
+        input[type="checkbox"]
+            position: relative
+            top: 2px
+
     > textarea, input
         width: 100%
         padding: 10px
@@ -108,8 +112,8 @@
     @extend .clearfix
 
 .city-block
-    width: 50%
-    float: left
+    label
+        display: block
 
     > span
         display: block
@@ -117,12 +121,28 @@
         color: #383838
 
 .date-block
-    width: 100%
-    float: left
+    width: 50% !important
+    float: left !important
+    display: block
+    margin: 15px 0 !important
+    padding: 0 !important
+
+    &--full
+        width: 100% !important
+
+        input
+            width: 60% !important
+            margin-top: 6px !important
+
+        .button
+            width: 37%
+            margin-left: 1%
+
     > span
         display: block
         padding: 7px 0 5px 18px
         color: #383838
+
     > input
         width: 220px
         height: 26px
@@ -139,29 +159,36 @@
     visibility: hidden
     clear: both
 
-.category-input-group
+.category-input-group,
+.skills-input-group
     width: 50%
     float: left
     overflow: hidden
 
-    > label:nth-of-type(3n-2)
-        margin-left: 10px
-        clear: both
+    label
+        margin-left: 5px
+        display: block
+        line-height: 20px
+        font-size: 16px
 
     > span
         display: block
         padding: 15px 0 5px 13px
         color: #383838
 
+    input[type="checkbox"]
+        top: 5px
+
 .skills-input-group
-    width: 50%
-    overflow: hidden
+    float: none
 
-    > label:nth-of-type(odd)
-        padding-left: 10px
-        clear: both
+.col-2
+    float: left
+    width: 49%
 
-    > span
-        display: block
-        padding: 15px 0 5px 18px
-        color: #383838
+    + &
+        margin-left: 2%
+
+.ta-scroll-window
+    display: block
+    border: 1px solid #ddd

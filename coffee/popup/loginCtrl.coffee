@@ -1,5 +1,5 @@
 angular.module 'app.controller.login', []
-    .controller 'loginCtrl', ($scope, $http, localStorageService, $location) ->
+    .controller 'loginCtrl', ($scope, $http, localStorageService, $location, Notification) ->
 
 
         $scope.auth = () ->
@@ -11,4 +11,6 @@ angular.module 'app.controller.login', []
                             $scope.closeThisDialog()
                             localStorageService.cookie.set('user', data[0])
                             $location.url('/events')
+                        else
+                            Notification.error 'Invalid login or password';
                     )

@@ -4,33 +4,57 @@
     <article class="user">
         <h3 class="user__title">
             <span ng-bind="user.name"></span>
-            <a href="#" class="button btn-event btn--blue btn--big" ng-click="">Повідомлення</a>
+            <a href="#" class="button btn-event btn--blue btn--big" ng-bind="::lang.header.mess"></a>
         </h3>
 
         <div class="user__info">
-
-            <img src="images/img1.png" alt="" class="user__ava "/>
-
-            <!--<div class="user__info__item">-->
-                <!--<span class="user__tel contacts-sprite">-->
-                    <!--<input class="user__data" b-ng-model=""/>-->
-                    <!--<input class="user__data" b-ng-model=""/>-->
-                <!--</span>-->
-                <!--<a href=""-->
-                   <!--class="user__fb contacts-sprite"-->
-                   <!--ng-bind="::user.email">-->
-                <!--</a>-->
-                <!--<input class="user__address contacts-sprite" b-ng-model="">-->
-            <!--</div>-->
+            <figure class="user__ava">
+                <upload-file url="user.photo"></upload-file>
+            </figure>
 
             <div class="user__info__item">
-                <p class="scale">Рейтинг:
+                <span class="user__tel contacts-sprite">
+                    <input ng-if="edit" type="text" ng-blur="updateInfo()" ng-model="user.phone1"/>
+                    <span ng-if="!edit" ng-bind="user.phone1"></span>
+                </span>
+                <span class="user__tel contacts-sprite">
+                    <input type="text" ng-if="edit" ng-blur="updateInfo()" ng-model="user.phone2"/>
+                    <span ng-if="!edit" ng-bind="user.phone2"></span>
+                </span>
+                <a href="mailto:{{user.email}}" ng-bind="user.email"></a>
+                <span class="user__fb contacts-sprite">
+                    <input type="text" ng-if="edit" ng-blur="updateInfo()" ng-model="user.fb">
+                    <a href="https://www.facebook.com/{{user.fb}}" ng-if="!edit" ng-bind="user.fb"></a>
+                </span>
+                <!--<input class="user__address contacts-sprite">-->
+            </div>
+
+            <div class="user__info__item">
+                <p class="scale">
+                    <span ng-bind="::lang.cabinet.rate2"></span>
                     <span ng-bind="rating"></span>
                     <span>/10</span>
                 </p>
                 <!--<p class="hours">Соціально-активних годин: <span>299</span></p>-->
-                <p class="projectsnum">
-                    Кількість проектів: <span ng-bind="::user.events.length"></span>
+                <p class="project-num">
+                    Кількість проектів:
+                    <span ng-bind="::user.events.length"></span>
+                </p>
+                <p>
+                    <span ng-bind="::lang.filter.city + ':'"></span>
+                    <select ng-if="edit" ng-blur="updateInfo()">
+                        <option ng-repeat="c in cites"
+                                selected="{{user.city.idCity === c.idCity}}"
+                                ng-value="c.idCity"
+                                ng-bind="c.name">
+                        </option>
+                    </select>
+                    <span ng-if="!edit" ng-bind="city.name"></span>
+                </p>
+                <p>
+                    <span ng-bind="::lang.cabinet.birthdate + ':'"></span>
+                    <input type="date" ng-if="edit" ng-blur="updateInfo()" ng-model="user.birthdate"/>
+                    <span ng-if="!edit" ng-bind="user.birthdate"></span>
                 </p>
             </div>
 
@@ -63,7 +87,7 @@
                 </span>
             </p>
 
-            <p class="activity">Історія активностей:</p>
+            <p class="activity" ng-bind="::lang.cabinet.historyActivity + ':'"></p>
 
             <nav class="activity-log">
                 <a class="activity-log-item"
@@ -77,7 +101,7 @@
                 </a>
             </nav>
 
-            <p class="rate">Оцінити: </p>
+            <p class="rate" ng-bind="::lang.cabinet.rate + ':'"></p>
             <ul class="user__rate">
                 <li class="user__rate__item"
                     ng-repeat="i in ::[0, 1, 2, 3, 4 ,5, 6, 7, 8, 9] track by $index"
@@ -90,7 +114,7 @@
 
 
     <div class="user__feedback__container">
-        <p class="user__feedback">Відгуки:</p>
+        <p class="user__feedback" ng-bind="::lang.cabinet.reviews + ':'"></p>
         <ul class="msg">
 
             <li class="msg__wrap js-clicked">

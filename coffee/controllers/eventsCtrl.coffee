@@ -1,5 +1,5 @@
 angular.module 'app.controller.events', []
-    .controller 'eventsCtrl', ($scope, $http, $rootScope, $sce) ->
+    .controller 'eventsCtrl', ($scope, $http) ->
 
         page = 0
         $scope.events = []
@@ -10,6 +10,10 @@ angular.module 'app.controller.events', []
                     console.log data
                     if !_.isEmpty data
                         $scope.events = [].concat $scope.events, data
+
+                    _.forEach($scope.events, (item) ->
+                        item.date_end = new Date(item.date_end)
+                    )
                     $scope.loading = false
                 )
 

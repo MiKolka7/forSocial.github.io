@@ -15,20 +15,55 @@
 
 .user__info
     @extend .clearfix
+
     a, p, span
-        padding-bottom: 16px
+        padding-bottom: 7px
         font-size: 20px
         color: #383838
     a
         display: block
+
     div:nth-of-type(1)
         padding-left: 36px
         padding-right: 65px
+        box-sizing: border-box
 
 .user__info__item
     float: left
     max-width: 33%
 
+    a:hover
+        text-decoration: underline
+
+    .user__tel
+        display: block
+
+    input, select
+        @extend .animate
+        padding: 3px 0
+        border-radius: 5px
+        font-size: 20px
+
+    select
+        padding: 3px 10px
+        min-width: 100px
+        -webkit-appearance: button
+        background: #fff
+        border: 1px solid transparent
+
+        &:hover
+            border-bottom: 1px solid #000
+
+    input
+        &:hover
+            box-shadow: 0 0 5px #001cff
+
+        &:focus
+            box-shadow: 0 0 5px #001cff
+
+    input[type="text"]
+        &:focus
+            text-indent: 10px
 
 .user__data
     width: 100%
@@ -50,8 +85,10 @@
         height: 26px
         background: url(http://bit.ly/1YUDIhB) no-repeat
         background-position: 0 2px
+
     &.user__fb:before
         background-position: 0 -83px
+
     &.user__address:before
         background-position: 0 -123px
 

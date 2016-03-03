@@ -6,7 +6,7 @@ angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, l
   }
   lang = localStorageService.cookie.get('lang');
   if (!lang) {
-    lang = 'ua';
+    lang = navigator.language || navigator.userLanguage;
   }
   $rootScope.openPopup = function(name) {
     return ngDialog.open({
@@ -27,8 +27,14 @@ angular.module('app.config.run', []).run(function($rootScope, ngDialog, $http, l
     data.name = lang;
     return $rootScope.lang = data;
   });
-  $rootScope.getHTML = function(data) {
-    return $sce.trustAsHtml(data);
+  $rootScope.getHTML = function(text, limit) {
+    var t;
+    if (text.length > limit) {
+      t = text.substr(0, limit);
+      return $sce.trustAsHtml(t);
+    } else {
+      return text;
+    }
   };
   return true;
 });

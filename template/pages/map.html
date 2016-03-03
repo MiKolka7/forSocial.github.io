@@ -12,11 +12,11 @@
         </ul>
     </div>
 
-    <button class="button btn-event btn--blue btn--big">Створити</button>
+    <button ng-click="openPopup('addEvent')" class="button btn-event btn--blue btn--big" ng-bind="::lang.btn.add"></button>
 
 </div>
 
 
 <main class="container">
-    <section id="map" class="g-maps" gmap></section>
+    <section id="map" class="g-maps" g-map></section>
 </main>

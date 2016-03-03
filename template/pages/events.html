@@ -37,8 +37,7 @@
         </ul>
     </div>
 
-    <button ng-click="openPopup('addEvent')"
-            class="button btn-event btn--blue btn--big" ng-bind="::lang.btn.add"></button>
+    <button ng-click="openPopup('addEvent')" class="button btn-event btn--blue btn--big" ng-bind="::lang.btn.add"></button>
 
 </div>
 
@@ -47,22 +46,30 @@
 
     <ul class="events" infinite-scroll>
 
-        <li class="events__item"
-            ng-repeat="item in events">
-            <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
+        <li class="events__item" ng-repeat="item in events track by $index">
+            <a ng-href="#/event/{{item.idEvent}}">
+                <img ng-src="images/{{item.cover}}" alt="" class="events__item__img"/>
+            </a>
 
             <article class="events__item__container">
                 <div class="events__item__info">
                     <address ng-bind="item.city || + ','"></address>
-                    <time ng-bind="item.date_end | date : 'dd.mm.yyyy'"></time>
+                    <time ng-bind="item.date_end | date : 'dd.MM.yyyy'"></time>
                 </div>
-                <h4 class="events__item__title" ng-bind="item.title"></h4>
-                <p class="events__item__text" ng-bind-html="getHTML(item.description)"></p>
+                <a class="events__item__title"
+                   ng-href="#/event/{{item.idEvent}}"
+                   ng-bind="item.title"></a>
+
+                <p class="events__item__text">
+                    <span ng-bind-html="getHTML(item.description, 140)"></span>
+                    <span ng-if="item.description.length > 140">...</span>
+                </p>
+
                 <div class="events__item__users">
-                    <p ng-bind="item.users.length + ' учасників'"></p>
+                    <p ng-bind="item.users.length + ' ' + lang.t.users"></p>
                     <div class="users">
                         <a class="users__list"
-                           ng-repeat="user in item.users"
+                           ng-repeat="user in item.users track by $index"
                            ng-href="'#/user/' + user.idUser"
                            style="background: url('images/{{::user.photo}}')">
                         </a>

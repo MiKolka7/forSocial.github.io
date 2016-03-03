@@ -2,21 +2,33 @@
 
 <div class="modal-event__wrap">
     <form class="modal-event__form" name="formAddEvent" ng-submit="addEvent()">
-        <span>Назва заходу</span>
-        <input type="text" class="event-name" ng-model="event.title"/>
+        <fieldset>
+            <label>Назва заходу</label>
+            <input type="text" class="event-name" ng-model="event.title"/>
+        </fieldset>
 
-        <div upload-file></div>
+        <br>
 
-        <div class="city-date-row">
-            <div class="city-block">
-                <span>Місто</span>
-                <label ng-repeat="item in city">
-                    <input type="checkbox"
-                           checklist-model="event.city"
-                           checklist-value="item.idCity"/>
-                    <span ng-bind="item.name"></span>
-                </label>
+        <fieldset class="clearfix">
+            <div class="col-2">
+                <label>Фото</label>
+                <upload-file url="event.cover"></upload-file>
             </div>
+
+            <div class="col-2 city-date-row">
+                <div class="city-block">
+                    <span>Місто</span>
+                    <label ng-repeat="item in city">
+                        <input type="checkbox"
+                               checklist-model="event.city"
+                               checklist-value="item.idCity"/>
+                        <span ng-bind="item.name"></span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="city-date-row">
             <label class="date-block">
                 <span>Дата початку</span>
                 <input type="datetime-local" ng-model="event.date_start"/>
@@ -25,9 +37,9 @@
                 <span>Дата кінця</span>
                 <input type="datetime-local" ng-model="event.date_end"/>
             </label>
-        </div>
+        </fieldset>
 
-        <filedest class="event-check-input-group">
+        <fieldset class="event-check-input-group clearfix">
             <div class="category-input-group">
                 <span>Категорія</span>
                 <label ng-repeat="category in categories">
@@ -46,23 +58,22 @@
                     <span ng-bind="skill.name"></span>
                 </label>
             </div>
-        </filedest>
+        </fieldset>
 
-        <label class="date-block">
-            <span>Longitude</span>
-            <input type="text" ng-model="event.long" required="required"/>
-        </label>
-        <label class="date-block">
-            <span>Latitude</span>
-            <input type="text" ng-model="event.lat" required="required"/>
-        </label>
-        <label class="date-block">
-            <span>Адреса</span>
-            <input type="text" ng-model="event.address" required="required"/>
-        </label>
+        <fieldset class="clearfix">
+            <label class="date-block date-block--full">
+                <span>Адреса</span>
+                <input type="text" ng-model="event.address" required="required"/>
+                <button class="button" type="button" ng-click="openMap()">Прив'язати подію на мапі</button>
+            </label>
+        </fieldset>
 
-        <span>Опис</span>
-        <text-angular class="event-description" cols="130" rows="12" ng-model="event.description"></text-angular>
+        <div class="g-maps g-maps--small" ng-if="visibleMap" g-map="setPoint"></div>
+
+        <fieldset>
+            <label>Опис</label>
+            <text-angular class="event-description" cols="130" rows="12" ng-model="event.description"></text-angular>
+        </fieldset>
 
         <label>
             <input type="checkbox" required="required"/>

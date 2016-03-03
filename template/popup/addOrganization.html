@@ -1,62 +1,63 @@
 <h2>Створення компанії</h2>
 
 <div class="modal-company__wrap">
-    <form class="modal-company__form" ng-submit="addCompany()" name="formAddCompany">
+    <form class="modal-company__form modal-event__form"
+          name="formAddCompany"
+          ng-submit="addCompany()">
 
         <span>Назва</span>
-        <input class="company-name" ng-model="company.title"/>
+        <input class="company-name" type="text" ng-model="company.name"/>
+
+        <span>Фото</span>
+        <input class="company-name" type="text" ng-model="company.photo"/>
+
+        <!--<div upload-file></div>-->
 
         <span>Тип</span>
         <label>
-            <input type="radio"
-                   checklist-model="company.city"
-                   checklist-value="1"
-                   name="type"/>
+            <input type="radio" ng-model="company.type" value="1"/>
             організація
         </label>
         <label>
-            <input type="radio"
-                   checklist-vmodelalue="company.idCity"
-                   checklist-value="2"
-                   name="type"/>
+            <input type="radio" ng-model="company.type" value="2"/>
             компанія
         </label>
 
-        <span>Сфера діяльності</span>
+        <!--<span>Сфера діяльності</span>-->
 
-        <div class="activity-input-group">
-            <label ng-repeat="category in categories">
-                <input type="checkbox"
-                       checklist-model="company.categories"
-                       checklist-value="category.idCategory"/>
-                <span ng-bind="category.name"></span>
-            </label>
-        </div>
+        <!--<div class="activity-input-group">-->
+            <!--<label ng-repeat="category in categories">-->
+                <!--<input type="checkbox"-->
+                       <!--checklist-model="company.categories"-->
+                       <!--checklist-value="category.idCategory"/>-->
+                <!--<span ng-bind="category.name"></span>-->
+            <!--</label>-->
+        <!--</div>-->
 
         <span>Опис</span>
         <text-angular class="event-description" cols="130" rows="12" ng-model="company.description"></text-angular>
 
         <span>Сайт</span>
-        <input class="company-site" ng-model="company.site"></input>
+        <input type="text" class="company-site" ng-model="company.site"/>
 
-        <label class="date-block">
-            <span>Longitude</span>
-            <input type="text" ng-model="event.long" required="required"/>
-        </label>
-        <label class="date-block">
-            <span>Latitude</span>
-            <input type="text" ng-model="event.lat" required="required"/>
-        </label>
-        <label class="date-block">
-            <span>Адреса</span>
-            <input type="text" ng-model="event.address" required="required"/>
-        </label>
+        <!--<label class="date-block">-->
+            <!--<span>Longitude</span>-->
+            <!--<input type="text" ng-model="event.long" required="required"/>-->
+        <!--</label>-->
+        <!--<label class="date-block">-->
+            <!--<span>Latitude</span>-->
+            <!--<input type="text" ng-model="event.lat" required="required"/>-->
+        <!--</label>-->
+        <!--<label class="date-block">-->
+            <!--<span>Адреса</span>-->
+            <!--<input type="text" ng-model="event.address" required="required"/>-->
+        <!--</label>-->
 
         <label>
-            <input type="checkbox"/>
+            <input type="checkbox" required="required"/>
             Я згоден з умовами використання ресурсу та даю згоду на обробку даних
         </label>
 
-        <button type="submit" class="btn btn-event btn--blue btn--big">Створити</button>
+        <button type="submit" class="button btn-event btn--blue btn--big">Створити</button>
     </form>
 </div>

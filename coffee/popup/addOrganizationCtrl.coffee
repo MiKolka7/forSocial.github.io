@@ -1,22 +1,21 @@
 angular.module 'app.controller.addOrganization', []
-    .controller 'addOrganizationCtrl', ($scope) ->
+    .controller 'addOrganizationCtrl', ($scope, localStorageService, $http) ->
 
         user = localStorageService.cookie.get('user')
+        console.log 'asd'
 
         $scope.addCompany = () ->
             if ($scope.formAddCompany.$valid)
 
-                event = {}
-                event = _.clone($scope.event)
+                company = {}
+                company = _.clone($scope.company)
 
-                event.date_start = +event.date_start
-                event.date_end = +event.date_end
-                event.cover = event.photo
-                event.iduser = +user.idUser
-                event.cover = event.photo
-                console.log event
+                company.cover = company.photo
+                company.id_creator = +user.idUser
+                company.cover = company.photo
+                console.log company
 
-                $http.get('http://api.prolaby.com/api/post/event', {params: ''})
-                .success( (data) ->
-                    console.log data
-                )
+                $http.get('http://api.prolaby.com/api/post/company', {params: company})
+                    .success( (data) ->
+                        console.log data
+                    )

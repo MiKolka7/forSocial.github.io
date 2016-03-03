@@ -1,13 +1,29 @@
-angular.module('app.directive.map', []).directive('gmap', function($http) {
+angular.module('app.directive.map', []).directive('gMap', function() {
   return {
     restrict: 'A',
-    link: function(scope, element) {
+    link: function(scope, element, attrs) {
       var MapsGeolocate, map;
-      map = new GMaps({
-        el: '#map',
-        lat: 50.449743916340445,
-        lng: 30.454806312918663
-      });
+      if (attrs.gMap === 'setPoint') {
+        map = new GMaps({
+          el: element[0],
+          lat: 50.449743916340445,
+          lng: 30.454806312918663,
+          click: function(e) {
+            scope.setLatLng(e.latLng.lat(), e.latLng.lng());
+            map.removeMarkers();
+            return map.addMarker({
+              lat: e.latLng.lat(),
+              lng: e.latLng.lng()
+            });
+          }
+        });
+      } else {
+        map = new GMaps({
+          el: element[0],
+          lat: 50.449743916340445,
+          lng: 30.454806312918663
+        });
+      }
       MapsGeolocate = function() {
         GMaps.geolocate({
           success: function(position) {
@@ -28,7 +44,6 @@ angular.module('app.directive.map', []).directive('gmap', function($http) {
           }
         });
       };
-      return true;
     }
   };
 });

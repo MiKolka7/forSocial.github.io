@@ -8,6 +8,7 @@ angular.module 'app', [
     'chieffancypants.loadingBar'
     'ngFileUpload'
     'checklist-model'
+    'ui-notification'
 
     'app.config.run'
     'app.config.route'
@@ -16,7 +17,6 @@ angular.module 'app', [
 
     'app.directives'
 
-    'app.controller.upload'
 
     'app.controller.header'
     'app.controller.footer'
@@ -35,4 +35,5 @@ angular.module 'app', [
 
     'app.directive.infiniteScroll'
     'app.directive.map'
+    'app.directive.upload'
 ]

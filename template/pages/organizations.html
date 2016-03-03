@@ -41,7 +41,7 @@
                 <a class="events__item__title"
                     ng-href="#/organization/{{item.idCompany}}"
                     ng-bind="item.name"></a>
-                <p class="events__item__text" ng-bind="item.description"></p>
+                <p class="events__item__text" ng-bind-html="getHTML(item.description)"></p>
                 <p class="events__text-info">
                     Міста: Київ, Одеса, Львів, Харьків
                 </p>
@@ -66,7 +66,7 @@
                 <a class="events__item__title"
                    ng-href="#/organization/{{item.idCompany}}"
                    ng-bind="item.name"></a>
-                <p class="events__item__text" ng-bind="item.description"></p>
+                <p class="events__item__text" ng-bind-html="getHTML(item.description)"></p>
                 <p class="events__text-info">
                     Міста: Київ, Одеса, Львів, Харьків
                 </p>

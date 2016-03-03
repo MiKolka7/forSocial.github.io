@@ -16,6 +16,7 @@ angular.module('app.filters', [])
 
         Object.keys obj
 )
+
 .filter 'allKeyfilter', ->
     (obj, arr) ->
         newArr = []

@@ -8,7 +8,7 @@ angular.module('app.config.run', [])
     lang = localStorageService.cookie.get('lang')
 
     if (!lang)
-        lang = 'ua'
+        lang = navigator.language || navigator.userLanguage
 
     $rootScope.openPopup = (name) ->
         ngDialog.open({
@@ -37,8 +37,12 @@ angular.module('app.config.run', [])
         $rootScope.lang = data
     )
 
-    $rootScope.getHTML = (data) ->
-        $sce.trustAsHtml(data)
+    $rootScope.getHTML = (text, limit) ->
+        if text.length > limit
+            t = text.substr(0, limit)
+            $sce.trustAsHtml(t)
+        else
+            return text
 
 
     return true
